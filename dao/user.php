@@ -1,0 +1,52 @@
+<?php
+require_once 'pdo.php';
+function user_insert($user_id, $password, $name, $email, $image, $status, $role
+)
+{
+    $sql = "INSERT INTO user(user_id,password,name,email,image,status,role) VALUES(?,?,?,?,?,?,?)";
+    pdo_execute($sql, $user_id, $password, $name, $email, $image,$status == 1, $role == 1);
+}
+function user_update($user_id, $password, $name, $email, $image, $status, $role,)
+{
+    $sql = "UPDATE user SET password=?,name=?,email=?,image=?,status=?,role=? WHERE user_id=?";
+    pdo_execute($sql, $user_id, $password, $name, $email, $image,$status == 1, $role == 1);
+}
+function user_delete($user_id)
+{
+    $sql = "DELETE FROM user WHERE user_id=?";
+    if (is_array($user_id)) {
+        foreach ($user_id as $id) {
+            pdo_execute($sql, $id);
+        }
+    } else {
+        pdo_execute($sql, $user_id);
+    }
+}
+function user_select_all()
+{
+    $sql = "SELECT * FROM user";
+    return pdo_query($sql);
+}
+function user_select_by_id($user_id)
+{
+    $sql = "SELECT * FROM user WHERE user_id=?";
+    return pdo_query_one($sql, $user_id);
+}
+function user_exist($user_id)
+{
+    $sql = "SELECT count(*) FROM user WHERE user_id=?";
+    return pdo_query_value($sql, $user_id) > 0;
+}
+
+function user_exist_email($email)
+{
+    $sql = "SELECT count(*) FROM user WHERE email=?";
+    return pdo_query_value($sql, $email) > 0;
+}
+
+function user_change_password($user_id, $mat_khau_moi)
+{
+
+    $sql = "UPDATE user SET mat_khau=? WHERE user_id=?";
+    pdo_execute($sql, $mat_khau_moi, $user_id);
+}
