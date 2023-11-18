@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-$ROOT_URL = "/duan1"; 
+$ROOT_URL = "/DUAN1-Website-ban-hang"; 
 $CONTENT_URL = "$ROOT_URL/content"; 
 $ADMIN_URL = "$ROOT_URL/admin"; 
 $CLIENT_URL = "$ROOT_URL/client";

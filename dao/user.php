@@ -44,9 +44,9 @@ function user_exist_email($email)
     return pdo_query_value($sql, $email) > 0;
 }
 
-function user_change_password($user_id, $mat_khau_moi)
+function user_change_password($user_id, $password2)
 {
 
-    $sql = "UPDATE user SET mat_khau=? WHERE user_id=?";
-    pdo_execute($sql, $mat_khau_moi, $user_id);
+    $sql = "UPDATE user SET password=? WHERE user_id=?";
+    pdo_execute($sql, $password2, $user_id);
 }

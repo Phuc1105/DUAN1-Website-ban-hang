@@ -1470,7 +1470,7 @@ $.extend( $.validator, {
 			return this.optional( element ) || /^\d+$/.test( value );
 		},
 
-		// https://jqueryvalidation.org/minlength-method/
+		// https://jqueryvalidation.org/-method/
 		minlength: function( value, element, param ) {
 			var length = Array.isArray( value ) ? value.length : this.getLength( value, element );
 			return this.optional( element ) || length >= param;

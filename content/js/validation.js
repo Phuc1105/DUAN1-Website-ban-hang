@@ -101,28 +101,28 @@ $(document).ready(function () {
 
     $('#form_doi_mk').validate({
         rules: {
-            mat_khau: {
+            password: {
                 required: true,
                 // remote: "check_user.php?id=" + ma_kh,
             },
-            mat_khau2: {
+            password2: {
                 required: true,
                 minlength: 6,
             },
-            mat_khau3: {
+            password3: {
                 required: true,
-                equalTo: '#mat_khau2',
+                equalTo: '#password2',
             },
         },
         messages: {
-            mat_khau: {
+            passowrd: {
                 required: 'Please enter your old password',
             },
-            mat_khau2: {
+            passowrd2: {
                 required: 'Please enter a new password',
                 minlength: 'Password must be at least 3 characters',
             },
-            mat_khau3: {
+            password3: {
                 required: 'Please enter the new password confirmation',
                 equalTo: 'Password incorrect',
             },

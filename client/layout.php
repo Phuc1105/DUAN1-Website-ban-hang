@@ -24,6 +24,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<?=$CONTENT_URL?>/css/style.css" rel="stylesheet">
+    
 </head>
 
 <body>

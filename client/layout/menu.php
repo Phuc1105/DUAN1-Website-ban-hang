@@ -36,7 +36,7 @@
                                     <a class="dropdown-item pl-3 py-2" href="<?= $ADMIN_URL . "/trang-chinh/" ?>">Admin Management</a>
                                 <?php }  ?>
                                 <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/update_account.php' ?>">Update Account</a>
-                                <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/forgot_password.php' ?>">Change Password</a>
+                                <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/change_password.php' ?>">Change Password</a>
                                 <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/login.php?btn_logout' ?>">Logout</a>
                             <?php } else { ?>
                                 <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/login.php' ?>">Login</a>
@@ -61,7 +61,7 @@
         </div>
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
-                <a href="" class="text-decoration-none">
+                <a href="<?=$ROOT_URL?>" class="text-decoration-none">
                     <span class="h1 text-uppercase text-primary bg-dark px-2">Multi</span>
                     <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
                 </a>

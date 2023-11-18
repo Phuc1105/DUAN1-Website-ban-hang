@@ -16,7 +16,7 @@
             </div> <!-- form-group// -->
 
             <div class="form-group">
-                <a href="<?= $CLIENT_URL ?>/account/forgot_password.php" class="float-right">Change password?</a>
+                <a href="<?= $CLIENT_URL ?>/account/change_password.php" class="float-right">Change password?</a>
 
                 <label class="float-left custom-control custom-checkbox"> <input type="checkbox"
                         class="custom-control-input" name="ghi_nho" checked>
