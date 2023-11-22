@@ -1,2 +1,3 @@
 <?php 
-header('location: ./client/index.php');
+header('location: ./client/trang-chinh');
+?>
