@@ -76,9 +76,9 @@ $(document).ready(function () {
     });
     //================Form quên mật khẩu================//
 
-    $('#form_quen_mk').validate({
+    $('#forgot_password_from').validate({
         rules: {
-            ma_kh: {
+            user_id: {
                 required: true,
             },
             email: {
@@ -87,7 +87,7 @@ $(document).ready(function () {
             },
         },
         messages: {
-            ma_kh: {
+            user_id: {
                 required: 'Enter username',
             },
             email: {
@@ -131,9 +131,9 @@ $(document).ready(function () {
 
     //================Form cập nhật tài khoản khách hàng================//
 
-    $('#update_tk').validate({
+    $('#update_account').validate({
         rules: {
-            ho_ten: {
+            name: {
                 required: true,
                 minlength: 6,
             },
@@ -144,7 +144,7 @@ $(document).ready(function () {
             },
         },
         messages: {
-            ho_ten: {
+            name: {
                 required: 'Please fill in your full name',
                 minlength: 'Please enter at least 6 characters',
             },

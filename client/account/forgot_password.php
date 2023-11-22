@@ -4,7 +4,7 @@ require '../../global.php';
 require '../../dao/user.php';
 
 extract($_REQUEST);
-$VIEW_NAME = 'account/forgot_password.php';
+$VIEW_NAME = 'account/forgot_password_form.php';
 if (exist_param('btn_forgot_pass')) {
     $user = user_select_by_id($user_id);
     if ($user) {
