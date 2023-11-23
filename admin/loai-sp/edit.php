@@ -23,9 +23,9 @@
                     ?>
                     <form class="form-horizontal" action="index.php?btn_update" method="post">
                         <div class="form-group row">
-                            <label for="catagogy_id" class="col-sm-3 text-end control-label col -form-label">Mã loại:</label>
+                            <label for="category_id" class="col-sm-3 text-end control-label col -form-label">Mã loại:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="catagogy_id" placeholder="" name="catagogy_id" value="<?= $catagogy_id ?>" readonly>
+                                <input type="text" class="form-control" id="category_id" placeholder="" name="category_id" value="<?= $category_id ?>" readonly>
                             </div>
                         </div>
                         <div class="form-group row">

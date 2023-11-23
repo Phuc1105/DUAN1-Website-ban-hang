@@ -1,20 +1,23 @@
 <div class="row">
-<h3 class="m-3 text-dark text-uppercase">ADD NEW PRODUCTS</h3>
+    <h3 class="m-3 text-dark text-uppercase">ADD NEW PRODUCTS</h3>
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
                 <form action="index.php" method="POST" enctype="multipart/form-data" id="add_product">
                     <div class="row">
                         <div class="form-group col-sm-4">
-                            <label for="catagogy_id" class="form-label">Product type</label>
-                            <select name="catagogy_id" class="form-control" id="catagogy_id">
+                            <label for="category_id" class="form-label">Product type</label>
+                            <select name="category_id" class="form-control" id="category_id" req>
+                                <option value="" disabled selected>Please select product type</option>
+                                <?php
+                                $categories = category_select_all();
+                                foreach ($categories as $categories) {
+                                    extract($categories);
+                                ?>
+                                    <option value="<?= $categories['category_id'] ?>"><?= $categories['name'] ?></option>
                                 <?php
 
-                                foreach ($catagogy_id as $catagogy_id) {
-                                    extract($catagogy_id);
-                                    echo '<option value="' . $catagogy_id . '">' . $name . '</option>';
                                 }
-
                                 ?>
 
                             </select>
@@ -25,8 +28,7 @@
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="product_id" class="form-label">Product ID</label>
-                            <input type="text" name="product_id" id="product_id" readonly class="form-control"
-                                value="auto number">
+                            <input type="text" name="product_id" id="product_id" readonly class="form-control" value="auto number">
                         </div>
                     </div>
                     <div class="row">
@@ -40,8 +42,7 @@
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="purchase_count" class="form-label">Purchase count</label>
-                            <input type="text" name="purchase_count" id="purchase_count" readonly class="form-control"
-                                value="0">
+                            <input type="text" name="purchase_count" id="purchase_count" readonly class="form-control" value="0">
                         </div>
                     </div>
                     <div class="row">
@@ -59,13 +60,11 @@
                         <div class="form-group col-sm-4">
                             <?php $today = date_format(date_create(), 'Y-m-d'); ?>
                             <label for="input_date" class="form-label">Input date</label>
-                            <input type="date" name="input_date" id="input_date" class="form-control"
-                                value="<?= $today ?>">
+                            <input type="date" name="input_date" id="input_date" class="form-control" value="<?= $today ?>">
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="view" class="form-label">Number of views</label>
-                            <input type="text" name="view" id="view" readonly class="form-control"
-                                value="0">
+                            <input type="text" name="view" id="view" readonly class="form-control" value="0">
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="quantity" class="form-label">Quantity</label>
@@ -75,8 +74,7 @@
                     <div class="row">
                         <div class="form-group col-sm-12">
                             <label for="describes" class="form-label">Product Description</label>
-                            <textarea id="txtarea" spellcheck="false" name="describes"
-                                class="form-control form-control-lg mb-3" id="textareaExample" rows="3"></textarea>
+                            <textarea id="txtarea" spellcheck="false" name="describes" class="form-control form-control-lg mb-3" id="textareaExample" rows="3"></textarea>
                         </div>
                     </div>
 

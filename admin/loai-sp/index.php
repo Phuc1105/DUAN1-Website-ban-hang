@@ -1,19 +1,19 @@
 <?php 
   require "../../global.php";
   require "../../dao/pdo.php";
-  require "../../dao/catagogy.php";
+  require "../../dao/category.php";
   extract($_REQUEST);
   $thongbao_name = "";
   $thongbao_status = "";
   if(exist_param("btn_list")){
-    $items = catagogy_select_all();
+    $items = category_select_all();
     $VIEW_NAME = "list.php";
   }elseif(exist_param("btn_insert")){
     $name = $_POST['name'];
-    $val_name = catagogy_select_by_name($name);
+    $val_name = category_select_by_name($name);
     if(isset($name) && isset($status) && $val_name == ""){ 
         $status = $_POST['status'];
-        catagogy_insert($name,$status);  
+        category_insert($name,$status);  
         $VIEW_NAME = "list.php";
     }else{
       if($val_name != ""){    
@@ -29,23 +29,23 @@
     }
     
   }elseif(exist_param('btn_delete')){
-    $catagogy_id = $_REQUEST['catagogy_id'];
-    catagogy_delete($catagogy_id);
-    $items = catagogy_select_all();
+    $category_id = $_REQUEST['category_id'];
+    category_delete($category_id);
+    $items = category_select_all();
     $VIEW_NAME = "list.php";
 }elseif(exist_param('btn_edit')){
-  $catagogy_id = $_REQUEST['catagogy_id'];
-  $loai_info = catagogy_select_by_id($catagogy_id);
+  $category_id = $_REQUEST['category_id'];
+  $loai_info = category_select_by_id($category_id);
   extract($loai_info);
-  $items = catagogy_select_all();
+  $items = category_select_all();
   $VIEW_NAME = "edit.php";
 }elseif(exist_param('btn_update')){
   if(isset($name) && $name != "" ){ 
-  $catagogy_id = $_POST['catagogy_id'];
+  $category_id = $_POST['category_id'];
   $name =$_POST['name'];
   $status = $_POST['status'];
-  catagogy_update($catagogy_id,$name,$status);
-  $items = catagogy_select_all();
+  category_update($category_id,$name,$status);
+  $items = category_select_all();
   $VIEW_NAME = "list.php";
 }else{
   if($val_name != ""){    
