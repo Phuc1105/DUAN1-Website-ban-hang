@@ -9,7 +9,7 @@
     <section class="is-title-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <ul>
-                <h3><a href="<?= $ADMIN_URL ?>">Admin</a> / <a href="index.php">Catagogies</a> / <a href="#">Add type</a></h3>
+                <h3><a href="<?= $ADMIN_URL ?>">Admin</a> / <a href="index.php">categories</a> / <a href="#">Add type</a></h3>
         </div>
     </section>
 

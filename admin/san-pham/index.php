@@ -2,7 +2,7 @@
    require "../../dao/pdo.php";
    require "../../global.php";
    require "../../dao/product.php";
-
+   require "../../dao/category.php";
 extract($_REQUEST);
 if (exist_param("btn_list")) {
 

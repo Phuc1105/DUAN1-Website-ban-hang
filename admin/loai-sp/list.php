@@ -1,7 +1,7 @@
 <section class="is-title-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <ul>
-                <h3><a href="<?=$ADMIN_URL?>">Admin</a> / <a href="index.php">Catagogies</a> / <a href="#">List Type</a></h3>
+                <h3><a href="<?=$ADMIN_URL?>">Admin</a> / <a href="index.php">categories</a> / <a href="#">List Type</a></h3>
         </div>
     </section>
 <section class="is-hero-bar">
@@ -27,15 +27,15 @@
                   </div>
                   <?php
                   // xóa   
-                  $items = catagogy_select_all();
-                  foreach ($items as $catagogy) {
+                  $items = category_select_all();
+                  foreach ($items as $category) {
                     
                   ?>  
                     <tr>
-                      <td><?= $catagogy['catagogy_id']?></td>
-                      <td><?= $catagogy['name']?></td>
+                      <td><?= $category['category_id']?></td>
+                      <td><?= $category['name']?></td>
                       <?php
-                      if($catagogy['status']==1){
+                      if($category['status']==1){
                         $status =  "Activated";
                       }else{
                         $status = "Not activated";
@@ -45,9 +45,9 @@
                       <td><?= $status ?></td>
                       <td>
                         
-                        <a href="index.php?btn_delete&catagogy_id=<?=$catagogy['catagogy_id']?>"><button class="btn btn-danger">Delete</button></a>
+                        <a href="index.php?btn_delete&category_id=<?=$category['category_id']?>"><button class="btn btn-danger">Delete</button></a>
 
-                        <a href="index.php?btn_edit&catagogy_id=<?=$catagogy['catagogy_id']?>"><button class="btn btn-primary">Edit type</button></a>
+                        <a href="index.php?btn_edit&category_id=<?=$category['category_id']?>"><button class="btn btn-primary">Edit type</button></a>
                         
                       </td>
                     </tr>
