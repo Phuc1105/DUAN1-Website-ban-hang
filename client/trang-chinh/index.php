@@ -1,9 +1,9 @@
 <?php
   require "../../global.php";
-  require "../../dao/product.php";
+  require_once  "../../dao/product.php";
 
-  if(exist_param("shop")){
-    $VIEW_NAME = "trang-chinh/shop.php";
+  if(exist_param("product")){
+    header("location: $CLIENT_URL/product/list.php");
   }else if(exist_param("detail")){
     $VIEW_NAME ="trang-chinh/detail.php";
   }else if(exist_param("cart")){

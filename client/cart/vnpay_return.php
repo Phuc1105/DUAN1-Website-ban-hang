@@ -82,7 +82,11 @@
         <footer class="footer">
             <p>&copy; VNPAY <?php echo date('Y') ?></p>
         </footer>
+        <div class="d-flex ">
+            <a href="../trang-chinh/"><button type="submit" class="btn bg-warning text-white">Về trang chủ</button></a>
+        </div>
     </div>
+
 </body>
 
 </html>
