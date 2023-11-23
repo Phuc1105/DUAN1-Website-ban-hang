@@ -47,14 +47,14 @@ function product_exist_update($ma_hh, $ten_hh)
     return pdo_query_value($sql, $ma_hh, $ten_hh) > 0;
 }
 
-function product_tang_so_luot_xem($ma_hh)
+function product_view($product_id)
 {
-    $sql = "UPDATE products SET so_luot_xem = so_luot_xem + 1 WHERE ma_hh=?";
-    pdo_execute($sql, $ma_hh);
+    $sql = "UPDATE products SET view = view + 1 WHERE product_id=?";
+    pdo_execute($sql, $product_id);
 }
 function product_select_top10()
 {
-    $sql = "SELECT * FROM products WHERE so_luot_xem > 0 ORDER BY so_luot_xem DESC LIMIT 0, 10";
+    $sql = "SELECT * FROM products WHERE view > 0 ORDER BY view DESC LIMIT 0, 10";
     return pdo_query($sql);
 }
 function product_select_outstanding()
@@ -63,17 +63,17 @@ function product_select_outstanding()
     return pdo_query($sql);
 }
 
-function product_select_by_loai($ma_loai)
+function product_select_by_loai($catagogy_id)
 {
-    $sql = "SELECT * FROM products WHERE ma_loai=?";
-    return pdo_query($sql, $ma_loai);
+    $sql = "SELECT * FROM products WHERE catagogy_id=?";
+    return pdo_query($sql, $catagogy_id);
 }
 
 function product_select_keyword($keyword)
 {
     $sql = "SELECT * FROM products hh "
-        . " JOIN loai lo ON lo.ma_loai=hh.ma_loai "
-        . " WHERE ten_hh LIKE ? OR ten_loai LIKE ?";
+        . " JOIN loai lo ON lo.catagogy_id=hh.catagogy_id "
+        . " WHERE name LIKE ? OR name LIKE ?";
     return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
 }
 function product_select_page($order, $limit)

@@ -69,12 +69,14 @@
     <div class="col-lg-4 col-6 text-left">
         <form action="">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for products">
-                <div class="input-group-append">
-                    <span class="input-group-text bg-transparent text-primary">
-                        <i class="fa fa-search"></i>
-                    </span>
-                </div>
+                <form class="pb-3" action="<?= $CLIENT_URL ?>/product/list.php" method="POST">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="kyww" placeholder="Search...">
+                        <div class="input-group-append">
+                            <button class="btn bg-warning" type="submit" name="search"><i class="fa fa-search text-white"></i></button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </form>
     </div>
@@ -129,7 +131,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php" class="nav-item nav-link active">Home</a>
-                        <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?shop" class="nav-item nav-link">Shop</a>
+                        <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?product" class="nav-item nav-link">Shop</a>
                         <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?detail" class="nav-item nav-link">Shop Detail</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
