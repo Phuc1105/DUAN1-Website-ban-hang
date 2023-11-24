@@ -52,17 +52,16 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-4">
-                            <label for="image" class="form-label">Image</label>
-                            <input type="file" name="image" id="image" class="form-control" value=""> 
-                            <img src="../../upload/products/<?=$product_info['image']?>" alt=""  width="100px">
-                        </div>
-                        <div class="form-group col-sm-4">
                             <label for="price" class="form-label">Unit Price ($)</label>
                             <input type="number" name="price" id="price" class="form-control" value="<?= $product_info['price'] ?>">
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="discount" class="form-label">Discount(%)</label>
                             <input type="text" name="discount" id="discount" class="form-control" value="<?= $product_info['discount'] ?>">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="quantity" class="form-label">Quantity</label>
+                            <input type="number" name="quantity" id="quantity" class="form-control" value="<?= $product_info['quantity'] ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -123,10 +122,6 @@
                                 <?php
                             }
                             ?>
-                        </div>
-                        <div class="form-group col-sm-4">
-                            <label for="quantity" class="form-label">Quantity</label>
-                            <input type="number" name="quantity" id="quantity" class="form-control" value="<?= $product_info['quantity'] ?>">
                         </div>
                     </div>
                     <div class="row">
