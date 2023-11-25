@@ -16,7 +16,7 @@
      <li class="nav-item active">
          <a class="nav-link" href="<?= $ADMIN_URL ?>/trang-chinh/">
              <i class="fas fa-fw fa-tachometer-alt"></i>
-             <span>Dashboard</span></a>
+             <span>Dashboard</span></a>ad
      </li>
      <li class="nav-item active">
          <a class="nav-link" href="<?= $CLIENT_URL ?>/trang-chinh/">
@@ -41,8 +41,8 @@
          </a>
          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="buttons.html">Add Account</a>
-                 <a class="collapse-item" href="cards.html">List of Customer Accounts</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/user/">Add Account</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/user/index.php?btn_list">List of Customer Accounts</a>
              </div>
          </div>
      </li>
