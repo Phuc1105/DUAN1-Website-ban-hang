@@ -120,19 +120,19 @@
 
      <!-- Heading -->
      <div class="sidebar-heading">
-     Discount Management     
+     Voucher product   
     </div>
 
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Discount" aria-expanded="true" aria-controls="collapsePages">
              <i class="fas fa-fw fa-folder"></i>
-             <span>Discount</span>
+             <span>Voucher</span>
          </a>
          <div id="Discount" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="login.html">Add New Discount</a>
-                 <a class="collapse-item" href="register.html">Discount List</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/voucher/">Add New Voucher</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/voucher/index.php?btn_list">Voucher List</a>
              </div>
          </div>
      </li>

@@ -1,29 +1,29 @@
 <?php
 require_once 'pdo.php';
-function product_insert($name, $price, $image, $category_id, $view, $input_date, $describes,$quantity,$purchase_count,$outstanding)
+function product_insert($name, $price, $category_id, $input_date, $describes,$quantity,$outstanding,$user_id,$discount)
 {
-    $sql = "INSERT INTO products(name, price, image, category_id, view, input_date, describes, quantity, purchase_count, outstanding) VALUES (?,?,?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $name, $price, $image, $category_id, $view, $input_date, $describes, $quantity, $purchase_count,$outstanding);
+    $sql = "INSERT INTO products(name, price, category_id ,input_date, describes, quantity, outstanding, user_id, discount) VALUES (?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql, $name, $price, $category_id, $input_date, $describes, $quantity,$outstanding,$user_id,$discount);
 }
-function product_update($product_id, $name, $price, $image, $category_id, $view, $input_date, $describes,$quantity,$purchase_count,)
+function product_update($name, $price, $category_id, $describes, $quantity, $outstanding, $status, $discount,$product_id)
 {
-    $sql = "UPDATE products SET name=?, price=?, image=?, category_id=?, view=?, input_date=?, describes=?, quantity=?, purchase_count=? WHERE product_id=?";
-    pdo_execute($sql, $name, $price, $image, $category_id, $view, $input_date, $describes,$quantity,$purchase_count, $product_id);
+    $sql = "UPDATE products SET name=?, price=?, category_id=?, describes=?, quantity=?, outstanding=?, status=?, discount=? WHERE product_id= ? ";
+    pdo_execute($sql,$name, $price, $category_id, $describes, $quantity, $outstanding, $status, $discount,$product_id);
 }
-function product_delete($ma_hh)
+function product_delete($product_id)
 {
-    $sql = "DELETE FROM products WHERE ma_hh=?";
-    if (is_array($ma_hh)) {
-        foreach ($ma_hh as $ma) {
+    $sql = "DELETE FROM products WHERE product_id=?";
+    if (is_array($product_id)) {
+        foreach ($product_id as $ma) {
             pdo_execute($sql, $ma);
         }
     } else {
-        pdo_execute($sql, $ma_hh);
+        pdo_execute($sql, $product_id);
     }
 }
 function product_select_all()
 {
-    $sql = "SELECT * FROM products ORDER BY ma_hh desc";
+    $sql = "SELECT * FROM products ORDER BY product_id desc";
     return pdo_query($sql);
 }
 function product_select_by_id($product_id)
@@ -31,20 +31,25 @@ function product_select_by_id($product_id)
     $sql = "SELECT * FROM products WHERE product_id=?";
     return pdo_query_one($sql, $product_id);
 }
-function product_exist($ma_hh)
+function product_select_by_name($name)
 {
-    $sql = "SELECT count(*) FROM products WHERE ma_hh=?";
-    return pdo_query_value($sql, $ma_hh) > 0;
+    $sql = "SELECT * FROM products WHERE name=?";
+    return pdo_query_one($sql, $name);
+}
+function product_exist($product_id)
+{
+    $sql = "SELECT count(*) FROM products WHERE product_id=?";
+    return pdo_query_value($sql, $product_id) > 0;
 }
 function product_exist_add($ten_hh)
 {
     $sql = "SELECT count(*) FROM products WHERE ten_hh=?";
     return pdo_query_value($sql, $ten_hh) > 0;
 }
-function product_exist_update($ma_hh, $ten_hh)
+function product_exist_update($product_id, $ten_hh)
 {
-    $sql = "SELECT count(*) FROM products WHERE ma_hh!=? and ten_hh=?";
-    return pdo_query_value($sql, $ma_hh, $ten_hh) > 0;
+    $sql = "SELECT count(*) FROM products WHERE product_id!=? and ten_hh=?";
+    return pdo_query_value($sql, $product_id, $ten_hh) > 0;
 }
 
 function product_view($product_id)
@@ -85,7 +90,7 @@ function product_select_page($order, $limit)
         $_SESSION['total_page'] = 1;
     }
     $_SESSION['total_pro'] = pdo_query_value("SELECT count(*) FROM products");
-    if (exist_param("page")) {
+if (exist_param("page")) {
         $_SESSION['page'] = $_REQUEST['page'];
     }
     $begin = ($_SESSION['page'] - 1) * $limit;
