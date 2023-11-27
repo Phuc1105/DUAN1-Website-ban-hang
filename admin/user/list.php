@@ -79,6 +79,7 @@
                         }
                         ?>
                         <a href="index.php?btn_edit&user_id=<?=$user['user_id']?>"><button class="btn btn-primary">Edit type</button></a> 
+                        <a href="index.php?btn_delete&user_id=<?=$user['user_id']?>"><button class="btn btn-danger">Delete</button></a> 
                       </td>
                     </tr>
                     <?php

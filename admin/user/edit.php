@@ -1,4 +1,22 @@
-<section class="is-title-bar">
+
+<style>
+    .err-form{
+        color: red;
+        margin-top: 1%;
+    }
+    .password-container {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      top: 50px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+</style><section class="is-title-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <ul>
                 <h3><a href="<?=$ADMIN_URL?>">Admin</a> / <a href="index.php">User</a> / <a href="#">Edit user</a></h3>
@@ -21,24 +39,30 @@
                         <div class="form-group col-sm-4">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" name="name" id="name" class="form-control" value="<?=$name?>">
+                            <div class="err-form"><?=$tb_name?></div>
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" name="password" id="password" class="form-control" value="<?=$password?>" readonly>
+                            <input type="password" name="password" id="password" class="form-control" value="<?=$password?>"    >
+                            <span class="toggle-password fas fa-eye" onclick="togglePasswordVisibility()"></span>
+                            <div class="err-form"><?=$tb_password?></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" name="email" id="email" class="form-control" value="<?=$email?>">
+                            <div class="err-form"><?=$tb_email?></div>
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="phone" class="form-label">Phone</label>
                             <input type="text" name="phone" id="phone"  class="form-control" value="<?=$phone?>">
+                            <div class="err-form"><?=$tb_phone?></div>
                         </div>                        
                         <div class="form-group col-sm-4">
                             <label for="address" class="form-label">Address</label>
                             <input type="text" name="address" id="address"  class="form-control" value="<?=$address?>">
+                            <div class="err-form"><?=$tb_address?></div>
                         </div>
                     </div>
                     <div class="row">
@@ -86,9 +110,24 @@
 
                     <div class="mb-3">
                         <input type="submit" name="btn_update" value="Update" class="btn btn-success mr-3">
+                        <a href="index.php?btn_list"><button class="btn btn-primary">Back</button></a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script>
+  function togglePasswordVisibility() {
+    var passwordInput = document.getElementById('password');
+    var toggleBtn = document.querySelector('.toggle-password');
+
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      toggleBtn.textContent = '';
+    } else {
+      passwordInput.type = 'password';
+      toggleBtn.textContent = '';
+    }
+  }
+</script>

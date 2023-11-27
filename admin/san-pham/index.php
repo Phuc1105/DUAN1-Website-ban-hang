@@ -1,5 +1,4 @@
 <?php 
-   require "../../dao/pdo.php";
    require "../../global.php";
    require "../../dao/product.php";
    require "../../dao/category.php";

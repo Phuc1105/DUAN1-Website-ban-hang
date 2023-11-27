@@ -11,7 +11,7 @@ function user_update_status($status,$user_id){
 }
 function user_update($password, $name, $email, $status, $role,$phone,$gender,$image,$user_id)
 {
-    if(isset($image)){
+    if(!empty($image)){
     $sql = "UPDATE users SET password=?,name=?,email=?,status=?,role=?,phone=?,gender=?,image=? WHERE user_id=?";
     pdo_execute($sql, $password, $name, $email, $status, $role,$phone,$gender,$image,$user_id);
     }else{

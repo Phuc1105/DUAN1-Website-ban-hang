@@ -10,6 +10,10 @@ function category_update($category_id, $name, $status)
     $sql = "UPDATE categories SET name=? , status=? WHERE category_id=?";
     pdo_execute($sql, $name, $status, $category_id);
 }
+function category_update_status($status,$category_id){
+    $sql = "UPDATE categories SET status=? WHERE category_id = ?";
+    pdo_execute($sql,$status,$category_id);
+}
 function category_delete($category_id)
 {
     $sql = "DELETE FROM categories WHERE category_id=?";

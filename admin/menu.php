@@ -63,8 +63,8 @@
          </a>
          <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/loai-sp/">Add New Product Type</a>
-                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/loai-sp/index.php?btn_list">List of Product Type</a>
+                 <a class="collapse-item" href="<?=$ADMIN_URL?>/loai-sp/">Add New Product Type</a>
+                 <a class="collapse-item" href="<?=$ADMIN_URL?>/loai-sp/index.php?btn_list">List of Product Type</a>
              </div>
          </div>
      </li>

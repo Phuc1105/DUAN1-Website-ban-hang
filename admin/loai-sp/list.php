@@ -44,7 +44,17 @@
                       ?>
                       <td><?= $status ?></td>
                       <td>
-                        
+                      <?php
+                        if($category['status'] == 1){
+                          ?>
+                           <a href="index.php?btn_update_status_hide&category_id=<?=$category['category_id']?>"><button class="btn btn-secondary">Hide</button></a>
+                          <?php
+                        }else{
+                          ?>
+                          <a href="index.php?btn_update_status_display&category_id=<?=$category['category_id']?>"><button class="btn btn-success">Display</button></a>
+                          <?php
+                        }
+                        ?>
                         <a href="index.php?btn_delete&category_id=<?=$category['category_id']?>"><button class="btn btn-danger">Delete</button></a>
 
                         <a href="index.php?btn_edit&category_id=<?=$category['category_id']?>"><button class="btn btn-primary">Edit type</button></a>
