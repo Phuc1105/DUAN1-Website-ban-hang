@@ -27,49 +27,32 @@
                             <input type="text" name="name" id="name" class="form-control">
                         </div>
                         <div class="form-group col-sm-4">
-                            <label for="product_id" class="form-label">Product ID</label>
-                            <input type="text" name="product_id" id="product_id" readonly class="form-control" value="auto number">
+                            <label for="quantity" class="form-label">Quantity</label>
+                            <input type="number" name="quantity" id="quantity" class="form-control">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-sm-4">
-                            <label for="img" class="form-label">Product images</label>
-                            <input type="file" name="img" id="img" class="form-control">
-                        </div>
                         <div class="form-group col-sm-4">
                             <label for="price" class="form-label">Unit Price ($)</label>
                             <input type="number" name="price" id="price" class="form-control">
                         </div>
                         <div class="form-group col-sm-4">
-                            <label for="purchase_count" class="form-label">Purchase count</label>
-                            <input type="text" name="purchase_count" id="purchase_count" readonly class="form-control" value="0">
+                            <label for="discount" class="form-label">Discount</label>
+                            <input type="number" name="discount" id="discount" class="form-control" value="">
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="form-group col-sm-4">
                             <label>Featured or New Products?</label>
                             <div class="form-control">
                                 <label class="radio-inline  mr-3">
-                                    <input type="radio" value="1" name="dac_biet">Featured Products
+                                    <input type="radio" value="1" name="outstanding">Featured Products
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" value="0" name="dac_biet" checked>New Products
+                                    <input type="radio" value="0" name="outstanding" checked>New Products
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group col-sm-4">
-                            <?php $today = date_format(date_create(), 'Y-m-d'); ?>
-                            <label for="input_date" class="form-label">Input date</label>
-                            <input type="date" name="input_date" id="input_date" class="form-control" value="<?= $today ?>">
-                        </div>
-                        <div class="form-group col-sm-4">
-                            <label for="view" class="form-label">Number of views</label>
-                            <input type="text" name="view" id="view" readonly class="form-control" value="0">
-                        </div>
-                        <div class="form-group col-sm-4">
-                            <label for="quantity" class="form-label">Quantity</label>
-                            <input type="number" name="quantity" id="quantity" class="form-control">
-                        </div>
+                    </div>
+                    <div class="row">
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12">
@@ -79,9 +62,9 @@
                     </div>
 
                     <div class="mb-3">
+                        <input type="submit" name="btn_insert" value="Add New Product" class="btn btn-success mr-3">
                         <input type="reset" value="Retype" class="btn btn-danger mr-3">
-                        <input type="submit" name="btn_insert" value="Add New Product" class="btn btn-primary mr-3">
-                        <a href="index.php?btn_list"><input type="button" class="btn btn-success" value="Product List"></a>
+                        <a href="index.php?btn_list"><input type="button" class="btn btn-primary" value="Product List"></a>
                     </div>
 
                 </form>

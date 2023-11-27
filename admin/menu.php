@@ -127,7 +127,7 @@
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Discount" aria-expanded="true" aria-controls="collapsePages">
              <i class="fas fa-fw fa-folder"></i>
-             <span>Discount</span>
+             <span>Voucher</span>
          </a>
          <div id="Discount" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
@@ -142,13 +142,13 @@
      <hr class="sidebar-divider">
 
      <!-- Heading -->
-     <div class="sidebar-heading">
+     <div class="sidebar-heading">  
      Comment Management
      </div>
 
      <!-- Nav Item - Charts -->
      <li class="nav-item">
-         <a class="nav-link" href="charts.html">
+         <a class="nav-link" href="<?= $ADMIN_URL ?>/comment/index.php">
              <i class="fas fa-fw fa-chart-area"></i>
              <span>List of Comments</span></a>
      </li>

@@ -17,6 +17,8 @@
   else{
     $_SESSION['name_page'] = 'home';
     $items = product_select_outstanding();
+    $new_products = product_select_new_product();
+    $popular_products = product_select_popular_products();
     $VIEW_NAME = "trang-chinh/trang-chu.php";
   }
 

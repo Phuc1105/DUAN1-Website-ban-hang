@@ -59,7 +59,7 @@ if (isset($_SESSION['cart'])) {
                     </tr>
                     <tr class="text-right ">
                         <th colspan="7">
-                            <a href="<?= $CLIENT_URL . "/cart/list-cart.php?form_invoice" ?>" class="btn btn-success">Check out</a>
+                            <a href="<?= $CLIENT_URL . "/cart/list-cart.php?form_invoice" ?>" class="btn btn-success" id="checkout">Check out</a>
                             <a onclick="return confirm('Are you sure you want to delete everything?');" href="<?= $CLIENT_URL . "/cart/delete-cart.php?act=deleteAll" ?>" class="btn btn-danger">Delete all</a>
                         </th>
                     </tr>

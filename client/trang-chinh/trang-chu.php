@@ -19,3 +19,8 @@
 <section class="recent_products">
     <?php require "../trang-chinh/recent_products.php" ?>
 </section>
+
+<!-- sản phẩm theo số lượt xem  -->
+<section class="popular_products">
+    <?php require "../trang-chinh/popular_products.php" ?>
+</section>

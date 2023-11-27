@@ -24,12 +24,12 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<?= $CONTENT_URL ?>/css/style.css" rel="stylesheet">
-    
-    
+
+
 </head>
 
 <body>
-               
+
 
     <?php require "layout/menu.php" ?>
     <!-- Featured Start -->
@@ -60,7 +60,7 @@
     <script src="<?= $CONTENT_URL ?>/js/main.js"></script>
     <script src="<?= $CONTENT_URL ?>/js/jquery.validation.js"></script>
     <script src="<?= $CONTENT_URL ?>/js/validation.js"></script>
-
+    
 </body>
 
 </html>
