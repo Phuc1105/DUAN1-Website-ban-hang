@@ -5,11 +5,12 @@ function product_insert($name, $price, $image, $category_id, $input_date, $descr
     $sql = "INSERT INTO products(name, price, image, category_id, input_date, describes, quantity, purchase_count, outstanding) VALUES (?,?,?,?,?,?,?,?,?,?)";
     pdo_execute($sql, $name, $price, $image, $category_id, $input_date, $describes, $quantity, $purchase_count, $outstanding);
 }
-function product_update($product_id, $name, $price, $image, $category_id, $view, $input_date, $describes, $quantity, $purchase_count,)
+function product_update($product_id, $name, $price, $image, $category_id, $view, $input_date, $describes, $quantity, $purchase_count)
 {
     $sql = "UPDATE products SET name=?, price=?, image=?, category_id=?, view=?, input_date=?, describes=?, quantity=?, purchase_count=? WHERE product_id=?";
     pdo_execute($sql, $name, $price, $image, $category_id, $view, $input_date, $describes, $quantity, $purchase_count, $product_id);
 }
+
 function product_delete($product_id)
 {
     $sql = "DELETE FROM products WHERE product_id=?";
@@ -55,6 +56,11 @@ function product_view($product_id)
 function product_select_popular_products()
 {
     $sql = "SELECT * FROM products WHERE view > 0 ORDER BY view DESC LIMIT 0, 10";
+    return pdo_query($sql);
+}
+function product_select_popular()
+{
+    $sql = "SELECT * FROM products WHERE view > 0 ORDER BY view ASC LIMIT 0, 10";
     return pdo_query($sql);
 }
 function product_select_outstanding()

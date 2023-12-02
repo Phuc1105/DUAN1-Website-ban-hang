@@ -4,7 +4,6 @@
             <nav class="breadcrumb bg-light mb-30">
                 <a class="breadcrumb-item text-dark" href="<?= $ROOT_URL ?>/">Home</a>
                 <a class="breadcrumb-item text-dark" href="<?= $CLIENT_URL ?>/product/list.php">Shop</a>
-                <span class="breadcrumb-item active">Shop List</span>
             </nav>
         </div>
     </div>
@@ -56,7 +55,7 @@
             <!-- Price End -->
 
             <!-- Color Start -->
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by color</span></h5>
+            <!-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by color</span></h5>
             <div class="bg-light p-4 mb-30">
                 <form>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -90,11 +89,11 @@
                         <span class="badge border font-weight-normal">168</span>
                     </div>
                 </form>
-            </div>
+            </div> -->
             <!-- Color End -->
 
             <!-- Size Start -->
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by size</span></h5>
+            <!-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by size</span></h5>
             <div class="bg-light p-4 mb-30">
                 <form action="">
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -128,7 +127,7 @@
                         <span class="badge border font-weight-normal">168</span>
                     </div>
                 </form>
-            </div>
+            </div> -->
             <!-- Size End -->
             <?php require '../layout/category_list.php';  ?>
         </div>
@@ -190,10 +189,10 @@
                                     <div class="text-center py-4">
                                         <a class="h6 text-decoration-none text-truncate text-center" href=""><?= $name ?></a>
                                         <div class="d-flex align-items-center justify-content-center mt-2">
-                                            <h5 class="d-block text-center"><?= number_format($price - $discount, 0, ',') ?>$ </h5>
+                                            <h5 class="d-block text-center"><?= $price - $discount?>$ </h5>
                                             <del>
                                                 <p class=" fz-20 d-block ml-3 mb-2">
-                                                    <?= number_format($price, 0, ',') ?>$</p>
+                                                    <?= $price ?>$</p>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-center mb-1">
                                             <small class="fa fa-star text-primary mr-1"></small>

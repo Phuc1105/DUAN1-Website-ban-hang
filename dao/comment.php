@@ -3,7 +3,6 @@ require_once 'pdo.php';
 function comment_insert($user_id,$product_id, $content, $comment_date, $rating, $status)
 {
     $sql = "INSERT INTO comments( user_id, product_id, content, comment_date, rating, status) VALUES (?,?,?,?,?,?)";
-
     pdo_execute($sql, $user_id, $product_id, $content, $comment_date, $rating, $status);
 }
 function comment_update($comment_id, $product_id, $user_id, $content, $comment_date)

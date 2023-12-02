@@ -21,7 +21,7 @@ if (exist_param("category_id")) {
     $items = product_select_date_old();
 
 }else if (exist_param("view_product")) {
-    $items = product_select_popular_products();
+    $items = product_select_popular();
 
 } else if (exist_param("search")) {
     $kyww = $_POST['kyww'];

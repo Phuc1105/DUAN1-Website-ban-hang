@@ -59,7 +59,8 @@
     </div>
 </div>
 </div>
-<div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+<div class="container-fluid">
+<div class="align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
     <div class="col-lg-4">
         <a href="<?= $ROOT_URL ?>" class="text-decoration-none">
             <span class="h1 text-uppercase text-primary bg-dark px-2">Multi</span>
@@ -84,6 +85,7 @@
         <p class="m-0">Customer Service</p>
         <h5 class="m-0">+012 345 6789</h5>
     </div>
+</div>
 </div>
 </div>
 <!-- Topbar End -->
@@ -137,7 +139,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
                             <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
                                 <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?cart" class="dropdown-item">Shopping Cart</a>
-                                <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?checkout" class="dropdown-item">Checkout</a>
+                                <a href="<?= $CLIENT_URL ?>/cart/bill.php?btn_list" class="dropdown-item">Checkout</a>
                             </div>
                         </div>
                         <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?contact" class="nav-item nav-link">Contact</a>
@@ -155,6 +157,15 @@
                                     echo $_SESSION['total_cart'];
                                 } else {
                                     echo 0;
+                                }
+                                function clearCart2() {
+                                    // Kiểm tra xem phiên đã bắt đầu chưa
+                                    if (session_status() == PHP_SESSION_NONE) {
+                                       session_start();
+                                   }
+                                
+                                   // Xóa giỏ hàng bằng cách unset biến $_SESSION['cart']
+                                   unset($_SESSION['cart']);
                                 }
                                 ?></span>
                         </a>

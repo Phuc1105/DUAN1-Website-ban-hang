@@ -13,10 +13,10 @@
                     <thead class="bg-primary text-white">
                         <tr>
                             <th><input type="checkbox" id="select-all"></th>
+                            <th>Rating</th>
                             <th>Comment content</th>
                             <th>Comment date</th>
                             <th>Commentator</th>
-                            <th>User</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -41,7 +41,7 @@
                         }
 
                         ?>
-                    </tbody>
+                    </tbody>    
 
                 </table>
                 <input type="hidden" name="product_id" value="<?= $product_id ?>">

@@ -131,8 +131,8 @@
          </a>
          <div id="Discount" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="login.html">Add New Discount</a>
-                 <a class="collapse-item" href="register.html">Discount List</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/voucher/">Add New Discount</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/voucher/index.php?btn_list">Discount List</a>
              </div>
          </div>
      </li>
@@ -152,34 +152,6 @@
              <i class="fas fa-fw fa-chart-area"></i>
              <span>List of Comments</span></a>
      </li>
-
-<!-- MENU QUẢN LÝ THÔNG TIN  -->
-     <!-- Divider -->
-     <hr class="sidebar-divider">
-
-     <!-- Heading -->
-     <div class="sidebar-heading">
-     Information Management
-     </div>
-     <!-- Nav Item - Tables -->
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Information" aria-expanded="true" aria-controls="collapsePages">
-             <i class="fas fa-fw fa-folder"></i>
-             <span>Information</span>
-         </a>
-         <div id="Information" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="login.html">Product Information</a>
-                 <a class="collapse-item" href="register.html">User Information</a>
-                 <a class="collapse-item" href="register.html">Comment Information</a>
-                 <a class="collapse-item" href="register.html">Order Information</a>
-                 <a class="collapse-item" href="register.html">Discount Information</a>
-             </div>
-         </div>
-     </li>
-
-
 <!-- MENU QUẢN LÝ THỐNG KÊ  -->
      <!-- Divider -->
      <hr class="sidebar-divider">

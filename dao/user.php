@@ -12,7 +12,7 @@ function user_insert(
     $sql = "INSERT INTO users(user_id,password,name,email,image,status,role) VALUES(?,?,?,?,?,?,?)";
     pdo_execute($sql, $user_id, $password, $name, $email, $image, $status == 1, $role == 1);
 }
-function user_update($user_id, $password, $name, $email, $image, $status, $role,)
+function user_update($user_id, $password, $name, $email, $image, $status, $role)
 {
     $sql = "UPDATE users SET password=?,name=?,email=?,image=?,status=?,role=? WHERE user_id=?";
     pdo_execute($sql, $user_id, $password, $name, $email, $image, $status == 1, $role == 1);

@@ -5,7 +5,7 @@
         foreach ($popular_products as $item) :
             extract($item);
             if ($price > 0) {
-                $percent_discount = number_format($discount / $price * 100);
+                $percent_discount = ($discount / $price * 100);
             } else {
                 $percent_discount = 0;
             }
@@ -22,10 +22,10 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate text-center" href=""><?= $name ?></a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5 class="d-block text-center"><?= number_format($price - $discount, 0, ',') ?>$ </h5>
+                            <h5 class="d-block text-center"><?= $price - $discount ?>$ </h5>
                             <del>
                                 <p class=" fz-20 d-block ml-3 mb-2">
-                                    <?= number_format($price, 0, ',') ?>$</p>
+                                    <?= $price ?>$</p>
                             </del>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
