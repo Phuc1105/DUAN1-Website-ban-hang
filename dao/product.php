@@ -57,6 +57,11 @@ function product_select_popular_products()
     $sql = "SELECT * FROM products WHERE view > 0 ORDER BY view DESC LIMIT 0, 10";
     return pdo_query($sql);
 }
+function product_select_popular()
+{
+    $sql = "SELECT * FROM products WHERE view > 0 ORDER BY view ASC LIMIT 0, 10";
+    return pdo_query($sql);
+}
 function product_select_outstanding()
 {
     $sql = "SELECT * FROM products WHERE outstanding=1";

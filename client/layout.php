@@ -25,10 +25,14 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<?= $CONTENT_URL ?>/css/style.css" rel="stylesheet">
 
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style="font-family: 'Hedvig Letters Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Roboto', sans-serif;">
 
 
     <?php require "layout/menu.php" ?>
@@ -60,7 +64,7 @@
     <script src="<?= $CONTENT_URL ?>/js/main.js"></script>
     <script src="<?= $CONTENT_URL ?>/js/jquery.validation.js"></script>
     <script src="<?= $CONTENT_URL ?>/js/validation.js"></script>
-    
+
 </body>
 
 </html>
