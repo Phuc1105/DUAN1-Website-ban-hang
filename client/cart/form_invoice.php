@@ -72,7 +72,6 @@
                         </tbody>
                     </table>
                 </div>
-
                 <div class="col-lg-4">
                     <form class="mb-30" action="">
                         <div class="input-group">

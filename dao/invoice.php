@@ -17,10 +17,10 @@ function invoice_select_by_user($user_id)
     $sql = "SELECT * FROM orders WHERE user_id=?";
     return pdo_query($sql, $user_id);
 }
-function invoice_select_by_id($user_id)
+function invoice_select_by_id($order_id)
 {
-    $sql = "SELECT * FROM orders WHERE user_id=?";
-    return pdo_query($sql, $user_id);
+    $sql = "SELECT * FROM orders WHERE order_id=?";
+    return pdo_query($sql, $order_id);
 }
 function get_all_order_details() {
     $sql = "SELECT * FROM order_details";
