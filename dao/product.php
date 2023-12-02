@@ -1,14 +1,14 @@
 <?php
 require_once 'pdo.php';
-function product_insert($name, $price, $image, $category_id, $input_date, $describes, $quantity, $purchase_count, $outstanding)
+function product_insert($name, $price, $category_id, $input_date, $describes,$quantity,$outstanding,$user_id,$discount)
 {
-    $sql = "INSERT INTO products(name, price, image, category_id, input_date, describes, quantity, purchase_count, outstanding) VALUES (?,?,?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $name, $price, $image, $category_id, $input_date, $describes, $quantity, $purchase_count, $outstanding);
+    $sql = "INSERT INTO products(name, price, category_id ,input_date, describes, quantity, outstanding, user_id, discount) VALUES (?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql, $name, $price, $category_id, $input_date, $describes, $quantity,$outstanding,$user_id,$discount);
 }
-function product_update($product_id, $name, $price, $image, $category_id, $view, $input_date, $describes, $quantity, $purchase_count,)
+function product_update($name, $price, $category_id, $describes, $quantity, $outstanding, $status, $discount,$product_id)
 {
-    $sql = "UPDATE products SET name=?, price=?, image=?, category_id=?, view=?, input_date=?, describes=?, quantity=?, purchase_count=? WHERE product_id=?";
-    pdo_execute($sql, $name, $price, $image, $category_id, $view, $input_date, $describes, $quantity, $purchase_count, $product_id);
+    $sql = "UPDATE products SET name=?, price=?, category_id=?, describes=?, quantity=?, outstanding=?, status=?, discount=? WHERE product_id= ? ";
+    pdo_execute($sql,$name, $price, $category_id, $describes, $quantity, $outstanding, $status, $discount,$product_id);
 }
 function product_delete($product_id)
 {
