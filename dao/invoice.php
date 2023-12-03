@@ -22,9 +22,25 @@ function invoice_select_by_id($order_id)
     $sql = "SELECT * FROM orders WHERE order_id=?";
     return pdo_query($sql, $order_id);
 }
+function invoice_select_by_all()
+{
+    $sql = "SELECT * FROM orders";
+    return pdo_query($sql);
+}
 function get_all_order_details() {
     $sql = "SELECT * FROM order_details";
     return pdo_query($sql);
 }
+function order_update($order_id, $voucher_id, $order_date, $user_id, $name_product, $img_product, $price, $quantity, $status)
+{
+    $sql = "UPDATE orders SET order_id=?, voucher_id=?, order_date=?, user_id=?, name_product=?, img_product=?, price=?, quantity=?, status=? WHERE order_id=? ";
+    pdo_execute($sql, $order_id, $voucher_id, $order_date, $user_id, $name_product, $img_product, $price, $quantity, $status);
+}
+function order_update_status($status, $order_id)
+{
+    $sql = "UPDATE orders SET status=? WHERE order_id=?";
+    pdo_execute($sql, $status, $order_id);
+}
+
 ?>
 

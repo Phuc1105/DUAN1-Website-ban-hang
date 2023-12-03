@@ -105,122 +105,165 @@
     .text-dark {
         color: #343a40;
     }
+    .itemside {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+
+.itemside .aside {
+    position: relative;
+    -ms-flex-negative: 0;
+    flex-shrink: 0
+}
+
+.img-sm {
+    width: 80px;
+    height: 80px;
+    padding: 7px
+}
 </style>
 
 <?php
 $currentDateTime = date('Y-m-d');
 $futureDateTime = date('Y-m-d', strtotime($currentDateTime . ' + 5 days'));
 ?>
-<?php foreach ($order_details as $value) :;
-    $order_status = 'Not yet confirmed';
-    if ($value['status'] == 1) {
-        $order_status = 'Order confirmation';
-    } elseif ($value['status'] == 2) {
-        $order_status = 'Delivering';
-    } elseif ($value['status'] == 3) {
-        $order_status = 'Delivered successfully';
-    }
+<?php
+
+foreach ($order_details as $item) {
+    extract($item);
+}
+foreach ($order as $orders) {
+    extract($item);
+
+//Trang thái đơn hàng
+$order_status = 'Chưa xác nhận';
+if ($orders['status'] == 2) {
+    $order_status = 'Đã xác nhận';
+} elseif ($orders['status'] == 3) {
+    $order_status = 'Đang giao';
+} elseif ($orders['status'] == 4) {
+    $order_status = 'Giao thành công';
+}
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])) {
+    $status = $_POST["status"];
+    $order_id = $_POST["order_id"];
+    order_update_status($status, $order_id);
+}
 ?>
     <div class="container-fluid">
-        <div class="row px-xl-5">
-            <div class="col-12">
-                <nav class="breadcrumb bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="#">Home</a>
-                    <a class="breadcrumb-item text-dark" href="#">Shop</a>
-                    <span class="breadcrumb-item">Shopping Cart</span>
-                </nav>
-            </div>
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="#">Trang chủ</a>
+                <a class="breadcrumb-item text-dark" href="#">Cửa hàng</a>
+                <span class="breadcrumb-item">Giỏ hàng</span>
+            </nav>
         </div>
     </div>
-    <div class="container pt-4" style="margin-bottom: 200px;">
-        <article class="card">
-            <header class="card-header">My Order</header>
-            <div class="card-body">
-                <article class="card">
-                    <div class="card-body row">
-                        <div class="col text-black"> <strong>Order Placed:</strong><?= $value['order_date'] ?><br></div>
-                        <div class="col text-black"> <strong>Estimated Delivery:</strong> <?php echo $futureDateTime; ?><br></div>
-                        <div class="col text-black"> <strong>Status:</strong><?= $order_status ?><br></div>
+</div>
 
-                    </div>
-                </article>
-                <div class="track">
-                    <div class="step active"> <span class="icon"> <i class="fa fa-check text-black"></i> </span> <span class="text">Waiting for Confirmation</span> </div>
-                    <div class="step <?php if ($value['status'] == 2 || $value['status'] == 3 || $value['status'] == 4) echo 'active' ?>">
-                        <span class="icon"> <i class="fa fa-user text-black"></i> </span>
-                        <span class="text text-black">Confirmed</span>
-                    </div>
-                    <div class="step  <?php if ($value['status'] == 3 || $value['status'] == 4) echo 'active' ?>">
-                        <span class="icon"> <i class="fa fa-truck text-black"></i> </span> <span class="text text-black"> On the Way </span>
-                    </div>
-                    <div class="step <?php if ($value['status'] == 4) echo 'active' ?>">
-                        <span class="icon"> <i class="fa fa-check text-black"></i> </span> <span class="text text-black"> Delivered</span>
-                    </div>
+<div class="container pt-4" style="margin-bottom: 200px;">
+    <article class="card">
+        <header class="card-header">Đơn hàng của tôi</header>
+        <div class="card-body">
+            <article class="card">
+                <div class="card-body row">
+                    <div class="col text-black"> <strong>Đặt hàng:</strong><?= $item['order_date'] ?><br></div>
+                    <div class="col text-black"> <strong>Dự kiến giao hàng:</strong> <?php echo $futureDateTime; ?><br></div>
+                    <div class="col text-black"> <strong>Trạng thái:</strong><?= $order_status ?><br></div>
                 </div>
-                <hr>
-                <?php foreach ($order as $details) : ?>
-                    <ul class="row">
-                        <li class="col-md-4">
-                            <figure class="itemside mb-3">
-                                <div class="aside"><img src="<?= $UPLOAD_URL . '/products/' . $details['img_product'] ?>" class="img-sm border"></div>
-                                <figcaption class="info align-self-center">
-                                    <p class="title"></p>
-                                    <span class="text-primary"></span> <span style="font-size: 16px;" class="text-dark"><?= $details['quantity']?>x</span>
-                                </figcaption>
-                            </figure>
-                        </li>
+            </article>
 
-                    </ul>
-                    <div class="row">
-                        <div class="col-lg-6"></div>
-                        <div class="col-lg-6">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-right">Full Name</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p class="mb-0 text-right"><?= $name ?></p>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-right">Shipping Address</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p class="mb-0 text-right"><?= $value['address'] ?></p>
-                                        </div>
-                                    </div>
-                                    
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-right">Shipping Fee</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p class="mb-0 text-right">10$</p>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="mb-0 text-right">Total Amount</p>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <p style="font-size: 1.5rem;" class="mb-0 text-right text-danger fw-500"><?= $details['price'] ?>$</p>
-                                        </div>
-                                    </div>
+            <div class="track">
+                <div class="step active">
+                    <span class="icon"> <i class="fa fa-check text-black"></i> </span>
+                    <span class="text">Đang chờ xác nhận</span>
+                </div>
+                <div class="step <?php if ($orders['status'] == 2 || $orders['status'] == 3 || $orders['status'] == 4) echo 'active' ?>">
+                    <span class="icon"> <i class="fa fa-user text-black"></i> </span>
+                    <span class="text text-black">Đã xác nhận</span>
+                </div>
+                <div class="step  <?php if ($orders['status'] == 3 || $orders['status'] == 4) echo 'active' ?>">
+                    <span class="icon"> <i class="fa fa-truck text-black"></i> </span>
+                    <span class="text text-black">Đang vận chuyển</span>
+                </div>
+                <div class="step <?php if ($orders['status'] == 4) echo 'active' ?>">
+                    <span class="icon"> <i class="fa fa-check text-black"></i> </span>
+                    <span class="text text-black">Đã giao hàng</span>
+                </div>
+            </div>
 
+            <hr>
 
+            <?php foreach ($order as $details) : ?>
+                <ul class="row " style="list-style-type: none;">
+                    <li class="col-md-4 ">
+                        <figure class="itemside mb-3">
+                            <div class="aside"><img src="<?= $UPLOAD_URL . '/products/' . $details['img_product'] ?>" class="img-sm border"></div>
+                            <figcaption class="info align-self-center">
+                                <p class="title"></p>
+                                <span class="text-primary"></span> <span style="font-size: 16px;" class="text-dark"><?= $details['quantity']?>x</span>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+
+                <div class="row">
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p class="mb-0 text-right">Họ và tên</p>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p class="mb-0 text-right"><?= $name ?></p>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p class="mb-0 text-right">Địa chỉ giao hàng</p>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p class="mb-0 text-right"><?= $item['address'] ?></p>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p class="mb-0 text-right">Phí vận chuyển</p>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p class="mb-0 text-right">10$</p>
+                                    </div>
+                                </div>
+
+                                <hr>
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p class="mb-0 text-right">Tổng cộng</p>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p style="font-size: 1.5rem;" class="mb-0 text-right text-danger fw-500"><?= $details['price'] ?>$</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                <?php endforeach; ?>
-            </div>
-        </article>
-    <?php endforeach; ?>
-    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </article>
+</div>

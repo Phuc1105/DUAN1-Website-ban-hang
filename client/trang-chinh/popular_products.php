@@ -5,7 +5,7 @@
         foreach ($popular_products as $item) :
             extract($item);
             if ($price > 0) {
-                $percent_discount = ($discount / $price * 100);
+                $percent_discount = round($discount / $price * 100);
             } else {
                 $percent_discount = 0;
             }

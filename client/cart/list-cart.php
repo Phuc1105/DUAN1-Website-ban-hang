@@ -35,7 +35,7 @@ if (exist_param("form_invoice")) {
         $voucher_id = 1;
         $order_date = $_POST['order_date'];
         $img_product = $_POST['image'];
-        $status = "";
+        $status = "1";
         $currentDateTime = date('Y-m-d');
         $receiving_date = date('Y-m-d', strtotime($currentDateTime . ' + 5 days'));
         $note = "";

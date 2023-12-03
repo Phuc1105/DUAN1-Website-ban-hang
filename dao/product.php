@@ -83,7 +83,7 @@ function product_select_keyword($keyword)
 {
     $sql = "SELECT * FROM products p "
     . " JOIN categories c ON c.category_id = p.category_id "
-    . " WHERE p.name LIKE ? OR c.name LIKE ?";
+    . " WHERE c.name LIKE ? OR p.name LIKE ?";
 return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
 
 }

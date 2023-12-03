@@ -1,4 +1,17 @@
 <!-- Topbar Start -->
+
+<style>
+    /* Thêm các kiểu CSS bạn muốn ở đây */
+
+    .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+</style>
+
 <div class="container-fluid">
     <div class="row bg-secondary py-1 px-xl-5">
         <div class="col-lg-6 d-none d-lg-block">
@@ -22,27 +35,24 @@
                     <?php }  ?>
                 </a>
                 <div class="text">
-                    <span class="text-dark" style="font-family: 'Dancing Script', cursive; font-size: 20px ;">User</span>
-                    <?php
-                    if (isset($_SESSION['user'])) { ?>
-                        <div class="text-dark"><?= $_SESSION['user']['name'] ?></div>
+                    <?php if (isset($_SESSION['user'])) { ?>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?= $_SESSION['user']['name'] ?>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="userDropdown">
+                                <?php if ($_SESSION['user']['role'] == 1) { ?>
+                                    <a class="dropdown-item" href="<?= $ADMIN_URL . "/trang-chinh/" ?>">Quản lý Admin</a>
+                                <?php } ?>
+                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/update_account.php' ?>">Cập nhật tài khoản</a>
+                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/change_password.php' ?>">Thay đổi mật khẩu</a>
+                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/login.php?btn_logout' ?>">Đăng xuất</a>
+                            </div>
+                        </div>
                     <?php } else { ?>
-                        <a href="<?= $CLIENT_URL . '/account/login.php' ?>" class="d-block text-white">Login</a>
-                    <?php }  ?>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <?php
-                        if (isset($_SESSION['user'])) { ?>
-                            <?php if ($_SESSION['user']['role'] == 1) { ?>
-                                <a class="dropdown-item pl-3 py-2" href="<?= $ADMIN_URL . "/trang-chinh/" ?>">Admin Management</a>
-                            <?php }  ?>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/update_account.php' ?>">Update Account</a>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/change_password.php' ?>">Change Password</a>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/login.php?btn_logout' ?>">Logout</a>
-                        <?php } else { ?>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/login.php' ?>">Login</a>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/register.php' ?>">Register</a>
-                        <?php }  ?>
-                    </div>
+                        <a href="<?= $CLIENT_URL . '/account/login.php' ?>" class="btn btn-primary">Đăng nhập</a>
+                        <a href="<?= $CLIENT_URL . '/account/register.php' ?>" class="btn btn-success">Đăng ký</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -60,32 +70,32 @@
 </div>
 </div>
 <div class="container-fluid">
-<div class="align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-    <div class="col-lg-4">
-        <a href="<?= $ROOT_URL ?>" class="text-decoration-none">
-            <span class="h1 text-uppercase text-primary bg-dark px-2">Multi</span>
-            <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
-        </a>
-    </div>
-    <div class="col-lg-4 col-6 text-left">
-        <form action="">
-            <div class="input-group">
-                <form class="pb-3" action="<?= $CLIENT_URL ?>/product/list.php" method="POST">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="kyww" placeholder="Search...">
-                        <div class="input-group-append">
-                            <button class="btn bg-warning" type="submit" name="search"><i class="fa fa-search text-white"></i></button>
+    <div class="align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+        <div class="col-lg-4">
+            <a href="<?= $ROOT_URL ?>" class="text-decoration-none">
+                <span class="h1 text-uppercase text-primary bg-dark px-2">Multi</span>
+                <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
+            </a>
+        </div>
+        <div class="col-lg-4 col-6 text-left">
+            <form action="">
+                <div class="input-group">
+                    <form class="pb-3" action="<?= $CLIENT_URL ?>/product/list.php" method="POST">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="kyww" placeholder="Search...">
+                            <div class="input-group-append">
+                                <button class="btn bg-warning" type="submit" name="search"><i class="fa fa-search text-white"></i></button>
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </div>
-        </form>
+                    </form>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4 col-6 text-right">
+            <p class="m-0">Customer Service</p>
+            <h5 class="m-0">+012 345 6789</h5>
+        </div>
     </div>
-    <div class="col-lg-4 col-6 text-right">
-        <p class="m-0">Customer Service</p>
-        <h5 class="m-0">+012 345 6789</h5>
-    </div>
-</div>
 </div>
 </div>
 <!-- Topbar End -->
@@ -158,14 +168,15 @@
                                 } else {
                                     echo 0;
                                 }
-                                function clearCart2() {
+                                function clearCart2()
+                                {
                                     // Kiểm tra xem phiên đã bắt đầu chưa
                                     if (session_status() == PHP_SESSION_NONE) {
-                                       session_start();
-                                   }
-                                
-                                   // Xóa giỏ hàng bằng cách unset biến $_SESSION['cart']
-                                   unset($_SESSION['cart']);
+                                        session_start();
+                                    }
+
+                                    // Xóa giỏ hàng bằng cách unset biến $_SESSION['cart']
+                                    unset($_SESSION['cart']);
                                 }
                                 ?></span>
                         </a>
@@ -176,3 +187,25 @@
     </div>
 </div>
 <!-- Navbar End -->
+<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var dropdownToggle = document.querySelector('.dropdown-toggle');
+                        var dropdownMenu = document.querySelector('.dropdown-menu');
+
+                        dropdownToggle.addEventListener('click', function() {
+                            if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+                                dropdownMenu.style.display = 'block';
+                            } else {
+                                dropdownMenu.style.display = 'none';
+                            }
+                        });
+
+                        dropdownToggle.addEventListener('mouseenter', function() {
+                            dropdownMenu.style.display = 'block';
+                        });
+
+                        dropdownToggle.addEventListener('mouseleave', function() {
+                            dropdownMenu.style.display = 'none';
+                        });
+                    });
+                </script>
