@@ -379,3 +379,11 @@ $(document).ready(function () {
         },
     });
 });
+// ========================================================= //
+
+var ma_hh = $("input[name='product_id']").val();
+    $('#update_hang_hoa').validate({
+        rules: {
+        
+        },
+    });

@@ -21,14 +21,14 @@
 
               <div class="card">
                 <div class="card-body">
-                  <h1 class="text-center">Category list</h1>
+                  <h1 class="text-center">User list</h1>
                   <div class="table-responsive">
                     <table id="" class="table table-striped table-bordered tableStyle">
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Name</th>
                           <th>Image</th>
+                          <th>Name</th>
                           <th>Gender</th>
                           <th>Role</th> 
                           <th>Status</th>
@@ -45,10 +45,11 @@
                   ?>  
                     <tr>
                       <td class="align-middle"><?= $user['user_id']?></td>
-                      <td class="align-middle"><?= $user['name']?></td>
                       <td class="align-middle" style="width: 120px;">
                         <img src="../../upload/users/<?= $user['image']?>" alt="" width="100px">
                       </td>
+                      <td class="align-middle"><?= $user['name']?></td>
+                      
                       <td class="align-middle"><?= $user['gender']?></td>
                       <?php
                       if($user['role']==1){

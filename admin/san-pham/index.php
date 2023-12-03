@@ -52,7 +52,7 @@ if (exist_param("btn_list")) {
         if($check_name ==  true){
             $tb_name = "Product name is available";
         }
-        $VIEW_NAME = "edit.php";
+        $VIEW_NAME = "add.php";
     }
     }else{
         if(empty($category_id)){
@@ -67,7 +67,7 @@ if (exist_param("btn_list")) {
         if(empty($price)){
             $tb_price = "Please enter product price";
         }
-        $VIEW_NAME = "edit.php";
+        $VIEW_NAME = "add.php";
     }
 } elseif (exist_param("btn_delete")) {
     $product_id = $_REQUEST['product_id'];
@@ -91,11 +91,14 @@ if (exist_param("btn_list")) {
     $describes = $_REQUEST['describes'];
     $status = $_REQUEST['status'];
     $category_id = $_REQUEST['category_id'];
-    if(is_numeric($quantity) && is_numeric($price) && is_numeric($discount)){
+    if(is_numeric($quantity) && is_numeric($price) && is_numeric($discount) && $discount < 100){
     product_update($name, $price, $category_id, $describes, $quantity, $outstanding, $status, $discount,$product_id);
     $items = product_select_all();
     $VIEW_NAME = "list.php";
     }else{
+        if($discount >= 100){
+            $tb_discount  = "Import products discount products below 100(%)";
+        }
         if(empty($category_id)){
             $tb_category_id = "Please select product type";
         }

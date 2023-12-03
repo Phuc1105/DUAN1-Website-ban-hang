@@ -16,7 +16,7 @@
      <li class="nav-item active">
          <a class="nav-link" href="<?= $ADMIN_URL ?>/trang-chinh/">
              <i class="fas fa-fw fa-tachometer-alt"></i>
-             <span>Dashboard</span></a>ad
+             <span>Dashboard</span></a>
      </li>
      <li class="nav-item active">
          <a class="nav-link" href="<?= $CLIENT_URL ?>/trang-chinh/">

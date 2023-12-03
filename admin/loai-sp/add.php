@@ -9,14 +9,14 @@
     <section class="is-title-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <ul>
-                <h3><a href="<?= $ADMIN_URL ?>">Admin</a> / <a href="index.php">categories</a> / <a href="#">Add type</a></h3>
+                <h3><a href="<?= $ADMIN_URL ?>">Admin</a> / <a href="index.php">Categorys</a> / <a href="#">Add type</a></h3>
         </div>
     </section>
 
     <section class="is-hero-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <h1 class="title text-center">
-            Add categories
+            ADD PRODUCT TYPE
             </h1>
         </div>
     </section>
@@ -27,7 +27,7 @@
             <div class="card">
                 <form class="form-horizontal" action="index.php?btn_insert" method="POST">
                     <div class="card-body">
-                        <h4 class="card-title">Add product type</h4>
+                        <h4 class="card-title"></h4>
                         <div class="form-group row">
                             <label for="ten" class="col-sm-3 text-end control-label col-form-label">Name:</label>
                             <div class="col-sm-9">

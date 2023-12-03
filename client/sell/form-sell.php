@@ -4,8 +4,8 @@
         margin-top: 1%;
     }
 </style>
+<h1 class="text text-center">ADD NEW PRODUCTS</h1>
 <div class="row">
-    <h3 class="m-3 text-dark text-uppercase">ADD NEW PRODUCTS</h3>
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
