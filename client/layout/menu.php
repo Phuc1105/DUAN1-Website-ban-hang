@@ -119,15 +119,12 @@
                             <a href="" class="dropdown-item">Baby's Dresses</a>
                         </div>
                     </div>
-                    <a href="" class="nav-item nav-link">Shirts</a>
-                    <a href="" class="nav-item nav-link">Jeans</a>
-                    <a href="" class="nav-item nav-link">Swimwear</a>
-                    <a href="" class="nav-item nav-link">Sleepwear</a>
-                    <a href="" class="nav-item nav-link">Sportswear</a>
-                    <a href="" class="nav-item nav-link">Jumpsuits</a>
-                    <a href="" class="nav-item nav-link">Blazers</a>
-                    <a href="" class="nav-item nav-link">Jackets</a>
-                    <a href="" class="nav-item nav-link">Shoes</a>
+                    <?php                    
+                    foreach ($list_category as $categories) : ?>
+                        <li class="list-group-item">
+                            <a class="d-block text-dark" href="<?= $CLIENT_URL . "/product/list.php?category_id=" . $categories['category_id'] ?>"><?= $categories['name'] ?></a>
+                        </li>
+                    <?php endforeach ?>
                 </div>
             </nav>
         </div>
@@ -186,26 +183,4 @@
         </div>
     </div>
 </div>
-<!-- Navbar End -->
-<script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        var dropdownToggle = document.querySelector('.dropdown-toggle');
-                        var dropdownMenu = document.querySelector('.dropdown-menu');
-
-                        dropdownToggle.addEventListener('click', function() {
-                            if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
-                                dropdownMenu.style.display = 'block';
-                            } else {
-                                dropdownMenu.style.display = 'none';
-                            }
-                        });
-
-                        dropdownToggle.addEventListener('mouseenter', function() {
-                            dropdownMenu.style.display = 'block';
-                        });
-
-                        dropdownToggle.addEventListener('mouseleave', function() {
-                            dropdownMenu.style.display = 'none';
-                        });
-                    });
-                </script>
+</script>

@@ -105,56 +105,28 @@
     .text-dark {
         color: #343a40;
     }
+
     .itemside {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-}
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+    }
 
-.itemside .aside {
-    position: relative;
-    -ms-flex-negative: 0;
-    flex-shrink: 0
-}
+    .itemside .aside {
+        position: relative;
+        -ms-flex-negative: 0;
+        flex-shrink: 0
+    }
 
-.img-sm {
-    width: 80px;
-    height: 80px;
-    padding: 7px
-}
+    .img-sm {
+        width: 80px;
+        height: 80px;
+        padding: 7px
+    }
 </style>
-
-<?php
-$currentDateTime = date('Y-m-d');
-$futureDateTime = date('Y-m-d', strtotime($currentDateTime . ' + 5 days'));
-?>
-<?php
-
-foreach ($order_details as $item) {
-    extract($item);
-}
-foreach ($order as $orders) {
-    extract($item);
-
-//Trang thái đơn hàng
-$order_status = 'Chưa xác nhận';
-if ($orders['status'] == 2) {
-    $order_status = 'Đã xác nhận';
-} elseif ($orders['status'] == 3) {
-    $order_status = 'Đang giao';
-} elseif ($orders['status'] == 4) {
-    $order_status = 'Giao thành công';
-}
-}
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])) {
-    $status = $_POST["status"];
-    $order_id = $_POST["order_id"];
-    order_update_status($status, $order_id);
-}
-?>
-    <div class="container-fluid">
+<div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-12">
             <nav class="breadcrumb bg-light mb-30">
@@ -165,6 +137,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
         </div>
     </div>
 </div>
+<?php
+$currentDateTime = date('Y-m-d');
+$futureDateTime = date('Y-m-d', strtotime($currentDateTime . ' + 5 days'));
+?>
+<?php
+
+foreach ($order_details as $item) {
+    extract($item);
+}
+foreach ($order2 as $orders) :
+    extract($orders);
+
+    //Trang thái đơn hàng
+    $order_status = 'Chưa xác nhận';
+    if ($orders['status'] == 2) {
+        $order_status = 'Đã xác nhận';
+    } elseif ($orders['status'] == 3) {
+        $order_status = 'Đang giao';
+    } elseif ($orders['status'] == 4) {
+        $order_status = 'Giao thành công';
+    }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])) {
+    $status = $_POST["status"];
+    $order_id = $_POST["order_id"];
+    order_update_status($status, $order_id);
+}
+?>
+
+
 
 <div class="container pt-4" style="margin-bottom: 200px;">
     <article class="card">
@@ -198,20 +200,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
             </div>
 
             <hr>
-
-            <?php foreach ($order as $details) : ?>
                 <ul class="row " style="list-style-type: none;">
                     <li class="col-md-4 ">
                         <figure class="itemside mb-3">
-                            <div class="aside"><img src="<?= $UPLOAD_URL . '/products/' . $details['img_product'] ?>" class="img-sm border"></div>
+                            <div class="aside"><img src="<?= $UPLOAD_URL . '/products/' . $orders['img_product'] ?>" class="img-sm border"></div>
                             <figcaption class="info align-self-center">
                                 <p class="title"></p>
-                                <span class="text-primary"></span> <span style="font-size: 16px;" class="text-dark"><?= $details['quantity']?>x</span>
+                                <span class="text-primary"></span> <span style="font-size: 16px;" class="text-dark"><?= $orders['quantity'] ?>x</span>
                             </figcaption>
                         </figure>
                     </li>
                 </ul>
-
                 <div class="row">
                     <div class="col-lg-6"></div>
                     <div class="col-lg-6">
@@ -256,14 +255,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
                                         <p class="mb-0 text-right">Tổng cộng</p>
                                     </div>
                                     <div class="col-sm-8">
-                                        <p style="font-size: 1.5rem;" class="mb-0 text-right text-danger fw-500"><?= $details['price'] ?>$</p>
+                                        <p style="font-size: 1.5rem;" class="mb-0 text-right text-danger fw-500"><?= $orders['price'] ?>$</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
         </div>
     </article>
 </div>
+<?php endforeach;?>
