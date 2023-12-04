@@ -1,4 +1,17 @@
 <!-- Topbar Start -->
+
+<style>
+    /* Thêm các kiểu CSS bạn muốn ở đây */
+
+    .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+</style>
+
 <div class="container-fluid">
     <div class="row bg-secondary py-1 px-xl-5">
         <div class="col-lg-6 d-none d-lg-block">
@@ -22,27 +35,24 @@
                     <?php }  ?>
                 </a>
                 <div class="text">
-                    <span class="text-dark" style="font-family: 'Dancing Script', cursive; font-size: 20px ;">User</span>
-                    <?php
-                    if (isset($_SESSION['user'])) { ?>
-                        <div class="text-dark"><?= $_SESSION['user']['name'] ?></div>
+                    <?php if (isset($_SESSION['user'])) { ?>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?= $_SESSION['user']['name'] ?>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="userDropdown">
+                                <?php if ($_SESSION['user']['role'] == 1) { ?>
+                                    <a class="dropdown-item" href="<?= $ADMIN_URL . "/trang-chinh/" ?>">Quản lý Admin</a>
+                                <?php } ?>
+                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/update_account.php' ?>">Cập nhật tài khoản</a>
+                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/change_password.php' ?>">Thay đổi mật khẩu</a>
+                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/login.php?btn_logout' ?>">Đăng xuất</a>
+                            </div>
+                        </div>
                     <?php } else { ?>
-                        <a href="<?= $CLIENT_URL . '/account/login.php' ?>" class="d-block text-white">Login</a>
-                    <?php }  ?>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <?php
-                        if (isset($_SESSION['user'])) { ?>
-                            <?php if ($_SESSION['user']['role'] == 1) { ?>
-                                <a class="dropdown-item pl-3 py-2" href="<?= $ADMIN_URL . "/trang-chinh/" ?>">Admin Management</a>
-                            <?php }  ?>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/update_account.php' ?>">Update Account</a>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/change_password.php' ?>">Change Password</a>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/login.php?btn_logout' ?>">Logout</a>
-                        <?php } else { ?>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/login.php' ?>">Login</a>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $CLIENT_URL . '/account/register.php' ?>">Register</a>
-                        <?php }  ?>
-                    </div>
+                        <a href="<?= $CLIENT_URL . '/account/login.php' ?>" class="btn btn-primary">Đăng nhập</a>
+                        <a href="<?= $CLIENT_URL . '/account/register.php' ?>" class="btn btn-success">Đăng ký</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -59,30 +69,32 @@
     </div>
 </div>
 </div>
-<div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-    <div class="col-lg-4">
-        <a href="<?= $ROOT_URL ?>" class="text-decoration-none">
-            <span class="h1 text-uppercase text-primary bg-dark px-2">Multi</span>
-            <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
-        </a>
-    </div>
-    <div class="col-lg-4 col-6 text-left">
-        <form action="">
-            <div class="input-group">
-                <form class="pb-3" action="<?= $CLIENT_URL ?>/product/list.php" method="POST">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="kyww" placeholder="Search...">
-                        <div class="input-group-append">
-                            <button class="btn bg-warning" type="submit" name="search"><i class="fa fa-search text-white"></i></button>
+<div class="container-fluid">
+    <div class="align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+        <div class="col-lg-4">
+            <a href="<?= $ROOT_URL ?>" class="text-decoration-none">
+                <span class="h1 text-uppercase text-primary bg-dark px-2">Multi</span>
+                <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
+            </a>
+        </div>
+        <div class="col-lg-4 col-6 text-left">
+            <form action="">
+                <div class="input-group">
+                    <form class="pb-3" action="<?= $CLIENT_URL ?>/product/list.php" method="POST">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="kyww" placeholder="Search...">
+                            <div class="input-group-append">
+                                <button class="btn bg-warning" type="submit" name="search"><i class="fa fa-search text-white"></i></button>
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </div>
-        </form>
-    </div>
-    <div class="col-lg-4 col-6 text-right">
-        <p class="m-0">Customer Service</p>
-        <h5 class="m-0">+012 345 6789</h5>
+                    </form>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4 col-6 text-right">
+            <p class="m-0">Customer Service</p>
+            <h5 class="m-0">+012 345 6789</h5>
+        </div>
     </div>
 </div>
 </div>
@@ -107,15 +119,12 @@
                             <a href="" class="dropdown-item">Baby's Dresses</a>
                         </div>
                     </div>
-                    <a href="" class="nav-item nav-link">Shirts</a>
-                    <a href="" class="nav-item nav-link">Jeans</a>
-                    <a href="" class="nav-item nav-link">Swimwear</a>
-                    <a href="" class="nav-item nav-link">Sleepwear</a>
-                    <a href="" class="nav-item nav-link">Sportswear</a>
-                    <a href="" class="nav-item nav-link">Jumpsuits</a>
-                    <a href="" class="nav-item nav-link">Blazers</a>
-                    <a href="" class="nav-item nav-link">Jackets</a>
-                    <a href="" class="nav-item nav-link">Shoes</a>
+                    <?php                    
+                    foreach ($list_category as $categories) : ?>
+                        <li class="list-group-item">
+                            <a class="d-block text-dark" href="<?= $CLIENT_URL . "/product/list.php?category_id=" . $categories['category_id'] ?>"><?= $categories['name'] ?></a>
+                        </li>
+                    <?php endforeach ?>
                 </div>
             </nav>
         </div>
@@ -137,7 +146,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
                             <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
                                 <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?cart" class="dropdown-item">Shopping Cart</a>
-                                <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?checkout" class="dropdown-item">Checkout</a>
+                                <a href="<?= $CLIENT_URL ?>/cart/bill.php?btn_list" class="dropdown-item">Checkout</a>
                             </div>
                         </div>
                         <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?contact" class="nav-item nav-link">Contact</a>
@@ -156,6 +165,16 @@
                                 } else {
                                     echo 0;
                                 }
+                                function clearCart2()
+                                {
+                                    // Kiểm tra xem phiên đã bắt đầu chưa
+                                    if (session_status() == PHP_SESSION_NONE) {
+                                        session_start();
+                                    }
+
+                                    // Xóa giỏ hàng bằng cách unset biến $_SESSION['cart']
+                                    unset($_SESSION['cart']);
+                                }
                                 ?></span>
                         </a>
                     </div>
@@ -164,4 +183,4 @@
         </div>
     </div>
 </div>
-<!-- Navbar End -->
+</script>

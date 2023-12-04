@@ -15,6 +15,7 @@ function exist_param($fieldname)
     return array_key_exists($fieldname, $_REQUEST);
 }
 
+
 function save_file($fieldname, $target_dir)
 {
     $file_upload = $_FILES[$fieldname];

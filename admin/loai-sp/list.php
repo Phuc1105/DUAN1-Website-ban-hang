@@ -45,7 +45,7 @@
                       <td><?= $status ?></td>
                       <td>
                         
-                        <a href="index.php?btn_delete&category_id=<?=$category['category_id']?>"><button class="btn btn-danger">Delete</button></a>
+                        <a href="index.php?btn_delete&category_id=<?=$category['category_id']?>"><button class="btn btn-danger" onclick="return checkDelete()">Delete</button></a>
 
                         <a href="index.php?btn_edit&category_id=<?=$category['category_id']?>"><button class="btn btn-primary">Edit type</button></a>
                         

@@ -1,41 +1,30 @@
-<div class="row m-1 pb-5">
+<?php
+require '../../dao/pdo.php';
+require '../../global.php';
+require '../../dao/product.php';
+require '../../dao/user.php';
+require '../../dao/invoice.php';
+//-------------------------------//
+check_login();
+extract($_REQUEST);
+if (exist_param("btn_list")) {
+    if (isset($_SESSION['user'])) {
+        $id = $_SESSION['user'];
+        $kh = user_select_by_id($id['user_id']);
+        extract($kh);
+        $order = invoice_select_by_user($user_id);
+        extract($order);
+        $VIEW_NAME = "../cart/bill_delivery.php";
+    }
+} else if (exist_param("btn_details")) {
+    $order_id = $_GET['btn_details'];
+    $order = invoice_select_by_id($order_id);
+    extract($order);
+    $order2 = invoice_select_by_order_details($order_id);
+    $VIEW_NAME = "../cart/bill_details.php";
+} else {
+    $VIEW_NAME = "../cart/bill_delivery.php";
+}
 
-    <form action="form_invoice.php" method="POST" class="col-6 m-auto" id="invoice"
-        enctype="multipart/form-data">
-        <h3 class="pt-3 pb-4">Shipment Details</h3>
-        <div class="form-group form">
-            <label for="">First and last name</label>
-            <input type="text" name="name" id="" class="form-control rounded-pill" value="<?= $name ?>"
-                aria-describedby="helpId">
-        </div>
-        <div class="form-group">
-            <input type="hidden" name="user_id" id="" class="form-control rounded-pill" value="<?= $user_id ?>"
-                aria-describedby="helpId">
-        </div>
-        <div class="form-group">
-            <label for="">Email address</label>
-            <input type="text" name="email" id="" class="form-control rounded-pill" value="<?= $email ?>"
-                aria-describedby="helpId">
-        </div>
-        <div class="form-group">
-            <label for="">Phone number</label>
-            <input type="text" name="phone" id="" class="form-control rounded-pill" placeholder="" value="<?= $phone?>"
-                aria-describedby="helpId">
-        </div>
-        <div class="form-group">
-            <label for="">Delivery address</label>
-            <input type="text" name="address" id="" class="form-control rounded-pill" placeholder="" value="<?= $address?>"
-                aria-describedby="helpId">
-        </div>
-        <input type="hidden" name="trang_thai" value="0">
-        <div class="form-group">
-            <label for="">Comment</label>
-            <textarea name="ghi_chu" class="form-control" id=""></textarea>
-        </div>
-        <div class="d-flex ">
-            <button type="submit" name="redirect" class="btn bg-warning text-white">Thanh toán Vnpay</button>
-            <!-- <a href="checkoutOnline.php" name class="btn bg-warning text-white">Thanh toán Vnpay</a> -->
-        </div>
-    </form>
-
-</div>
+// $order_details['$order_detail_id'];
+require '../layout.php';

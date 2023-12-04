@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= $CONTENT_URL ?>/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?= $CONTENT_URL ?>/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -141,7 +142,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="<?=$CONTENT_URL?>/img/undraw_profile_1.svg" alt="...">
+                                        <img class="rounded-circle" src="<?= $CONTENT_URL ?>/img/undraw_profile_1.svg" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -152,7 +153,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="<?=$CONTENT_URL?>/img/undraw_profile_2.svg" alt="...">
+                                        <img class="rounded-circle" src="<?= $CONTENT_URL ?>/img/undraw_profile_2.svg" alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -163,7 +164,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="<?=$CONTENT_URL?>/img/undraw_profile_3.svg" alt="...">
+                                        <img class="rounded-circle" src="<?= $CONTENT_URL ?>/img/undraw_profile_3.svg" alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -192,16 +193,16 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <?php
-                                                if (isset($_SESSION['user']) && $_SESSION['user']['image'] != "") { ?>
-                                                    <img src="<?= $UPLOAD_URL . "/users/" . $_SESSION['user']['image'] ?>" width="30" height="30" class="mb-2 object-fit-cover rounded-circle" alt="">
-                                                <?php } else { ?>
-                                                    <i class="fa fa-user primary-color"></i>
-                                                <?php }  ?>
+                                <?php
+                                if (isset($_SESSION['user']) && $_SESSION['user']['image'] != "") { ?>
+                                    <img src="<?= $UPLOAD_URL . "/users/" . $_SESSION['user']['image'] ?>" width="30" height="30" class="mb-2 object-fit-cover rounded-circle" alt="">
+                                <?php } else { ?>
+                                    <i class="fa fa-user primary-color"></i>
+                                <?php }  ?>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/login.php?btn_logout' ?>" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/login.php?btn_logout' ?>">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -228,23 +229,33 @@
                         </div>
                     </div>
                 </footer>
-        <!-- Bootstrap core JavaScript-->
-        <script src="<?= $CONTENT_URL ?>/vendor/jquery/jquery.min.js"></script>
-        <script src="<?= $CONTENT_URL ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <!-- Bootstrap core JavaScript-->
+                <script src="<?= $CONTENT_URL ?>/vendor/jquery/jquery.min.js"></script>
+                <script src="<?= $CONTENT_URL ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Core plugin JavaScript-->
-        <script src="<?= $CONTENT_URL ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
+                <!-- Core plugin JavaScript-->
+                <script src="<?= $CONTENT_URL ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="<?= $CONTENT_URL ?>/js/sb-admin-2.min.js"></script>
+                <!-- Custom scripts for all pages-->
+                <script src="<?= $CONTENT_URL ?>/js/sb-admin-2.min.js"></script>
 
-        <!-- Page level plugins -->
-        <script src="<?= $CONTENT_URL ?>/vendor/chart.js/Chart.min.js"></script>
+                <!-- Page level plugins -->
+                <script src="<?= $CONTENT_URL ?>/vendor/chart.js/Chart.min.js"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="<?= $CONTENT_URL ?>/js/demo/chart-area-demo.js"></script>
-        <script src="<?= $CONTENT_URL ?>/js/demo/chart-pie-demo.js"></script>
+                <!-- Page level custom scripts -->
+                <script src="<?= $CONTENT_URL ?>/js/demo/chart-area-demo.js"></script>
+                <script src="<?= $CONTENT_URL ?>/js/demo/chart-pie-demo.js"></script>
+                <script>
+                    function checkDelete() {
+                        var x = confirm("Are you sure you want to delete?")
+                        if (x) {
+                            return true;
+                        } else {
+                            return false;
+                        }
 
+                    }
+                </script>
 </body>
 
 </html>
