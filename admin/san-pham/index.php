@@ -22,7 +22,7 @@ if (exist_param("btn_list")) {
     $format = "D/m/y";
     $input_date = date($format, time());
     $user_id = "thoai";
-    product_insert($name, $price, $category_id, $input_date, $describes, $quantity, $outstanding, $user_id, $discount);
+    product_insert($name, $price, $category_id, $input_date, $describes, $quantity, $outstanding, $user_id, $discount, $status, $image);
     $VIEW_NAME = "list.php";
 } elseif (exist_param("btn_delete")) {
     $product_id = $_REQUEST['product_id'];
