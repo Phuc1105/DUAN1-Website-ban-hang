@@ -1,6 +1,11 @@
 <?php
-require "pdo.php";
-function user_insert($user_id, $password, $name, $email, $image, $status, $role,$phone,$gender)
+require_once "pdo.php";
+function user_insert($user_id, $password, $name, $email, $image, $status, $role)
+{
+    $sql = "INSERT INTO users(user_id,password,name,email,image,status,role) VALUES(?,?,?,?,?,?,?)";
+    pdo_execute($sql, $user_id, $password, $name, $email, $image,$status == 1, $role == 1);
+}
+function user_insert_admin($user_id, $password, $name, $email, $image, $status, $role,$phone,$gender)
 {
     $sql = "INSERT INTO users(user_id,password,name,email,image,status,role,phone,gender) VALUES(?,?,?,?,?,?,?,?,?)";
     pdo_execute($sql, $user_id, $password, $name, $email, $image,$status == 1, $role == 1,$phone,$gender);

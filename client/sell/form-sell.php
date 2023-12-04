@@ -1,20 +1,16 @@
 <style>
-       .err-form{
-        color: red;
-        margin-top: 1%;
-    }
 </style>
-<h1 class="text text-center">ADD NEW PRODUCTS</h1>
-<div class="row">
-    <div class="col-lg-12">
+<h1 class="text text-center">Thông tin sản phẩm</h1>
+<div class="row row justify-content-center">
+    <div class="col-lg-10">
         <div class="card">
             <div class="card-body">
-                <form action="index.php?btn_insert" method="POST" enctype="multipart/form-data" id="add_product">
+                <form action="<?= $CLIENT_URL ?>/sell/sell.php" method="POST" enctype="multipart/form-data" id="add_product">
                     <div class="row">
-                        <div class="form-group col-sm-4">
-                            <label for="category_id" class="form-label">Product type</label>
-                            <select name="category_id" class="form-control" id="category_id" req>
-                                <option value="" disabled selected>Please select product type</option>
+                        <div class="form-group col-sm-4 d-block">
+                            <label for="category_id" class="form-label">Loại sản phẩm</label>
+                            <select name="category_id" class="form-control" id="category_id">
+                                <option value="" disabled selected>Xin chọn loại sản phẩm..</option>
                                 <?php
                                 $categories = category_select_all();
                                 foreach ($categories as $categories) {
@@ -27,55 +23,54 @@
                                 ?>
 
                             </select>
-                            <div class="err-form"><?=$tb_category_id?></div>
                         </div>
                         <div class="form-group col-sm-4">
-                            <label for="name" class="form-label">Product's name</label>
-                            <input type="text" name="name" id="name" class="form-control" value="<?= isset($_REQUEST['name']) ? $_REQUEST['name'] : '' ?>">
-                            <div class="err-form"><?=$tb_name?></div>
+                            <label for="name" class="form-label">Tên sản phẩm:</label>
+                            <input type="text" name="name" id="name" class="form-control" value="">
                         </div>
                         <div class="form-group col-sm-4">
-                            <label for="quantity" class="form-label">Quantity</label>
-                            <input type="number" name="quantity" id="quantity" class="form-control" value="<?= isset($_REQUEST['quantity']) ? $_REQUEST['quantity'] : '' ?>">
-                            <div class="err-form"><?=$tb_quantity?></div>
+                            <label for="quantity" class="form-label">Số lượng:</label>
+                            <input type="number" name="quantity" id="quantity" class="form-control" value="">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-4">
-                            <label for="price" class="form-label">Unit Price ($)</label>
-                            <input type="number" name="price" id="price" class="form-control" value="<?= isset($_REQUEST['price']) ? $_REQUEST['price'] : '' ?>">
-                            <div class="err-form"><?=$tb_price?></div>
+                            <label for="price" class="form-label">Giá(đ):</label>
+                            <input type="number" name="price" id="price" class="form-control">
                         </div>
                         <div class="form-group col-sm-4">
-                            <label for="discount" class="form-label">Discount</label>
-                            <input type="number" name="discount" id="discount" class="form-control" value="" value="<?= isset($_REQUEST['discount']) ? $_REQUEST['discount'] : '' ?>">
-                            <div class="err-form"><?=$tb_discount?></div>
+                            <label for="discount" class="form-label">Giảm(%):</label>
+                            <input type="number" name="discount" id="discount" class="form-control" required>
                         </div>
                         <div class="form-group col-sm-4">
-                            <label>Featured or New Products?</label>
+                            <label>Sản phẩm mới hay là đặc biệt?</label>
                             <div class="form-control">
                                 <label class="radio-inline  mr-3">
-                                    <input type="radio" value="1" name="outstanding">Featured Products
+                                    <input type="radio" value="1" name="outstanding">Đặc biệt
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" value="0" name="outstanding" checked>New Products
-</label>
+                                    <input type="radio" value="" name="outstanding" checked>Mới
+                                </label>
                             </div>
-                        </div>
+                        </div>  
                     </div>
                     <div class="row">
+                    <div class="form-group col-sm-4">
+                            <label for="image" class="form-label">Ảnh:</label>
+                            <input type="file" name="image" id="image" class="form-control" required>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12">
-                            <label for="describes" class="form-label">Product Description</label>
+                            <label for="describes" class="form-label">Mô tả sản phẩm</label>
                             <textarea id="txtarea" spellcheck="false" name="describes" class="form-control form-control-lg mb-3" id="textareaExample" rows="3" value="<?= isset($_REQUEST['describes']) ? $_REQUEST['describes'] : '' ?>"></textarea>
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <input type="submit" name="btn_insert" value="Add New Product" class="btn btn-success mr-3">
-                        <input type="reset" value="Retype" class="btn btn-danger mr-3">
-                        <a href="index.php?btn_list"><input type="button" class="btn btn-primary" value="Product List"></a>
+                        <button type="submit" name="btn_insert_product" class="btn btn-primary mr-3"> Thêm </button>
+                        <input type="reset" value="Xóa" class="btn btn-danger mr-3">
+                        <a href="sell.php?btn_list_product" class="btn btn-success">Danh sách</a>
                     </div>
 
                 </form>

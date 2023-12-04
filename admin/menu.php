@@ -85,7 +85,6 @@
          </a>
          <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/san-pham/">Add New Product</a>
                  <a class="collapse-item" href="<?= $ADMIN_URL ?>/san-pham/index.php?btn_list">Product List</a>
              </div>
          </div>

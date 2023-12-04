@@ -41,7 +41,7 @@
                                 <select class="col-sm-12 text-end control-label col-form-label form-control" name="status" id="">
                                     <option value="" selected disabled>Please select product status...</option>
                                     <option value="1">Activated</option>
-                                    <option value="">Not activated</option>
+                                    <option value="0">Not activated</option>
                                 </select>
                                 <div class="thongbao"><?= $thongbao_status ?></div>
                             </div>

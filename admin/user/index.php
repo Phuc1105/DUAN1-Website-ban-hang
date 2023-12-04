@@ -36,7 +36,7 @@ if (exist_param("btn_list")) {
       $image = $image_array['name'];
     }
     if ((strlen($phone) == 10 && preg_match('/^0[0-9]{9}$/', $phone)) && strlen($password) >= 6 && filter_var($email, FILTER_VALIDATE_EMAIL) && empty($user_select_id)) {
-      user_insert($user_id, $password, $name, $email, $image, $status, $role, $phone, $gender);
+      user_insert_admin($user_id, $password, $name, $email, $image, $status, $role, $phone, $gender);
       $VIEW_NAME = "list.php";
     } else {
       if (strlen($phone) != 10 || !preg_match('/^0[0-9]{9}$/', $phone)) {

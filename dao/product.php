@@ -1,14 +1,32 @@
 <?php
 require_once 'pdo.php';
-function product_insert($name, $price, $category_id, $input_date, $describes,$quantity,$outstanding,$user_id,$discount)
+function product_insert($name, $price, $category_id, $input_date, $describes, $quantity, $outstanding, $user_id, $discount, $status, $image)
 {
-    $sql = "INSERT INTO products(name, price, category_id ,input_date, describes, quantity, outstanding, user_id, discount) VALUES (?,?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $name, $price, $category_id, $input_date, $describes, $quantity,$outstanding,$user_id,$discount);
+    $sql = "INSERT INTO products(name, price, category_id ,input_date, describes, quantity, outstanding, user_id, discount,status,image) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql, $name, $price, $category_id, $input_date, $describes, $quantity, $outstanding, $user_id, $discount, $status, $image);
 }
-function product_update($name, $price, $category_id, $describes, $quantity, $outstanding, $status, $discount,$product_id)
+function product_update($name, $price, $category_id, $describes, $quantity, $outstanding, $status, $discount, $product_id)
 {
     $sql = "UPDATE products SET name=?, price=?, category_id=?, describes=?, quantity=?, outstanding=?, status=?, discount=? WHERE product_id= ? ";
-    pdo_execute($sql,$name, $price, $category_id, $describes, $quantity, $outstanding, $status, $discount,$product_id);
+    pdo_execute($sql, $name, $price, $category_id, $describes, $quantity, $outstanding, $status, $discount, $product_id);
+}
+function product_update_user($name, $price, $category_id, $describes, $quantity, $outstanding, $discount, $image, $product_id)
+{
+    if (!empty($image)) {
+        $sql = "UPDATE products SET name=?, price=?, category_id=?, describes=?, quantity=?, outstanding=?, discount=?, image=? WHERE product_id= ? ";
+        pdo_execute($sql, $name, $price, $category_id, $describes, $quantity, $outstanding, $discount, $image,$product_id);
+    } else {
+        $sql = "UPDATE products SET name=?, price=?, category_id=?, describes=?, quantity=?, outstanding=?, discount=? WHERE product_id= ? ";
+        pdo_execute($sql, $name, $price, $category_id, $describes, $quantity, $outstanding, $discount, $product_id);
+    }
+}
+function product_update_status_display($product_id){
+    $sql = "UPDATE products SET status=1 WHERE product_id = ?";
+    pdo_execute($sql , $product_id);
+}
+function product_update_status_hide($product_id){
+    $sql = "UPDATE products SET status=0 WHERE product_id = ?";
+    pdo_execute($sql , $product_id);
 }
 function product_delete($product_id)
 {
@@ -90,7 +108,7 @@ function product_select_page($order, $limit)
         $_SESSION['total_page'] = 1;
     }
     $_SESSION['total_pro'] = pdo_query_value("SELECT count(*) FROM products");
-if (exist_param("page")) {
+    if (exist_param("page")) {
         $_SESSION['page'] = $_REQUEST['page'];
     }
     $begin = ($_SESSION['page'] - 1) * $limit;
