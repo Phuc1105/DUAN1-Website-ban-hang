@@ -41,8 +41,8 @@
          </a>
          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="buttons.html">Add Account</a>
-                 <a class="collapse-item" href="cards.html">List of Customer Accounts</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/user/">Add Account</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/user/index.php?btn_list">List of Customer Accounts</a>
              </div>
          </div>
      </li>
@@ -63,8 +63,8 @@
          </a>
          <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/loai-sp/">Add New Product Type</a>
-                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/loai-sp/index.php?btn_list">List of Product Type</a>
+                 <a class="collapse-item" href="<?=$ADMIN_URL?>/loai-sp/">Add New Product Type</a>
+                 <a class="collapse-item" href="<?=$ADMIN_URL?>/loai-sp/index.php?btn_list">List of Product Type</a>
              </div>
          </div>
      </li>
@@ -85,7 +85,6 @@
          </a>
          <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/san-pham/">Add New Product</a>
                  <a class="collapse-item" href="<?= $ADMIN_URL ?>/san-pham/index.php?btn_list">Product List</a>
              </div>
          </div>
@@ -119,7 +118,7 @@
 
      <!-- Heading -->
      <div class="sidebar-heading">
-     Discount Management     
+     Voucher product   
     </div>
 
      <!-- Nav Item - Pages Collapse Menu -->
@@ -130,8 +129,8 @@
          </a>
          <div id="Discount" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/voucher/">Add New Discount</a>
-                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/voucher/index.php?btn_list">Discount List</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/voucher/">Add New Voucher</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/voucher/index.php?btn_list">Voucher List</a>
              </div>
          </div>
      </li>

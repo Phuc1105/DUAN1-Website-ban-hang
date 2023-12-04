@@ -1,8 +1,8 @@
 <style>
-    .thongbao{
+   
+       .err-form{
         color: red;
         margin-top: 1%;
-        margin-left: 0.2%;
     }
 </style>
 <div id="app">
@@ -31,32 +31,42 @@
                         <div class="form-group row">
                             <label for="ten" class="col-sm-3 text-end control-label col-form-label">Name:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="name" placeholder="Enter product type name..." name="name">
+                                <input type="text" class="form-control" id="name" placeholder="Enter product type name..." name="name"value="<?= isset($_REQUEST['name']) ? $_REQUEST['name'] : '' ?>">
+                                <div class="err-form"><?=$err_name?></div>
                             </div>
+                            
                         </div>
                         <div class="form-group row">
                             <label for="ten" class="col-sm-3 text-end control-label col-form-label">Reduce:</label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" id="reduce" placeholder="Enter voucher reduce..." name="reduce">
+                                <input type="number" class="form-control" id="reduce" placeholder="Enter voucher reduce..." name="reduce" value="<?= isset($_REQUEST['reduce']) ? $_REQUEST['reduce'] : '' ?>">
+                                <div class="err-form"><?=$err_reduce?></div>
                             </div>
+                           
                         </div>
                         <div class="form-group row">
                             <label for="ten" class="col-sm-3 text-end control-label col-form-label">Quantity:</label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" id="quantity" placeholder="Enter voucher quantity..." name="quantity">
+                                <input type="number" class="form-control" id="quantity" placeholder="Enter voucher quantity..." name="quantity" value="<?= isset($_REQUEST['quantity']) ? $_REQUEST['quantity'] : '' ?>">
+                                <div class="err-form"><?=$err_reduce?></div>
                             </div>
+                            
                         </div>
                         <div class="form-group row">
                             <label for="ten" class="col-sm-3 text-end control-label col-form-label">Start date:</label>
                             <div class="col-sm-9">
-                                <input type="date" class="form-control" id="start_date" placeholder="Enter voucher start date..." name="start_date">
+                                <input type="date" class="form-control" id="start_date" placeholder="Enter voucher start date..." name="start_date" value="<?= isset($_REQUEST['start_date']) ? $_REQUEST['start_date'] : '' ?>">
+                                <div class="err-form"><?=$err_start?></div>
                             </div>
+                            
                         </div>
                         <div class="form-group row">
                             <label for="ten" class="col-sm-3 text-end control-label col-form-label">End date:</label>
                             <div class="col-sm-9">
-                                <input type="date" class="form-control" id="end_date" placeholder="Enter voucher end date..." name="end_date">
+                                <input type="date" class="form-control" id="end_date" placeholder="Enter voucher end date..." name="end_date" value="<?= isset($_REQUEST['end_date']) ? $_REQUEST['end_date'] : '' ?>">
+                                <div class="err-form"><?=$err_end?></div>
                             </div>
+                            
                         </div>
                         <div class="form-group row">
                             <label for="ten" class="col-sm-3 text-end control-label col-form-label ">Status:</label>
@@ -66,7 +76,9 @@
                                     <option value="1">Activated</option>
                                     <option value="">Not activated</option>
                                 </select>
+                                <div class="err-form"><?=$err_status?></div>
                             </div>
+                            
                         </div>
                         <div class="form-group row">
                             <label for="ten" class="col-sm-3 text-end control-label col-form-label">Describes:</label>

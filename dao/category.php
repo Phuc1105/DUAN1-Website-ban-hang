@@ -1,14 +1,22 @@
 <?php
 require_once 'pdo.php';
-function category_insert($name,$status)
+function category_insert($name, $status)
 {
     $sql = "INSERT INTO categories(name,status)  VALUES(?,?)";
-    pdo_execute($sql, $name,$status);
+    pdo_execute($sql, $name, $status);
 }
 function category_update($category_id, $name, $status)
 {
     $sql = "UPDATE categories SET name=? , status=? WHERE category_id=?";
     pdo_execute($sql, $name, $status, $category_id);
+}
+function category_update_status_display($category_id){
+    $sql = "UPDATE categories SET status=1 WHERE category_id = ?";
+    pdo_execute($sql , $category_id);
+}
+function category_update_status_hide($category_id){
+    $sql = "UPDATE categories SET status=0 WHERE category_id = ?";
+    pdo_execute($sql , $category_id);
 }
 function category_delete($category_id)
 {

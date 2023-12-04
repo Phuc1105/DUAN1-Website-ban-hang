@@ -245,6 +245,7 @@
                 <!-- Page level custom scripts -->
                 <script src="<?= $CONTENT_URL ?>/js/demo/chart-area-demo.js"></script>
                 <script src="<?= $CONTENT_URL ?>/js/demo/chart-pie-demo.js"></script>
+                <script src="<?= $CONTENT_URL ?>/js/jquery.validation.js"></script>
                 <script>
                     function checkDelete() {
                         var x = confirm("Are you sure you want to delete?")

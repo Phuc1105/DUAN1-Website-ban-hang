@@ -1,13 +1,7 @@
-<section class="is-title-bar">
-    <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-        <ul>
-            <h3><a href="<?= $ADMIN_URL ?>">Admin</a> / <a href="index.php">Product</a> / <a href="#">Edit product</a></h3>
-    </div>
-</section>
 <section class="is-hero-bar">
     <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
         <h1 class="title text-center">
-            Edit product
+            Sửa sản phẩm
         </h1>
     </div>
 </section>
@@ -16,7 +10,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <form action="index.php" method="POST" enctype="multipart/form-data" id="btn_update">
+                <form action="sell.php" method="POST" enctype="multipart/form-data" id="btn_update">
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="category_id" class="form-label">Product type</label>
@@ -53,7 +47,7 @@
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="price" class="form-label">Unit Price ($)</label>
-<input type="number" name="price" id="price" class="form-control" value="<?= $product_info['price'] ?>">
+                            <input type="number" name="price" id="price" class="form-control" value="<?= $product_info['price'] ?>">
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="discount" class="form-label">Discount(%)</label>
@@ -94,49 +88,24 @@
                             ?>
                         </div>
                         <div class="form-group col-sm-4">
-                            <label>Enter product status</label>
-                            <?php
-                            if($product_info['status'] == 1){
-                            ?>
-                            <div class="form-control">
-                                <label class="radio-inline mr-3">
-                                    <input type="radio" value="1" name="status" checked>Ativated
-                                </label>
-                                <label class="radio-inline">
-<input type="radio" value="" name="status" >
-                                    Not activated
-                                </label>
-                            </div>
-                            <?php
-                            }else{
-                                ?>
-                                <div class="form-control">
-                                <label class="radio-inline mr-3">
-                                    <input type="radio" value="1" name="status" >Ativated
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" value="" name="status" checked>
-                                    Not activated
-                                </label>
-                            </div>
-                                <?php
-                            }
-                            ?>
+                            <label for="image" class="form-label">Ảnh:</label>
+                            <input type="file" name="image" id="image" class="form-control">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="form-group col-sm-12">
-                            <label for="describes" class="form-label">Product Description</label>
-                            <textarea id="txtarea" spellcheck="false" name="describes" class="form-control form-control-lg mb-3" id="textareaExample" rows="3"><?=$product_info['describes']?>
-                            </textarea>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <input type="submit" name="btn_update" value="Update" class="btn btn-success mr-3">
-                        <a href="index.php?btn_list"><input type="button" class="btn btn-primary" value="Product List"></a>
-                    </div>
-                </form>
             </div>
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <label for="describes" class="form-label">Product Description</label>
+                    <textarea id="txtarea" spellcheck="false" name="describes" class="form-control form-control-lg mb-3" id="textareaExample" rows="3"><?= $product_info['describes'] ?>
+                            </textarea>
+                </div>
+            </div>
+            <div class="mb-3">
+            <button type="submit" name="btn_update_product" class="btn btn-success mr-3 ml-3"> Cập nhật </button>
+                <a href="sell.php?btn_list_product" class="btn btn-warning">Danh sách</a>
+            </div>
+            </form>
         </div>
     </div>
+</div>
 </div>

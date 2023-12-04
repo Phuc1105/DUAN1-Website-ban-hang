@@ -65,7 +65,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="ten" class="col-sm-3 text-end control-label col-form-label ">Status:</label>
+                            <label for="status" class="col-sm-3 text-end control-label col-form-label ">Status:</label>
                             <div class="col-sm-9">
                                 <select class="col-sm-12 text-end control-label col-form-label form-control" name="status" id="">
                                     <option value=""disabled>Please select product status...</option>
@@ -73,9 +73,9 @@
                                     <option value="" <?php if($status!=1){echo "selected";}?>>Not activated</option>
                                 </select>
                             </div>
-                        </div>
+                        </div>  
                         <div class="form-group row">
-                            <label for="ten" class="col-sm-3 text-end control-label col-form-label">Describes:</label>
+                            <label for="discribe" class="col-sm-3 text-end control-label col-form-label">Describes:</label>
                             <div class="col-sm-9">
                             <textarea id="txtarea"  spellcheck="false" name="discribe" class="form-control mb-3" id="textareaExample" rows="3" placeholder="Enter voucher descrisbes..." ><?=$discribe?></textarea>
                             </div>

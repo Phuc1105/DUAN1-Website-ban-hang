@@ -288,7 +288,7 @@ $(document).ready(function () {
             },
         },
     });
-    //============================Form admin add hàng hóa================//
+    //============================Form admin add sản phẩm================//
 
     $.validator.addMethod(
         'lessThanEqual',
@@ -302,34 +302,116 @@ $(document).ready(function () {
     );
     $('#add_product').validate({
         rules: {
+            category_id:{
+                required: true,
+            },
             name: {
                 required: true,
-                remote: 'check-hang-hoa.php?act=add',
+                remote: {
+                    url: 'check-product.php',
+                    type: 'post',
+                    data: {
+                        name: function () {
+                            return $('#name').val();
+                        }
+                    }
+                }
+            },
+            quantity: {
+                required: true,
+                number: true,
+                min: 0,
             },
             price: {
                 required: true,
+                number: true,
                 min: 0,
             },
-            input_date: {
+            discount: {
+                required: true,
+                min: 0,
+                max: 100,
+            },
+            image: {
                 required: true,
             },
-            img: {
+            image_url:{
                 required: true,
-            },
+            }
         },
         messages: {
-            name: {
-                required: 'Vui lòng điền tên hàng hóa',
-                remote: 'Tên hàng hóa đã tồn tại',
+            category_id: {
+            required: 'Vui lòng chọn loại sản phẩm!!',
+        },
+            name: { 
+                required: 'Vui lòng điền tên sản phẩm',
+                remote: 'Tên sản phẩm đã tồn tại',
             },
             price: {
                 required: 'Vui lòng điền đơn giá $',
+                number: 'Vui lòng nhập số',
                 min: 'Đơn giá phải lớn hơn 0$',
             },
-            input_date: {
-                required: 'Vui lòng chọn ngày nhập',
+            discount: {
+                required: 'Vui lòng nhập giảm giá',
+                min: 'Vui lòng nhập giảm gía từ 0-100(%)',
+                max: 'Vui lòng nhập giảm gía từ 0-100(%)',
             },
-            img: 'Vui lòng chọn ảnh',
+            quantity: {
+                required: 'Vui lòng điền số lượng sản phẩn',
+                number: 'Vui lòng nhập số',
+                min: 'Đơn giá phải lớn hơn 0$',
+            },
+        },
+    });
+    $('#btn_update').validate({
+        rules: {
+            category_id:{
+                required: true,
+            },
+            name: {
+                required: true,
+                // remote: 'check-product.php',
+            },
+            quantity: {
+                required: true,
+                number: true,
+                min: 0,
+            },
+            price: {
+                required: true,
+                number: true,
+                min: 0,
+            },
+            discount: {
+                required: true,
+                min: 0,
+                max: 100,
+            },
+        },
+        messages: {
+            category_id: {
+            required: 'Vui lòng chọn loại sản phẩm!!',
+        },
+            name: {
+                required: 'Vui lòng điền tên sản phẩm',
+                // remote: 'Tên sản phẩm đã tồn tại',
+            },
+            price: {
+                required: 'Vui lòng điền đơn giá $',
+                number: 'Vui lòng nhập số',
+                min: 'Đơn giá phải lớn hơn 0$',
+            },
+            discount: {
+                required: 'Vui lòng nhập giảm giá',
+                min: 'Vui lòng nhập giảm gía từ 0-100(%)',
+                max: 'Vui lòng nhập giảm gía từ 0-100(%)',
+            },
+            quantity: {
+                required: 'Vui lòng điền số lượng sản phẩn',
+                number: 'Vui lòng nhập số',
+                min: 'Đơn giá phải lớn hơn 0$',
+            },
         },
     });
 
@@ -358,8 +440,8 @@ $(document).ready(function () {
         },
         messages: {
             ten_hh: {
-                required: 'Vui lòng điền tên hàng hóa',
-                remote: 'Tên hàng hóa đã tồn tại',
+                required: 'Vui lòng điền tên sản phẩm',
+                remote: 'Tên sản phẩm đã tồn tại',
             },
             don_gia: {
                 required: 'Vui lòng điền đơn giá',
@@ -379,3 +461,11 @@ $(document).ready(function () {
         },
     });
 });
+// ========================================================= //
+
+var ma_hh = $("input[name='product_id']").val();
+    $('#update_hang_hoa').validate({
+        rules: {
+        
+        },
+    });

@@ -1,6 +1,5 @@
 <?php 
   require "../../global.php";
-  require "../../dao/pdo.php";
   require "../../dao/category.php";
   extract($_REQUEST);
   $thongbao_name = "";
@@ -56,7 +55,19 @@
   } 
   $VIEW_NAME = "edit.php";
 }
-}
+}elseif (exist_param('btn_update_status_hide')) {
+  $category_id = $_REQUEST['category_id'];
+  $status = "";
+  category_update_status_hide($category_id);
+  $items = category_select_all();
+  $VIEW_NAME = "list.php";
+}elseif(exist_param('btn_update_status_display')){
+  $category_id = $_REQUEST['category_id'];
+  $status = 1;
+  category_update_status_display( $category_id);
+  $items = category_select_all();
+  $VIEW_NAME = "list.php";
+} 
   else{
     $VIEW_NAME = "add.php";
   }

@@ -17,7 +17,7 @@ if (isset($_GET['email'])) {
     } else {
         echo json_encode(true);
     }
-}
+}   
 if (isset($_POST['user_id'])) {
     # code...
     $result = user_exist($_POST['user_id']);
