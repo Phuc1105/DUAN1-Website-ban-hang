@@ -22,6 +22,11 @@ function invoice_select_by_id($order_id)
     $sql = "SELECT * FROM orders WHERE order_id=?";
     return pdo_query($sql, $order_id);
 }
+function invoice_select_by_order_details($order_id)
+{
+    $sql = "SELECT * FROM order_details WHERE order_id=?";
+    return pdo_query($sql, $order_id);
+}
 function invoice_select_by_all()
 {
     $sql = "SELECT * FROM orders";

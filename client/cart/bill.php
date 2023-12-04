@@ -16,18 +16,15 @@ if (exist_param("btn_list")) {
         extract($order);
         $VIEW_NAME = "../cart/bill_delivery.php";
     }
-}if (exist_param("btn_details")) {
-    if (isset($_SESSION['user'])) {
-        $id = $_SESSION['user'];
-        $kh = user_select_by_id($id['user_id']);
-        extract($kh);
-        $order = invoice_select_by_user($user_id);
-        extract($order);
-    }
-    $order2 = invoice_select_by_all();
-    extract($order2);
+} else if (exist_param("btn_details")) {
+    $order_id = $_GET['btn_details'];
+    $order = invoice_select_by_id($order_id);
+    extract($order);
+    $order2 = invoice_select_by_order_details($order_id);
     $VIEW_NAME = "../cart/bill_details.php";
+} else {
+    $VIEW_NAME = "../cart/bill_delivery.php";
 }
 
-$order_details = get_all_order_details();
+// $order_details['$order_detail_id'];
 require '../layout.php';

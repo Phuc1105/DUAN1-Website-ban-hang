@@ -142,12 +142,10 @@ $currentDateTime = date('Y-m-d');
 $futureDateTime = date('Y-m-d', strtotime($currentDateTime . ' + 5 days'));
 ?>
 <?php
-
-foreach ($order_details as $item) {
+foreach ($order2 as $item) {
     extract($item);
 }
-foreach ($order2 as $orders) :
-    extract($orders);
+foreach ($order as $orders) : 
 
     //Trang thái đơn hàng
     $order_status = 'Chưa xác nhận';
@@ -179,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
                     <div class="col text-black"> <strong>Trạng thái:</strong><?= $order_status ?><br></div>
                 </div>
             </article>
-
+            <input type="hidden" name="order_details" value="item">
             <div class="track">
                 <div class="step active">
                     <span class="icon"> <i class="fa fa-check text-black"></i> </span>
@@ -191,7 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
                 </div>
                 <div class="step  <?php if ($orders['status'] == 3 || $orders['status'] == 4) echo 'active' ?>">
                     <span class="icon"> <i class="fa fa-truck text-black"></i> </span>
-                    <span class="text text-black">Đang vận chuyển</span>
+                    <span class="text text-black">Đang giao</span>
                 </div>
                 <div class="step <?php if ($orders['status'] == 4) echo 'active' ?>">
                     <span class="icon"> <i class="fa fa-check text-black"></i> </span>
@@ -221,7 +219,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
                                         <p class="mb-0 text-right">Họ và tên</p>
                                     </div>
                                     <div class="col-sm-8">
-                                        <p class="mb-0 text-right"><?= $name ?></p>
+                                        <p class="mb-0 text-right"><?= $orders['user_id'] ?></p>
                                     </div>
                                 </div>
 
@@ -265,4 +263,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
         </div>
     </article>
 </div>
-<?php endforeach;?>
+<?php endforeach; ?>

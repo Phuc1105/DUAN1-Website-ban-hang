@@ -103,13 +103,14 @@ foreach ($order as $item) {
                         <a href="<?= $CLIENT_URL ?>/cart/bill.php?btn_details=<?= $item['order_id'] ?>" class="btn btn-custom">
                             <button type="submit" class="btn bg-warning">Chi tiết đơn hàng</button>
                         </a>
-                         <input type="hidden" name="order_id" value="<?= $item['order_id'] ?>">
+                       
                     </div>
                 </div>
             </div>
 
         </article>
     </div>
+
 <?php } ?>
 
 
