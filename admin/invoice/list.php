@@ -1,20 +1,23 @@
-<h1>Hello, darling</h1>
+<section class="is-title-bar">
+        <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <ul>
+                <h3><a href="<?=$ADMIN_URL?>">Quản trị</a> / <a href="index.php">Hóa đơn</a> / <a href="#">Danh sách</a></h3>
+        </div>
+    </section>
+
 <div class="container-fluid pt-4 px-4">
     <div class="bg-light text-center rounded p-4">
-        <div class="d-flex align-items-center justify-content-between mb-4">
-            <h6 class="mb-0">Order List</h6>
-        </div>
-
-        <div class="table-responsive">
+    <h1 class="text text-center">Hóa đơn</h1>
+    <div class="table-responsive">
             <table class="table text-start align-middle table-bordered table-hover mb-0">
                 <thead>
                     <tr class="text-dark">
-                        <th scope="col">#</th>
-                        <th scope="col">Customer Name</th>
-                        <th scope="col">Order Date</th>
-                        <th scope="col">Total Amount</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Edit</th>
+                        <th scope="col">Mã </th>
+                        <th scope="col">Tên khách hàng</th>
+                        <th scope="col">Ngày đặt hàng</th>
+                        <th scope="col">Tổng cộng</th>
+                        <th scope="col">trạng thái</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,13 +27,13 @@
                     foreach ($order as $value) {
                         $i++;
                         // Order status
-                        $order_status = '<a href="" class="btn btn-small btn-danger">Pending Confirmation</a>';
+                        $order_status = '<a href="" class="btn btn-small btn-danger">Chờ xác nhận</a>';
                         if($value['status'] == 2) {
-                            $order_status = '<a href="" class="btn btn-small btn-warning">Confirmed</a>';
+                            $order_status = '<a href="" class="btn btn-small btn-warning">Đã xác nhận</a>';
                         } elseif($value['status'] == 3) {
-                            $order_status = '<a href="" class="btn btn-small btn-success">In Transit</a>';
+                            $order_status = '<a href="" class="btn btn-small btn-success">Trên đường vận chuyển</a>';
                         } elseif($value['status'] == 4) {
-                            $order_status = '<a href="" class="btn btn-small btn-success">Delivered</a>';
+                            $order_status = '<a href="" class="btn btn-small btn-success">Đã giao hàng</a>';
                         }
                     ?>
                     <tr>
@@ -44,8 +47,8 @@
                             <?=$order_status?>
                         </td>
                         <td>
-                            <a class="btn-sm btn-success" href="index.php?manage=update-order&id=<?=$order_id?>">View</a>
-                            <a class="btn-sm btn-secondary" href="index.php?btn_edit&order_id=<?= $value['order_id'] ?>">Update</a>                          
+                            <!-- <a class="btn-sm btn-success" href="index.php?manage=update-order&id=<?=$order_id?>">Xem</a> -->
+                            <a class="btn-sm btn-secondary" href="index.php?btn_edit&order_id=<?= $value['order_id'] ?>">Xem</a>                          
                         </td>
                     </tr>
                     <?php

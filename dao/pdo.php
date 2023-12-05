@@ -24,6 +24,7 @@ function pdo_execute($sql)
         unset($conn);
     }
 }
+
 // ===================Truy vấn nhiều dữ liệu=======================//
 function pdo_query($sql)
 {

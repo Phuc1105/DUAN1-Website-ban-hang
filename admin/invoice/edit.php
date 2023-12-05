@@ -229,6 +229,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
                     </div>
                 </div>
             </div>
+
+            <a class="btn btn-primary float-lg-right " href="index.php?btn_list">Trở về</a>
         </div>
+        
     </article>
+    
 </div>

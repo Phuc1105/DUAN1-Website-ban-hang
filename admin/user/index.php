@@ -40,55 +40,55 @@ if (exist_param("btn_list")) {
       $VIEW_NAME = "list.php";
     } else {
       if (strlen($phone) != 10 || !preg_match('/^0[0-9]{9}$/', $phone)) {
-        $tb_phone = "Invalid phone number. Please enter a 10-digit phone number, starting with 0";
+        $tb_phone = "Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại gồm 10 chữ số, bắt đầu bằng 0";
       }
       if (strlen($password) < 6) {
-        $tb_password = "Password must have 6 digits or more";
+        $tb_password = "Mật khẩu phải có 6 chữ số trở lên";
       }
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $tb_email = "Email address is not valid.";
+        $tb_email = "Địa chỉ email không hợp lệ";
       }
       if (!empty($user_select_id)) {
         $tb_user_id = "This account has been registered";
       }
       if (empty($_REQUEST['user_id'])) {
-        $tb_user_id = "Please do not leave your account name blank";
+        $tb_user_id = "Vui lòng không để trống tên tài khoản của bạn";
       }
       if (empty($_REQUEST['password'])) {
-        $tb_password = "Please do not leave your password blank";
+        $tb_password = "Vui lòng không để trống mật khẩu của bạn";
       }
       if (empty($_REQUEST['name'])) {
-        $tb_name = "Please do not leave your name blank";
+        $tb_name = "Vui lòng không để trống tên của bạn";
       }
       if (empty($_REQUEST['phone'])) {
-        $tb_phone = "Please do not leave your phone blank";
+        $tb_phone = "Vui lòng không để trống điện thoại của bạn";
       }
       if (empty($_REQUEST['address'])) {
-        $tb_address = "Please do not leave your address blank";
+        $tb_address = "Vui lòng không để trống địa chỉ của bạn";
       }
       if (empty($_REQUEST['email'])) {
-        $tb_email = "Please do not leave your email blank";
+        $tb_email = "Vui lòng không để trống email của bạn";
       }
       $VIEW_NAME = "add.php";
     }
   } else {
     if (empty($_REQUEST['user_id'])) {
-      $tb_user_id = "Please do not leave your account name blank";
+      $tb_user_id = "Vui lòng không để trống tên tài khoản của bạn";
     }
     if (empty($_REQUEST['password'])) {
-      $tb_password = "Please do not leave your password blank";
+      $tb_password = "Vui lòng không để trống mật khẩu của bạn";
     }
     if (empty($_REQUEST['name'])) {
-      $tb_name = "Please do not leave your name blank";
+      $tb_name = "Vui lòng không để trống tên của bạn";
     }
     if (empty($_REQUEST['phone'])) {
-      $tb_phone = "Please do not leave your phone blank";
+      $tb_phone = "Vui lòng không để trống điện thoại của bạn";
     }
     if (empty($_REQUEST['address'])) {
-      $tb_address = "Please do not leave your address blank";
+      $tb_address = "Vui lòng không để trống địa chỉ của bạn";
     }
     if (empty($_REQUEST['email'])) {
-      $tb_email = "Please do not leave your email blank";
+      $tb_email = "Vui lòng không để trống email của bạn";
     }
     $VIEW_NAME = "add.php";
   }
@@ -133,49 +133,49 @@ if ((strlen($phone) == 10 && preg_match('/^0[0-9]{9}$/', $phone)) && strlen($pas
   $VIEW_NAME = "list.php";
 } else {
   if (strlen($phone) != 10 || !preg_match('/^0[0-9]{9}$/', $phone)) {
-    $tb_phone = "Invalid phone number. Please enter a 10-digit phone number, starting with 0";
+    $tb_phone = "Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại gồm 10 chữ số, bắt đầu bằng 0";
   }
   if (strlen($password) < 6) {
-    $tb_password = "Password must have 6 digits or more";
+    $tb_password = "Mật khẩu phải có 6 chữ số trở lên";
   }
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $tb_email = "Email address is not valid.";
+    $tb_email = "Địa chỉ email không hợp lệ";
   }
   if (empty($_REQUEST['user_id'])) {
-    $tb_user_id = "Please do not leave your account name blank";
+    $tb_user_id = "Vui lòng không để trống tên tài khoản của bạn";
   }
   if (empty($_REQUEST['password'])) {
-    $tb_password = "Please do not leave your password blank";
+    $tb_password = "Vui lòng không để trống mật khẩu của bạn";
   }
   if (empty($_REQUEST['name'])) {
-    $tb_name = "Please do not leave your name blank";
+    $tb_name = "Xin đừng để trống tên của bạn";
   }
   if (empty($_REQUEST['phone'])) {
-    $tb_phone = "Please do not leave your phone blank";
+    $tb_phone = "Xin đừng để trống điện thoại của bạn";
   }
   if (empty($_REQUEST['address'])) {
-    $tb_address = "Please do not leave your address blank";
+    $tb_address = "Vui lòng không để trống địa chỉ của bạn";
   }
   if (empty($_REQUEST['email'])) {
-    $tb_email = "Please do not leave your email blank";
+    $tb_email = "Vui lòng không để trống email của bạn";
   }
   $VIEW_NAME = "edit.php";
 }
   }else{
     if (empty($_REQUEST['password'])) {
-      $tb_password = "Please do not leave your password blank";
+      $tb_password = "Vui lòng không để trống mật khẩu của bạn";
     }
     if (empty($_REQUEST['name'])) {
-      $tb_name = "Please do not leave your name blank";
+      $tb_name = "Vui lòng không để tên của bạn";
     }
     if (empty($_REQUEST['phone'])) {
-      $tb_phone = "Please do not leave your phone blank";
+      $tb_phone = "Vui lòng không để điện thoại của bạn";
     }
     if (empty($_REQUEST['address'])) {
-      $tb_address = "Please do not leave your address blank";
+      $tb_address = "Vui lòng không để trống địa chỉ của bạn";
     }
     if (empty($_REQUEST['email'])) {
-      $tb_email = "Please do not leave your email blank";
+      $tb_email = "Vui lòng không để trống email của bạn";
     }
     $VIEW_NAME = "edit.php"; 
   }

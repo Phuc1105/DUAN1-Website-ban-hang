@@ -60,7 +60,9 @@
                         </div>
 
                         <div class="float-lg-right" style="display: flex;">
-                            <input type="submit" class="btn btn-success" value="Cập nhật">
+                        <a href="index.php?btn_list"><button class="btn btn-primary mr-3">Trở về</button></a>
+                        <input type="submit" class="btn btn-success" value="Cập nhật">
+                            
 
                     </form>
 
