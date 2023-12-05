@@ -8,8 +8,8 @@ check_login();
 
 if (exist_param("chart")) {
     $VIEW_NAME = "chart.php";
-} else {
+} else{
     $VIEW_NAME = "list.php";
 }
-// $items = thong_ke_hang_hoa();
+$items = thong_ke_hang_hoa();
 require "../layout.php";

@@ -15,25 +15,27 @@
                         <th>GIÁ TRUNG BÌNH</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <?php
+                <?php
 
-                    foreach ($items as $item) {
-                        extract($item);
+                foreach ($items as $item) {
+                    var_dump($item);
 
-                    ?>
-                    <tr>
-                        <td><?= $ten_loai ?></td>
-                        <td><?= $so_luong ?></td>
-                        <td>$<?= number_format($gia_min, 2) ?></td>
-                        <td>$<?= number_format($gia_max, 2) ?></td>
-                        <td>$<?= number_format($gia_avg, 2) ?></td>
-                    </tr>
-                    <?php
-                    }
+                ?>
+                    <tbody>
 
-                    ?>
-                </tbody>
+                        <tr>
+                            <td><?= $item['name'] ?></td>
+                            <td><?= $item['quantity'] ?></td>
+                            <td>$<?= number_format($item['price_max'], 2) ?></td>
+                            <td>$<?= number_format($item['price_min'], 2) ?></td>
+                            <td>$<?= number_format($item['price_avg'], 2) ?></td>
+                        </tr>
+
+                    </tbody>
+                <?php
+                }
+
+                ?>
             </table>
             <a href="index.php?chart" class="btn btn-info text-white">Xem biểu đồ<i class="fas fa-eye ml-2"></i></a>
         </div>

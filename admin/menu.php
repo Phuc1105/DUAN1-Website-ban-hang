@@ -167,7 +167,7 @@
          </a>
          <div id="Statistics" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="login.html">Product Statistics</a>
+                 <a class="collapse-item" href="<?=$ADMIN_URL?>/thong-ke">Product Statistics</a>
                  <a class="collapse-item" href="register.html">Order Statistics</a>
                  <a class="collapse-item" href="register.html">Comment Statistics</a>
              </div>
