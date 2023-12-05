@@ -31,9 +31,9 @@
                         if($value['status'] == 2) {
                             $order_status = '<a href="" class="btn btn-small btn-warning">Đã xác nhận</a>';
                         } elseif($value['status'] == 3) {
-                            $order_status = '<a href="" class="btn btn-small btn-success">Trên đường vận chuyển</a>';
+                            $order_status = '<a href="" class="btn btn-small btn-success">Đang dao</a>';
                         } elseif($value['status'] == 4) {
-                            $order_status = '<a href="" class="btn btn-small btn-success">Đã giao hàng</a>';
+                            $order_status = '<a href="" class="btn btn-small btn-success">Giao thành công</a>';
                         }
                     ?>
                     <tr>

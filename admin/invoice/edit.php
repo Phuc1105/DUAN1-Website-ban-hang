@@ -135,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
                                 {
                                     switch ($statusValue) {
                                         case 1:
-                                            return 'Chờ xác nhận';
+                                            return 'Chưa xác nhận';
                                         case 2:
                                             return 'Đã xác nhận';
                                         case 3:
