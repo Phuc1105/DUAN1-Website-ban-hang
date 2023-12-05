@@ -44,6 +44,7 @@
                                 <?php if ($_SESSION['user']['role'] == 1) { ?>
                                     <a class="dropdown-item" href="<?= $ADMIN_URL . "/trang-chinh/" ?>">Quản lý Admin</a>
                                 <?php } ?>
+                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/sell/sell.php' ?>">Bán hàng</a>
                                 <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/update_account.php' ?>">Cập nhật tài khoản</a>
                                 <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/change_password.php' ?>">Thay đổi mật khẩu</a>
                                 <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/login.php?btn_logout' ?>">Đăng xuất</a>
