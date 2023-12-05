@@ -16,12 +16,12 @@
      <li class="nav-item active">
          <a class="nav-link" href="<?= $ADMIN_URL ?>/trang-chinh/">
              <i class="fas fa-fw fa-tachometer-alt"></i>
-             <span>Dashboard</span></a>
+             <span>Bảng thống kê</span></a>
      </li>
      <li class="nav-item active">
          <a class="nav-link" href="<?= $CLIENT_URL ?>/trang-chinh/">
              <i class="fas fa-fw fa-tachometer-alt"></i>
-             <span>Web home page</span></a>
+             <span>Đi đến website</span></a>
      </li>
 
 <!-- MENU QUẢN LÝ TÀI KHOẢN Ở ĐÂY -->
@@ -30,19 +30,19 @@
 
      <!-- Heading -->
      <div class="sidebar-heading">
-         Account Management
+        Quản lý tài khoản
      </div>
 
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
              <i class="fas fa-fw fa-cog"></i>
-             <span>Account</span>
+             <span>Tài khoản</span>
          </a>
          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/user/">Add Account</a>
-                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/user/index.php?btn_list">List of Customer Accounts</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/user/">Thêm</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/user/index.php?btn_list">Danh sách</a>
              </div>
          </div>
      </li>
@@ -53,18 +53,18 @@
 
      <!-- Heading -->
      <div class="sidebar-heading">
-     Management Product Types
+    Quản lý danh mục
      </div>
      <!-- Nav Item - Utilities Collapse Menu -->
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
              <i class="fas fa-fw fa-wrench"></i>
-             <span>Product Type</span>
+             <span>Danh mục</span>
          </a>
          <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="<?=$ADMIN_URL?>/loai-sp/">Add New Product Type</a>
-                 <a class="collapse-item" href="<?=$ADMIN_URL?>/loai-sp/index.php?btn_list">List of Product Type</a>
+                 <a class="collapse-item" href="<?=$ADMIN_URL?>/loai-sp/">Thêm</a>
+                 <a class="collapse-item" href="<?=$ADMIN_URL?>/loai-sp/index.php?btn_list">Danh sách</a>
              </div>
          </div>
      </li>
@@ -74,18 +74,18 @@
 
      <!-- Heading -->
      <div class="sidebar-heading">
-     Product Management
+     Quản lý sản phẩm
      </div>
 
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
              <i class="fas fa-fw fa-folder"></i>
-             <span>Product</span>
+             <span>Sản phẩm</span>
          </a>
          <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/san-pham/index.php?btn_list">Product List</a>
+                 <a class="collapse-item" href="<?= $ADMIN_URL ?>/san-pham/index.php?btn_list">Danh sách</a>
              </div>
          </div>
      </li>
@@ -96,18 +96,18 @@
 
      <!-- Heading -->
      <div class="sidebar-heading">
-     Invoice Management     
+     Quản lý hóa đơn  
     </div>
 
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Invoice" aria-expanded="true" aria-controls="collapsePages">
              <i class="fas fa-fw fa-folder"></i>
-             <span>Invoice</span>
+             <span>Hóa đơn</span>
          </a>
          <div id="Invoice" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="../invoice/index.php?btn_list">Add New Invoice</a>
+                 <a class="collapse-item" href="../invoice/index.php?btn_list">Danh sách</a>
              </div>
          </div>
      </li>
@@ -117,12 +117,12 @@
      <hr class="sidebar-divider">
 
      <!-- Heading -->
-     <div class="sidebar-heading">
+     <!-- <div class="sidebar-heading">
      Voucher product   
-    </div>
+    </div> -->
 
      <!-- Nav Item - Pages Collapse Menu -->
-     <li class="nav-item">
+     <!-- <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Discount" aria-expanded="true" aria-controls="collapsePages">
              <i class="fas fa-fw fa-folder"></i>
              <span>Voucher</span>
@@ -133,7 +133,7 @@
                  <a class="collapse-item" href="<?= $ADMIN_URL ?>/voucher/index.php?btn_list">Voucher List</a>
              </div>
          </div>
-     </li>
+     </li> -->
 
 <!-- MENU QUẢN LÝ Bình luận  -->
      <!-- Divider -->
@@ -141,14 +141,14 @@
 
      <!-- Heading -->
      <div class="sidebar-heading">  
-     Comment Management
+     Quản lý bình luận và dánh giá
      </div>
 
      <!-- Nav Item - Charts -->
      <li class="nav-item">
          <a class="nav-link" href="<?= $ADMIN_URL ?>/comment/index.php">
              <i class="fas fa-fw fa-chart-area"></i>
-             <span>List of Comments</span></a>
+             <span>Danh sách bình luận</span></a>
      </li>
 <!-- MENU QUẢN LÝ THỐNG KÊ  -->
      <!-- Divider -->
@@ -156,7 +156,7 @@
 
      <!-- Heading -->
      <div class="sidebar-heading">
-     Managing Statistics
+        Thống kê
      </div>
      <!-- Nav Item - Tables -->
     <!-- Nav Item - Pages Collapse Menu -->
@@ -167,9 +167,9 @@
          </a>
          <div id="Statistics" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="<?=$ADMIN_URL?>/thong-ke">Product Statistics</a>
-                 <a class="collapse-item" href="register.html">Order Statistics</a>
-                 <a class="collapse-item" href="register.html">Comment Statistics</a>
+                 <a class="collapse-item" href="login.html">Thống kê sản phẩm</a>
+                 <a class="collapse-item" href="register.html">Thống kê hóa đơn</a>
+                 <a class="collapse-item" href="register.html">Thống kê bình luận</a>
              </div>
          </div>
      </li>

@@ -9,7 +9,7 @@
 <section class="is-title-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <ul>
-                <h3><a href="<?=$ADMIN_URL?>">Admin</a> / <a href="index.php">User</a> / <a href="#">List user</a></h3>
+                <h3><a href="<?=$ADMIN_URL?>">Quản trị</a> / <a href="index.php">Người dùng</a> / <a href="#">Danh sách</a></h3>
         </div>
     </section>
 
@@ -21,17 +21,17 @@
 
               <div class="card">
                 <div class="card-body">
-                  <h1 class="text-center">User list</h1>
+                  <h1 class="text-center">Danh sách người dùng</h1>
                   <div class="table-responsive">
                     <table id="" class="table table-striped table-bordered tableStyle">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Image</th>
-                          <th>Name</th>
-                          <th>Gender</th>
-                          <th>Role</th> 
-                          <th>Status</th>
+                          <th>Tài khoản</th>
+                          <th>Ảnh</th>
+                          <th>Tên</th>
+                          <th>Giới tính</th>
+                          <th>Vai trò</th> 
+                          <th>Trạng thái</th>
                           <th></th>
                         </tr>
                       </thead>
@@ -53,17 +53,17 @@
                       <td class="align-middle"><?= $user['gender']?></td>
                       <?php
                       if($user['role']==1){
-                        $role = "Administration";
+                        $role = "Quản trị";
                       }else{
-                        $role = "User";
+                        $role = "Người dùng";
                       }
                       ?>  
                       <td class="align-middle"><?=$role?></td>
                       <?php
                       if($user['status'] == 1){
-                        $status =  "Activated";
+                        $status =  "Kích hoạt";
                       }else{
-                        $status = "Not activated";
+                        $status = "Ẩn";
                       }
                       ?>
                       <td class="align-middle status"><?= $status ?></td>
@@ -71,16 +71,16 @@
                         <?php
                         if($user['status'] == 1){
                           ?>
-                           <a href="index.php?btn_update_status_hide&user_id=<?=$user['user_id']?>"><button class="btn btn-secondary">Hide</button></a>
+                           <a href="index.php?btn_update_status_hide&user_id=<?=$user['user_id']?>"><button class="btn btn-secondary">Ẩn</button></a>
                           <?php
                         }else{
                           ?>
-                          <a href="index.php?btn_update_status_display&user_id=<?=$user['user_id']?>"><button class="btn btn-success">Display</button></a>
+                          <a href="index.php?btn_update_status_display&user_id=<?=$user['user_id']?>"><button class="btn btn-success">Kích hoạt</button></a>
                           <?php
                         }
                         ?>
-                        <a href="index.php?btn_edit&user_id=<?=$user['user_id']?>"><button class="btn btn-primary">Edit type</button></a> 
-                        <a href="index.php?btn_delete&user_id=<?=$user['user_id']?>"><button class="btn btn-danger">Delete</button></a> 
+                        <a href="index.php?btn_edit&user_id=<?=$user['user_id']?>"><button class="btn btn-primary">Sửa</button></a> 
+                        <a href="index.php?btn_delete&user_id=<?=$user['user_id']?>"><button class="btn btn-danger">Xóa</button></a> 
                       </td>
                     </tr>
                     <?php
@@ -88,7 +88,7 @@
         ?>  
                     </tbody>
                     </table>
-                    <a href="index.php?btn_add"><button class="btn btn-success">More</button></a>
+                    <a href="index.php?btn_add"><button class="btn btn-success">Thêm</button></a>
                 </div>
               </div>
             </div>

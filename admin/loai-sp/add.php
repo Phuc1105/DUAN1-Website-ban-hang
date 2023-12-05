@@ -9,14 +9,14 @@
     <section class="is-title-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <ul>
-                <h3><a href="<?= $ADMIN_URL ?>">Admin</a> / <a href="index.php">Categorys</a> / <a href="#">Add type</a></h3>
+                <h3><a href="<?= $ADMIN_URL ?>">Quản trị</a> / <a href="index.php">Danh mục</a> / <a href="#">Thêm</a></h3>
         </div>
     </section>
 
     <section class="is-hero-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <h1 class="title text-center">
-            ADD PRODUCT TYPE
+            Thêm danh mục
             </h1>
         </div>
     </section>
@@ -29,19 +29,19 @@
                     <div class="card-body">
                         <h4 class="card-title"></h4>
                         <div class="form-group row">
-                            <label for="ten" class="col-sm-3 text-end control-label col-form-label">Name:</label>
+                            <label for="ten" class="col-sm-3 text-end control-label col-form-label">Tên:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="name" placeholder="Enter product type name..." name="name">
+                                <input type="text" class="form-control" id="name" placeholder="Nhập tên danh mục..." name="name">
                                 <div class="thongbao"><?= $thongbao_name ?></div>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="ten" class="col-sm-3 text-end control-label col-form-label ">Status:</label>
+                            <label for="ten" class="col-sm-3 text-end control-label col-form-label ">Trạng thái:</label>
                             <div class="col-sm-9">
                                 <select class="col-sm-12 text-end control-label col-form-label form-control" name="status" id="">
-                                    <option value="" selected disabled>Please select product status...</option>
-                                    <option value="1">Activated</option>
-                                    <option value="0">Not activated</option>
+                                    <option value="" selected disabled>Vui lòng chọn trạng thái...</option>
+                                    <option value="1">Kích hoạt</option>
+                                    <option value="0">Ẩn</option>
                                 </select>
                                 <div class="thongbao"><?= $thongbao_status ?></div>
                             </div>
@@ -50,11 +50,11 @@
             </div>
             <div class="border-top">
                 <div class="card-body" style="display: flex;">
-                    <button type="submit" class="btn btn-success" name="them">More</button>
+                    <button type="submit" class="btn btn-success" name="them">Thêm</button>
                 </div>
             </div>
             </form>
-            <a href="index.php?btn_list"><button type="submit" class="btn btn-primary " name="them" style="position: absolute;margin-left: 8%;margin-top: -4%;">List type</button></a>
+            <a href="index.php?btn_list"><button type="submit" class="btn btn-primary " name="them" style="position: absolute;margin-left: 8%;margin-top: -4.44%;">Danh sách</button></a>
         </div>
 
     </div>

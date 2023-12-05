@@ -10,10 +10,16 @@
   }elseif(exist_param("btn_insert")){
     $name = $_POST['name'];
     $val_name = category_select_by_name($name);
+    if (isset($_POST['status'])) {
+      $status = $_POST['status'];
+  } else {
+      $thongbao_status = "Vui lòng chọn trạng thái!!";
+      $VIEW_NAME = "add.php";
+  }
     if(isset($name) && isset($status) && $val_name == ""){ 
-        $status = $_POST['status'];
         category_insert($name,$status);  
         $VIEW_NAME = "list.php";
+        
     }else{
       if($val_name != ""){    
         $thongbao_name = "Đã có tên sản phẩm này!!";

@@ -1,22 +1,22 @@
 <div class="container">
     <div class="page-title">
 
-        <h4 class="mt-5 font-weight-bold ">Comment details</h4>
+        <h4 class="mt-5 font-weight-bold ">Chi tiết bình luận</h4>
     </div>
     <div class="box">
         <div class="box-body">
             <form action="?btn_delete_all" method="post" class="table-responsive">
 
                 <button type="submit" class="btn btn-danger mb-1" id="deleteAll" onclick="return checkDelete()">
-                Delete selected item</button> <i class="ml-5"></i>
+                Xóa mục chọn</button> <i class="ml-5"></i>
                 <table width="100%" class="table table-hover table-bordered text-center">
                     <thead class="bg-primary text-white">
                         <tr>
                             <th><input type="checkbox" id="select-all"></th>
-                            <th>Rating</th>
-                            <th>Comment content</th>
-                            <th>Comment date</th>
-                            <th>Commentator</th>
+                            <th>Đánh giá</th>
+                            <th>Nội dung</th>
+                            <th>Ngày bình luận</th>
+                            <th>Người bình luận</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -57,7 +57,7 @@
 
                     </ul>
                 </div>
-                <a class="btn btn-primary" href="index.php">Back</a>
+                <a class="btn btn-primary" href="index.php">Trở về</a>
             </form>
         </div>
     </div>
