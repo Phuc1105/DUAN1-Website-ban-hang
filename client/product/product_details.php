@@ -139,19 +139,12 @@
                             <a class="text-dark px-2" href="#" onclick="shareProduct()">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-
-                            <!-- Đoạn mã JavaScript -->
                             <script>
                                 function shareProduct() {
-                                    // Thay đổi thông tin dưới đây theo sản phẩm cụ thể của bạn
                                     var productName = 'Tên sản phẩm';
-                                    var productURL = 'URL_sản_phẩm';
-                                    var productImageURL = 'URL_ảnh_sản_phẩm';
-
-                                    // Tạo đường link chia sẻ Facebook
+                                    var productURL = 'http://wd18305-nhom6.demowebcantho.online/client/product/details.php?product_id=<?php echo $product_id; ?>';
+                                    var productImageURL = 'http://localhost/DUAN1-Website-ban-hang/upload/products/<?php echo $image; ?>';  
                                     var facebookShareURL = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(productURL);
-
-                                    // Mở cửa sổ chia sẻ
                                     window.open(facebookShareURL, 'Chia sẻ sản phẩm', 'width=600,height=400');
                                 }
                             </script>

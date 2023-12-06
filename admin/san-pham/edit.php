@@ -16,7 +16,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="index.php" method="POST" enctype="multipart/form-data" id="btn_update">
+                    <form action="index.php?btn_update" method="POST" enctype="multipart/form-data" id="edit_product">
                         <div class="row">
                             <div class="form-group col-sm-4">
                                 <label for="category_id" class="form-label">Loại:</label>

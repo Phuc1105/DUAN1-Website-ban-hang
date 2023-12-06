@@ -45,12 +45,21 @@ function user_select_by_id($user_id)
     $sql = "SELECT * FROM users WHERE user_id=?";
     return pdo_query_one($sql, $user_id);
 }
+function phone_exist($phone)
+{
+    $sql = "SELECT count(*) FROM users WHERE phone=?";
+    return pdo_query_value($sql, $phone) > 0;
+}
 function user_exist($user_id)
 {
     $sql = "SELECT count(*) FROM users WHERE user_id=?";
     return pdo_query_value($sql, $user_id) > 0;
 }
-
+function user_phone($phone)
+{
+    $sql = "SELECT count(*) FROM users WHERE phone=?";
+    return pdo_query_value($sql, $phone) > 0;
+}
 function user_exist_email($email)
 {
     $sql = "SELECT count(*) FROM users WHERE email=?";
