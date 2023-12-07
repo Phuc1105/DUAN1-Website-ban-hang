@@ -31,62 +31,64 @@
             $user_id = $user['user_id'];
             $items = product_select_all();
             foreach ($items as $product) {
-                if( $product['user_id'] == $user_id){
+
+              if ($product['user_id'] == $user_id) {
+
             ?>
-              <tr>
-                <td><?= $product['product_id'] ?></td>
-                <td><img src="../../upload/products/<?=$product['image']?>" alt="" width="100px" ></td>
-                <td><?= $product['name'] ?></td>
-                <td>
-                  <?php
-                  
-                  $categories = category_select_all();
-                  foreach ($categories as $categories) {
-                    extract($categories);
-                       
-                    if ($categories['category_id'] == $product['category_id']) {
-                  ?>
-                      <?= $categories['name']; ?>
-                  <?php
+                <tr>
+                  <td><?= $product['product_id'] ?></td>
+                  <td><img src="../../upload/products/<?= $product['image'] ?>" alt="" width="100px"></td>
+                  <td><?= $product['name'] ?></td>
+                  <td>
+                    <?php
+
+                    $categories = category_select_all();
+                    foreach ($categories as $categories) {
+                      extract($categories);
+
+                      if ($categories['category_id'] == $product['category_id']) {
+                    ?>
+                        <?= $categories['name']; ?>
+                    <?php
+                      }
                     }
+                    ?>
+                  </td>
+
+                  <?php
+                  if ($product['status'] == 1) {
+                    $status =  "Activated";
+                  } else {
+                    $status = "Not activated";
                   }
                   ?>
-                </td>
-
-                <?php
-                if ($product['status'] == 1) {
-                  $status =  "Activated";
-                } else {
-                  $status = "Not activated";
-                }
-                ?>
 
 
-                <?php
-                if ($product['outstanding'] == 1) {
-                  $outstanding =  "Special product";
-                } else {
-                  $outstanding = "Normal";
-                }
-                ?>
-                <td><?= $outstanding ?></td>
-                <td><?= $status ?></td>
-                <td><?= $product['price'] ?>$</td>
-                <td><?= $product['discount'] ?>%</td>
-                <td><?= $product['user_id'] ?></td>
-                <td>
+                  <?php
+                  if ($product['outstanding'] == 1) {
+                    $outstanding =  "Special product";
+                  } else {
+                    $outstanding = "Normal";
+                  }
+                  ?>
+                  <td><?= $outstanding ?></td>
+                  <td><?= $status ?></td>
+                  <td><?= $product['price'] ?>$</td>
+                  <td><?= $product['discount'] ?>%</td>
+                  <td><?= $product['user_id'] ?></td>
+                  <td>
 
-                  <a href="sell.php?btn_delete&product_id=<?= $product['product_id'] ?>"><button class="btn btn-danger">Xóa</button></a>
+                    <a href="sell.php?btn_delete&product_id=<?= $product['product_id'] ?>"><button class="btn btn-danger">Xóa</button></a>
 
-                  <a href="sell.php?btn_edit_product&product_id=<?= $product['product_id'] ?>"><button class="btn btn-primary">Sửa</button></a>
+                    <a href="sell.php?btn_edit_product&product_id=<?= $product['product_id'] ?>"><button class="btn btn-primary">Sửa</button></a>
 
-                </td>
-              </tr>
+                  </td>
+                </tr>
+                
             <?php
+              }
             }
-        }
             ?>
-
             </tbody>
             </table>
             <a href="sell.php?btn_sell"><button class="btn btn-success">Thêm</button></a>

@@ -25,36 +25,33 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <form class="form-horizontal" action="index.php?btn_insert" method="POST">
+                <form class="form-horizontal" action="index.php?btn_insert" method="POST" enctype="multipart/form-data" id="add_loai">
                     <div class="card-body">
                         <h4 class="card-title"></h4>
                         <div class="form-group row">
                             <label for="ten" class="col-sm-3 text-end control-label col-form-label">Tên:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="name" placeholder="Nhập tên danh mục..." name="name">
-                                <div class="thongbao"><?= $thongbao_name ?></div>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="ten" class="col-sm-3 text-end control-label col-form-label ">Trạng thái:</label>
+                            <label for="status" class="col-sm-3 text-end control-label col-form-label ">Trạng thái:</label>
                             <div class="col-sm-9">
-                                <select class="col-sm-12 text-end control-label col-form-label form-control" name="status" id="">
+                                <select class="col-sm-12 text-end control-label col-form-label form-control" name="status" id="status">
                                     <option value="" selected disabled>Vui lòng chọn trạng thái...</option>
                                     <option value="1">Kích hoạt</option>
                                     <option value="0">Ẩn</option>
                                 </select>
-                                <div class="thongbao"><?= $thongbao_status ?></div>
                             </div>
                         </div>
                     </div>
             </div>
-            <div class="border-top">
-                <div class="card-body" style="display: flex;">
-                    <button type="submit" class="btn btn-success" name="them">Thêm</button>
+            <div class="mb-3">
+                        <input type="submit" name="" value="Thêm" class="btn btn-primary mr-3">
+                        <a href="index.php?btn_list"><input type="button" class="btn btn-success" value="Danh sách"></a>
                 </div>
-            </div>
             </form>
-            <a href="index.php?btn_list"><button type="submit" class="btn btn-primary " name="them" style="position: absolute;margin-left: 8%;margin-top: -4.44%;">Danh sách</button></a>
+           
         </div>
 
     </div>

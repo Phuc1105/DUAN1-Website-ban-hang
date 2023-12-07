@@ -10,6 +10,11 @@ function comment_update($comment_id, $product_id, $user_id, $content, $comment_d
     $sql = "UPDATE comments SET product_id=?,user_id=?,content=?,comment_date=? WHERE comment_id=?";
     pdo_execute($sql, $product_id, $user_id, $content, $comment_date, $comment_id);
 }
+function comment_count()
+{
+    $sql = "SELECT count(comment_id) FROM comments";
+    return pdo_query_value($sql) ;
+}
 function comment_delete($comment_id)
 {
     $sql = "DELETE FROM comments WHERE comment_id=?";

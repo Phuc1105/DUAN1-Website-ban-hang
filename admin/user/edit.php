@@ -30,7 +30,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <form action="index.php?btn_update" method="POST" enctype="multipart/form-data" id="edit_user">
+                <form action="index.php?btn_update" method="POST" enctype="multipart/form-data" id="admin_edit_kh">
                     <div class="row">
                         <div class="form-group col-sm-4">
                         <label for="user_id" class="form-label">Tài khoản:</label>
@@ -39,25 +39,21 @@
                         <div class="form-group col-sm-4">
                             <label for="name" class="form-label">Tên:</label>
                             <input type="text" name="name" id="name" class="form-control" value="<?=$name?>">
-                            <div class="err-form"><?=$tb_name?></div>
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="password" class="form-label">Mật khẩu:</label>
                             <input type="password" name="password" id="password" class="form-control" value="<?=$password?>"    >
                             <span class="toggle-password fas fa-eye" onclick="togglePasswordVisibility()"></span>
-                            <div class="err-form"><?=$tb_password?></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="email" class="form-label">Email:</label>
                             <input type="email" name="email" id="email" class="form-control" value="<?=$email?>">
-                            <div class="err-form"><?=$tb_email?></div>
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="phone" class="form-label">Số điện thoại:</label>
                             <input type="text" name="phone" id="phone"  class="form-control" value="<?=$phone?>">
-                            <div class="err-form"><?=$tb_phone?></div>
                         </div>                        
                         <div class="form-group col-sm-4">
                             <label>Gender</label>   

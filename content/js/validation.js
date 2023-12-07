@@ -162,15 +162,21 @@ $(document).ready(function () {
     //============================Form add loại================//
     $('#add_loai').validate({
         rules: {
-            ten_loai: {
+            name: {
                 required: true,
-                remote: 'check-loai.php?act=add',
+                remote: 'check.php',
+            },
+            status: {
+                required: true,
             },
         },
         messages: {
-            ten_loai: {
-                required: 'Loại hàng không được trống',
-                remote: 'Loại hàng đã tồn tại',
+            name: {
+                required: 'Tên danh mục không được trống',
+                remote: 'Danh mục đã tồn tại',
+            },
+            status: {
+                required: 'Không để trống trạng thái',
             },
         },
     });
@@ -193,15 +199,21 @@ $(document).ready(function () {
         },
     });
     //============================Form admin add tài khoản khách hàng================//
-
+    $.validator.addMethod(
+        "phoneVN",
+        function (value, element) {
+            return this.optional(element) || /^(0|84)(3[2-9]|5[6|8|9]|7[0|6-9]|8[1-6]|9\d)\d{7}$/.test(value);
+        },
+        "Vui lòng nhập số điện thoại hợp lệ của Việt Nam."
+    );
     $('#admin_add_kh').validate({
         rules: {
-            ma_kh: {
+            user_id: {
                 required: true,
-                minlength: 6,
+                minlength: 3,
                 remote: 'check.php',
             },
-            ho_ten: {
+            name: {
                 required: true,
                 minlength: 6,
             },
@@ -210,23 +222,22 @@ $(document).ready(function () {
                 email: true,
                 remote: 'check.php',
             },
-            mat_khau: {
+            password: {
                 required: true,
                 minlength: 3,
             },
-            mat_khau2: {
+            phone: {
                 required: true,
-                minlength: 3,
-                equalTo: '#mat_khau',
+                phoneVN: true,
             },
         },
         messages: {
-            ma_kh: {
-                required: 'Vui lòng điền mã kh',
-                minlength: 'Hãy nhập tối thiểu 6 ký tự',
-                remote: 'Mã kh đã tồn tại',
+            user_id: {
+                required: 'Vui lòng điền tài khoản',
+                minlength: 'Hãy nhập tối thiểu 3 ký tự',
+                remote: 'Tài khoản đã tồn tại',
             },
-            ho_ten: {
+            name: {
                 required: 'Vui lòng điền họ tên',
                 minlength: 'Hãy nhập tối thiểu 6 ký tự',
             },
@@ -235,14 +246,13 @@ $(document).ready(function () {
                 email: 'Email không hợp lệ ',
                 remote: 'Email đã tồn tại',
             },
-            mat_khau: {
+            password: {
                 required: 'Vui lòng điền mật khẩu',
                 minlength: 'Hãy nhập ít nhất 3 ký tự',
             },
-            mat_khau2: {
-                required: 'Vui lòng điền mật khẩu',
-                equalTo: 'Mật khẩu không trùng nhau',
-                minlength: 'Hãy nhập ít nhất 3 ký tự',
+            phone: {
+                required: "Vui lòng nhập số điện thoại.",
+                phoneVN: "Vui lòng nhập số điện thoại hợp lệ của Việt Nam.",
             },
         },
     });
@@ -305,6 +315,70 @@ $(document).ready(function () {
     $('#add_product').validate({
         rules: {
             category_id: {
+                required: true,
+            },
+            name: {
+                required: true,
+                // remote: {
+                //     url: 'check-product.php',
+                //     type: 'post',
+                //     data: {
+                //         name: function () {
+                //             return $('#name').val();
+                //         }
+                //     }
+                // }
+            },
+            quantity: {
+                required: true,
+                number: true,
+                min: 0,
+            },
+            price: {
+                required: true,
+                number: true,
+                min: 0,
+            },
+            discount: {
+                required: true,
+                min: 0,
+                max: 100,
+            },
+            image: {
+                required: true,
+            },
+            image_url:{
+                required: true,
+            }
+        },
+        messages: {
+            category_id: {
+            required: 'Vui lòng chọn loại sản phẩm!!',
+        },
+            name: { 
+                required: 'Vui lòng điền tên sản phẩm',
+                // remote: 'Tên sản phẩm đã tồn tại',
+            },
+            price: {
+                required: 'Vui lòng điền đơn giá $',
+                number: 'Vui lòng nhập số',
+                min: 'Đơn giá phải lớn hơn 0$',
+            },
+            discount: {
+                required: 'Vui lòng nhập giảm giá',
+                min: 'Vui lòng nhập giảm gía từ 0-100(%)',
+                max: 'Vui lòng nhập giảm gía từ 0-100(%)',
+            },
+            quantity: {
+                required: 'Vui lòng điền số lượng sản phẩn',
+                number: 'Vui lòng nhập số',
+                min: 'Đơn giá phải lớn hơn 0$',
+            },
+        },
+    });
+    $('#edit_product').validate({
+        rules: {
+            category_id:{
                 required: true,
             },
             name: {
@@ -466,8 +540,59 @@ $(document).ready(function () {
 // ========================================================= //
 
 var ma_hh = $("input[name='product_id']").val();
-$('#update_hang_hoa').validate({
+    $('#update_hang_hoa').validate({
+        rules: {
+        
+        },
+    });
+// =======================update khách hàng admin=======================//
+$('#admin_edit_kh').validate({
     rules: {
-
+        user_id: {
+            required: true,
+            minlength: 3,
+            // remote: 'check.php',
+        },
+        name: {
+            required: true,
+            minlength: 6,
+        },
+        email: {
+            required: true,
+            email: true,
+            // remote: 'check.php',
+        },
+        password: {
+            required: true,
+            minlength: 3,
+        },
+        phone: {
+            required: true,
+            phoneVN: true,
+        },
+    },
+    messages: {
+        user_id: {
+            required: 'Vui lòng điền tài khoản',
+            minlength: 'Hãy nhập tối thiểu 3 ký tự',
+            // remote: 'Tài khoản đã tồn tại',
+        },
+        name: {
+            required: 'Vui lòng điền họ tên',
+            minlength: 'Hãy nhập tối thiểu 6 ký tự',
+        },
+        email: {
+            required: 'Vui lòng điền email',
+            email: 'Email không hợp lệ ',
+            // remote: 'Email đã tồn tại',
+        },
+        password: {
+            required: 'Vui lòng điền mật khẩu',
+            minlength: 'Hãy nhập ít nhất 3 ký tự',
+        },
+        phone: {
+            required: "Vui lòng nhập số điện thoại.",
+            phoneVN: "Vui lòng nhập số điện thoại hợp lệ của Việt Nam.",
+        },
     },
 });

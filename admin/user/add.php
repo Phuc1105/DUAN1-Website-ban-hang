@@ -31,40 +31,39 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <form action="index.php?btn_insert" method="POST" enctype="multipart/form-data" id="add_user">
+                <form action="index.php?btn_insert" method="POST" enctype="multipart/form-data" id="admin_add_kh">
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="user_id" class="form-label">Tài khoản:</label>
-                            <input type="text" name="user_id" id="user_id" class="form-control" value="<?= isset($_REQUEST['user_id']) ? $_REQUEST['user_id'] : '' ?>">
-                            <div class="err-form"><?= $tb_user_id ?></div>
+                            <input type="text" name="user_id" id="user_id" class="form-control">
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="name" class="form-label">Tên:</label>
-                            <input type="text" name="name" id="name" class="form-control" value="<?= isset($_REQUEST['name']) ? $_REQUEST['name'] : '' ?>">
-                            <div class="err-form"><?= $tb_name ?></div>
+                            <input type="text" name="name" id="name" class="form-control">
+
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="password" class="form-label">Mật khẩu:</label>
-                            <input type="password" name="password" id="password" class="form-control" value="<?= isset($_REQUEST['password']) ? $_REQUEST['password'] : '' ?>">
+                            <input type="password" name="password" id="password" class="form-control" >
                             <span class="toggle-password fas fa-eye" onclick="togglePasswordVisibility()"></span>
-                            <div class="err-form"><?= $tb_password ?></div>
+
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="email" class="form-label">Email:</label>
-                            <input type="email" name="email" id="email" class="form-control" value="<?= isset($_REQUEST['email']) ? $_REQUEST['email'] : '' ?>">
-                            <div class="err-form"><?= $tb_email ?></div>
+                            <input type="email" name="email" id="email" class="form-control" >
+                            
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="phone" class="form-label">Số điện thoại:</label>
-                            <input type="text" name="phone" id="phone" class="form-control" value="<?= isset($_REQUEST['phone']) ? $_REQUEST['phone'] : '' ?>">
-                            <div class="err-form"><?= $tb_phone ?></div>
+                            <input type="text" name="phone" id="phone" class="form-control" >
+     
                         </div>
                         <div class="form-group col-sm-4">
                             <label>Giới tính</label>
                             <div class="form-control">
-                                <label class="radio-inline mr-3">
+                                <label class="radio-inline mr-3">   
                                     <input type="radio" value="Nam" name="gender" checked>Nam
                                 </label>
                                 <label class="radio-inline">

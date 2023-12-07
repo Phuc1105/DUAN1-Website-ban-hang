@@ -1,5 +1,6 @@
 <?php
 require_once 'pdo.php';
+
 function product_insert($name, $price, $category_id, $input_date, $describes, $quantity, $outstanding, $user_id, $discount, $status, $image)
 {
     $sql = "INSERT INTO products(name, price, category_id ,input_date, describes, quantity, outstanding, user_id, discount,status,image) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
@@ -54,6 +55,11 @@ function product_select_by_name($name)
     $sql = "SELECT * FROM products WHERE name=?";
     return pdo_query_one($sql, $name);
 }
+function product_count()
+{
+    $sql = "SELECT count(product_id) FROM products";
+    return pdo_query_value($sql) ;
+}
 function product_exist($product_id)
 {
     $sql = "SELECT count(*) FROM products WHERE product_id=?";
@@ -63,6 +69,10 @@ function product_exist_add($name)
 {
     $sql = "SELECT count(*) FROM products WHERE name=?";
     return pdo_query_value($sql, $name) > 0;
+}
+function product_count_id(){
+    $sql = "SELECT product_id, COUNT(*) AS total_count FROM products GROUP BY product_id";
+
 }
 function product_exist_update($product_id, $name)
 {

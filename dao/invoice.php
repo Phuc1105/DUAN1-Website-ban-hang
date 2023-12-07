@@ -12,6 +12,16 @@ function invoice_details_insert( $order_id,$address, $order_date,$receiving_date
 
     pdo_execute($sql, $order_id,$address, $order_date,$receiving_date);
 }
+function invoice_sum()
+{
+    $sql = "SELECT SUM(price) FROM orders WHERE status = 4";
+    return pdo_query_value($sql) ;
+}
+function invoice_count()
+{
+    $sql = "SELECT count(order_id) FROM orders";
+    return pdo_query_value($sql) ;
+}
 function invoice_select_by_user($user_id)
 {
     $sql = "SELECT * FROM orders WHERE user_id=?";
