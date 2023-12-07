@@ -32,7 +32,6 @@
                             <label for="ten" class="col-sm-3 text-end control-label col-form-label">Tên Loại:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="name" placeholder="Nhập tên loại sản phẩm..." name="name" value="<?= $name ?>">
-                                <div class="thongbao"><?= $thongbao_name ?></div>
                             </div>
                         </div>
                         <div class="form-group row">
