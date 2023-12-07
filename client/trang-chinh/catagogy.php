@@ -3,7 +3,7 @@
 </style>
 <!-- Categories Start -->
 <div class="container-fluid pt-5">
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">DANH MỤC</span></h2>
 
     <div id="categoryCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner ">

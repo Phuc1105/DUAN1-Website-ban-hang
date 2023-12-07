@@ -1,4 +1,4 @@
-<h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Product portfolio</span></h5>
+<h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Danh mục</span></h5>
 
 
     <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">

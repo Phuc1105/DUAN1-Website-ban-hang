@@ -4,7 +4,7 @@ require '../../dao/product.php';
 require '../../dao/category.php';
 //-------------------------------//
 
-
+check_login(); 
 extract($_REQUEST);
 
 if (exist_param("category_id")) {
@@ -24,13 +24,13 @@ if (exist_param("category_id")) {
     $items = product_select_popular();
 
 } else if (exist_param("search")) {
-    $kyww = $_POST['kyww'];
-    if ($kyww == '') {
+    $keyword = $_POST['keyword'];
+    if ($keyword == '') {
         $title_site = "All Menu";
     } else {
-        $title_site = "Products containing keywords :'$kyww'";
+        $title_site = "Products containing keywords :'$keyword'";
     }
-    $items = product_select_keyword($kyww);
+    $items = product_select_keyword($keyword);
     if (count($items) == 0) {
         $title_site = "No products contain keywords :'$search'";
     }

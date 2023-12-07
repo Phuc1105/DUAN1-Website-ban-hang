@@ -45,7 +45,7 @@
 <div class="col-12" id="reviews">
     <div class="card border-light mb-3">
         <div class="text-dark text-uppercase">
-            <h3> Product review</h3>
+            <h3>Đánh giá sản phẩm</h3>
         </div>
         <div class="card-body">
             <?php
@@ -89,7 +89,7 @@
 
         ?>
             <div class="comment-box">
-                <h4>Comment</h4>
+                <h4>Bình luận</h4>
                 <form action="" method="POST">
                     <div class="rating">
                         <input type="radio" name="rating" value="5" id="5" checked>
@@ -107,7 +107,7 @@
                         <textarea class="form-control" name="content" placeholder="comment....." rows="4"></textarea>
                     </div>
                     <div class="mt-4">
-                        <button type="submit" class="btn btn-warning px-5">Comment
+                        <button type="submit" class="btn btn-warning px-5">Bình luận
 
                         </button>
                     </div>

@@ -2,16 +2,16 @@
     <div class="row px-xl-5">
         <div class="col-12">
             <nav class="breadcrumb bg-light mb-30">
-                <a class="breadcrumb-item text-dark" href="#">Home</a>
-                <a class="breadcrumb-item text-dark" href="#">Shop</a>
-                <span class="breadcrumb-item active">Shopping Cart</span>
+                <a class="breadcrumb-item text-dark" href="#">Trang chủ</a>
+                <a class="breadcrumb-item text-dark" href="#">Giỏ hàng</a>
+                <span class="breadcrumb-item active">Thanh toán</span>
             </nav>
         </div>
     </div>
 </div>
 <div class="">
     <form action="<?= $CLIENT_URL . '/cart/checkoutOnline.php' ?>" method="POST" class="m-auto w-100" id="invoice" enctype="multipart/form-data">
-        <p class="pt-3 pl-5 text-warning h4"><i class="fas fa-map-marker-alt p-2"></i>Your delivery address</p>
+        <p class="pt-3 pl-5 text-warning h4"><i class="fas fa-map-marker-alt p-2"></i>Địa chỉ giao hàng</p>
         <div class="container-fluid">
             <div class="row px-xl-5">
                 <div class="col-12">
@@ -47,11 +47,11 @@
                     <table class="table table-light table-borderless table-hover text-center mb-0">
                         <thead class="thead-dark">
                             <tr>
-                                <th>Products</th>
-                                <th>Price</th>
-                                <th>Sale</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
+                                <th>Sản phẩm</th>
+                                <th>Giá tiền</th>
+                                <th>Giảm giá</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
                             </tr>
                         </thead>
                         <tbody class="align-middle">
@@ -75,28 +75,28 @@
                 <div class="col-lg-4">
                     <form class="mb-30" action="">
                         <div class="input-group">
-                            <input type="text" class="form-control border-0 p-4" placeholder="Coupon Code">
+                            <input type="text" class="form-control border-0 p-4" placeholder="voucher">
                             <div class="input-group-append">
-                                <button class="btn btn-primary">Apply Coupon</button>
+                                <button class="btn btn-primary">Áp dụng voucher</button>
                             </div>
                         </div>
                     </form>
-                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Cart Summary</span></h5>
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Thông tin đặt hàng</span></h5>
                     <div class="bg-light p-30 mb-5">
                         <form action="<?= $CLIENT_URL . '/cart/checkoutOnline.php' ?>" method="POST">
                             <div class="border-bottom pb-2">
                                 <div class="d-flex justify-content-between mb-3">
-                                    <h6>Order price</h6>
+                                    <h6>Giá tiền sản phẩm</h6>
                                     <h6><span class="thanh_tien_sp " id="thanh_tien_sp_<?= $index ?>" data-price="<?= $item['price'] ?>" data-discount="<?= $item['discount'] ?>"><?= $item['total']?></span> $</h6>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-medium">Shipping</h6>
+                                    <h6 class="font-weight-medium">Phí vận chuyển</h6>
                                     <h6 class="font-weight-medium">$10</h6>
                                 </div>
                             </div>
                             <div class="pt-2">
                                 <div class="d-flex justify-content-between mt-2">
-                                    <h5>Total</h5>
+                                    <h5>Tổng thanh toán</h5>
                                     <h5><?= $totalAll ?>$</h5>
                                 </div>
                                 <button type="submit" name="redirect" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Thanh toán Vnpay</button>

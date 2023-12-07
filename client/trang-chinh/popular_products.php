@@ -1,5 +1,5 @@
 <div class="container-fluid pt-5 pb-3">
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Popular Products</span></h2>
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">GỢI Ý HÔM NAY</span></h2>
     <div class="row px-xl-5">
         <?php
         foreach ($popular_products as $item) :
@@ -22,10 +22,10 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate text-center" href=""><?= $name ?></a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5 class="d-block text-center"><?= $price - $discount ?>$ </h5>
+                            <h5 class="d-block text-center"><?= $price - $discount ?>đ </h5>
                             <del>
                                 <p class=" fz-20 d-block ml-3 mb-2">
-                                    <?= $price ?>$</p>
+                                    <?= $price ?>đ</p>
                             </del>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">

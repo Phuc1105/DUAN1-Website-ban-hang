@@ -81,15 +81,15 @@ foreach ($order_details as $item) {
 foreach ($order as $orders) {
     extract($item);
 
-//Trang thái đơn hàng
-$order_status = 'Chưa xác nhận';
-if ($orders['status'] == 2) {
-    $order_status = 'Đã xác nhận';
-} elseif ($orders['status'] == 3) {
-    $order_status = 'Đang giao';
-} elseif ($orders['status'] == 4) {
-    $order_status = 'Giao thành công';
-}
+    //Trang thái đơn hàng
+    $order_status = 'Chưa xác nhận';
+    if ($orders['status'] == 2) {
+        $order_status = 'Đã xác nhận';
+    } elseif ($orders['status'] == 3) {
+        $order_status = 'Đang giao';
+    } elseif ($orders['status'] == 4) {
+        $order_status = 'Giao thành công';
+    }
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])) {
     $status = $_POST["status"];
@@ -127,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
                 <div class="card col-lg-6">
                     <div class="cart bg-custom rounded bg-custom" style="background-color: fffff;">
                         <div class="p-4">
-                           
+
                             <h6 class="mb-4">
                                 Trạng thái đơn hàng: <span class="text-danger"><?= $order_status ?></span>
                                 <?php
@@ -135,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
                                 {
                                     switch ($statusValue) {
                                         case 1:
-                                            return 'Chờ xác nhận';
+                                            return 'Chưa xác nhận';
                                         case 2:
                                             return 'Đã xác nhận';
                                         case 3:
@@ -151,12 +151,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
 
                             <!-- Hiển thị trạng thái đơn vào options -->
                             <form action="" method="post">
-                                <div class="form-floating mb-3">
-                                    <select name="status" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                <div class="mb-3">
+                                    <label for="status" class="form-label">Trạng thái</label>
+                                    <select name="status" class="form-select" id="status">
                                         <?php
                                         $status_options = [1, 2, 3, 4];
                                         foreach ($status_options as $option_value) {
-                                            $selected = ($option_value == $status) ? 'selected' : '';
+                                            $selected = ($option_value == $orders['status']) ? 'selected' : '';
                                             echo "<option value='$option_value' $selected>";
                                             // Đặt tên hoặc giá trị của option tại đây
                                             echo getStatusName($option_value); // Thay thế hàm này bằng hàm trả về tên tương ứng
@@ -164,14 +165,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
                                         }
                                         ?>
                                     </select>
-                                    <label for="floatingSelect">Trạng thái</label>
                                 </div>
                                 <input type="hidden" name="order_id" value="<?= $order_id ?>">
-                                <h6 class="mb-4">
-                                    <input type="submit" name="update_status_order" value="Cập nhật" class="btn btn-custom">
-                                    <a href="" class="btn btn-custom">Xóa đơn</a>
-                                </h6>
+                                <div class="mb-4">
+                                    <button type="submit" name="update_status_order" class="btn btn-primary">Cập nhật</button>
+                                    <a href="" class="btn btn-danger">Xóa đơn</a>
+                                </div>
                             </form>
+
 
                         </div>
                     </div>
@@ -232,7 +233,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
 
             <a class="btn btn-primary float-lg-right " href="index.php?btn_list">Trở về</a>
         </div>
-        
+
     </article>
-    
+
 </div>

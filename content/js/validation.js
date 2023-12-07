@@ -28,33 +28,33 @@ $(document).ready(function () {
             },
         },
         messages: {
-            mane: {
-                required: 'Full name cannot be left blank',
-                minlength: 'Minimum 6 characters',
+            name: {
+                required: 'Họ tên không được để trống',
+                minlength: 'Ít nhất 6 ký tự',
             },
             user_id: {
-                required: 'Username cannot be blank',
-                remote: 'Username available',
-                minlength: 'Minimum 5 characters',
+                required: 'Tên đăng nhập không được để trống',
+                remote: 'Tên đăng nhập đã tồn tại',
+                minlength: 'Ít nhất 5 ký tự',
             },
             email: {
-                required: 'Email cannot be blank',
-                remote: 'Email already exists, please use another email!',
-                email: 'Invalid email ',
+                required: 'Email không được để trống',
+                remote: 'Email đã tồn tại, vui lòng chọn email khác',
+                email: 'Email không hợp lệ',
             },
             password: {
-                required: 'Password can not be blank',
-                minlength: 'Please enter at least 3 characters',
+                required: 'Mật khẩu không được để trống',
+                minlength: 'Vui lòng nhập ít nhất 3 ký tự',
             },
             password2: {
-                required: 'Confirm password cannot be blank',
-                equalTo: 'Confirm passwords do not match',
-                minlength: 'Please enter at least 3 characters',
+                required: 'Xác nhận mật khẩu không được để trống',
+                equalTo: 'Xác nhận mật khẩu không khớp',
+                minlength: 'Vui lòng nhập ít nhất 3 ký tự',
             },
         },
     });
 
-    //================Form đăng nhập================//
+    //================ Form đăng nhập =================//
 
     $('#form_login').validate({
         rules: {
@@ -67,14 +67,15 @@ $(document).ready(function () {
         },
         messages: {
             user_id: {
-                required: 'Please enter your login name',
+                required: 'Vui lòng nhập tên đăng nhập của bạn',
             },
             password: {
-                required: 'Please enter your login password',
+                required: 'Vui lòng nhập mật khẩu đăng nhập của bạn',
             },
         },
     });
-    //================Form quên mật khẩu================//
+
+    //================ Form quên mật khẩu =================//
 
     $('#forgot_password_from').validate({
         rules: {
@@ -88,16 +89,16 @@ $(document).ready(function () {
         },
         messages: {
             user_id: {
-                required: 'Enter username',
+                required: 'Vui lòng nhập tên người dùng',
             },
             email: {
-                required: 'Enter email',
-                email: 'Email invalidate',
+                required: 'Vui lòng nhập địa chỉ email',
+                email: 'Email không hợp lệ',
             },
         },
     });
 
-    //================Form đổi mật khẩu================//
+    //================ Form đổi mật khẩu =================//
 
     $('#form_doi_mk').validate({
         rules: {
@@ -115,21 +116,21 @@ $(document).ready(function () {
             },
         },
         messages: {
-            passowrd: {
-                required: 'Please enter your old password',
+            password: {
+                required: 'Vui lòng nhập mật khẩu cũ của bạn',
             },
-            passowrd2: {
-                required: 'Please enter a new password',
-                minlength: 'Password must be at least 3 characters',
+            password2: {
+                required: 'Vui lòng nhập mật khẩu mới',
+                minlength: 'Mật khẩu phải chứa ít nhất 3 ký tự',
             },
             password3: {
-                required: 'Please enter the new password confirmation',
-                equalTo: 'Password incorrect',
+                required: 'Vui lòng nhập xác nhận mật khẩu mới',
+                equalTo: 'Mật khẩu không khớp',
             },
         },
     });
 
-    //================Form cập nhật tài khoản khách hàng================//
+    //================ Form cập nhật tài khoản khách hàng =================//
 
     $('#update_account').validate({
         rules: {
@@ -145,15 +146,16 @@ $(document).ready(function () {
         },
         messages: {
             name: {
-                required: 'Please fill in your full name',
-                minlength: 'Please enter at least 6 characters',
+                required: 'Vui lòng điền họ tên đầy đủ của bạn',
+                minlength: 'Vui lòng nhập ít nhất 6 ký tự',
             },
             email: {
-                required: 'Please fill in your email',
-                email: 'Invalid email ',
+                required: 'Vui lòng điền địa chỉ email của bạn',
+                email: 'Email không hợp lệ',
             },
         },
     });
+
 
     //==========================ADMIN=====================//
     //======================================================//
@@ -302,7 +304,7 @@ $(document).ready(function () {
     );
     $('#add_product').validate({
         rules: {
-            category_id:{
+            category_id: {
                 required: true,
             },
             name: {
@@ -335,15 +337,15 @@ $(document).ready(function () {
             image: {
                 required: true,
             },
-            image_url:{
+            image_url: {
                 required: true,
             }
         },
         messages: {
             category_id: {
-            required: 'Vui lòng chọn loại sản phẩm!!',
-        },
-            name: { 
+                required: 'Vui lòng chọn loại sản phẩm!!',
+            },
+            name: {
                 required: 'Vui lòng điền tên sản phẩm',
                 remote: 'Tên sản phẩm đã tồn tại',
             },
@@ -366,7 +368,7 @@ $(document).ready(function () {
     });
     $('#btn_update').validate({
         rules: {
-            category_id:{
+            category_id: {
                 required: true,
             },
             name: {
@@ -391,8 +393,8 @@ $(document).ready(function () {
         },
         messages: {
             category_id: {
-            required: 'Vui lòng chọn loại sản phẩm!!',
-        },
+                required: 'Vui lòng chọn loại sản phẩm!!',
+            },
             name: {
                 required: 'Vui lòng điền tên sản phẩm',
                 // remote: 'Tên sản phẩm đã tồn tại',
@@ -464,8 +466,8 @@ $(document).ready(function () {
 // ========================================================= //
 
 var ma_hh = $("input[name='product_id']").val();
-    $('#update_hang_hoa').validate({
-        rules: {
-        
-        },
-    });
+$('#update_hang_hoa').validate({
+    rules: {
+
+    },
+});

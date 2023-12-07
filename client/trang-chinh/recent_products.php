@@ -19,13 +19,13 @@
     <!-- Products Start -->
     
 <div class="container-fluid pt-5 pb-3">
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Recent Products</span></h2>
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">SẢN PHẨM MỚI NHẤT</span></h2>
     <div class="row px-xl-5">
         <?php
         foreach ($new_products as $item) :
             extract($item);
             if ($price > 0) {
-                $percent_discount = number_format($discount / $price * 100);
+                $percent_discount = $discount / $price * 100;
             } else {
                 $percent_discount = 0;
             }
@@ -51,10 +51,10 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate text-center" href="<?= $CLIENT_URL . '/product/details.php?product_id=' . $product_id ?>"><?= $name ?></a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5 class="d-block text-center"><?= number_format($price - $discount, 0, ',') ?>$ </h5>
+                            <h5 class="d-block text-center"><?= $price - $discount ?>đ </h5>
                             <del>
                                 <p class=" fz-20 d-block ml-3 mb-2">
-                                    <?= number_format($price, 0, ',') ?>$</p>
+                                    <?= $price?>đ</p>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
