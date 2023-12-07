@@ -1,10 +1,10 @@
 <?php
 require_once 'pdo.php';
-function category_insert($name,$status)
+function category_insert($name,$image, $status)
 {
     
-    $sql = "INSERT INTO categories(name, status)  VALUES(?,?)";
-    pdo_execute($sql, $name,$status);
+    $sql = "INSERT INTO categories(name,image, status)  VALUES(?,?,?)";
+    pdo_execute($sql, $name, $image, $status);
 }
 function category_update($category_id, $name, $status)
 {

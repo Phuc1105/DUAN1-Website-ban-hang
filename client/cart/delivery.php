@@ -21,7 +21,7 @@ if (isset($_SESSION['cart'])) {
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-3">
                     <a href="<?= $CLIENT_URL . "/cart/list-cart.php?form_invoice" ?>" class="breadcrumb-item mt-2"><i class="fas fa-chevron-left pr-3"></i></a>
-                    <span class="h4 pt-1">Orders</span>
+                    <span class="h4 pt-1">Đặt hàng</span>
                     <span class="ml-auto" style="color: red; font-size: 30px;"><i class="fas fa-comment"></i></span>
                     <input type="hidden" name="address" value="<?= $address ?>">
                 </nav>
@@ -39,11 +39,11 @@ if (isset($_SESSION['cart'])) {
                             <h5 class="card-title text-uppercase"><?= $item['name'] ?></h5>
                             <input type="hidden" name="name" value="<?= $item['name'] ?>">
                             <input type="hidden" name="image" value="<?= $item['image'] ?>">
-                            <p class="card-text">Quantity: <?= $item['sl'] ?></p>
+                            <p class="card-text">Số lượng: <?= $item['sl'] ?></p>
                             <input type="hidden" name="quantity" value="<?= $item['sl'] ?>">
                             <p class="card-text text-danger">Total: <span class="thanh_tien_sp" id="thanh_tien_sp_<?= $index ?>" data-price="<?= $item['price'] ?>" data-discount="<?= $item['discount'] ?>"><?= $item['total']?></span> $</p>
                             <input type="hidden" name="price" value="<?= number_format($item['total'], 0, ".") ?>">
-                            <p class="card-text text-danger">Status: Still waiting for confirmation</p>
+                            <p class="card-text text-danger">Trạng thái: Đang chờ xác nhận</p>
                         </div>
                     </div>
                 </div>
@@ -66,8 +66,8 @@ if (isset($_SESSION['cart'])) {
                             <p class="mr-3 h5 mt-1 ml-2"><?= $kh['name'] ?></p>
                         </div>
                         <div class="d-flex">
-                            <p class="mr-3">Price: <?= $item['price'] ?> $</p>
-                            <p class="mr-3">Discount: <?= $item['discount'] ?> $</p>
+                            <p class="mr-3">Giá: <?= $item['price'] ?> $</p>
+                            <p class="mr-3">Giảm giá: <?= $item['discount'] ?> $</p>
                         </div>
                     </div>
                 </div>
@@ -78,19 +78,19 @@ if (isset($_SESSION['cart'])) {
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <p class="h5 text-uppercase mb-3">Shipping Information</p>
+                        <p class="h5 text-uppercase mb-3">Thông tin đặt hàng</p>
                         <div class="d-flex">
-                            <p class="mr-3">Order ID:</p>
+                            <p class="mr-3">Mã hóa đơn:</p>
                             <span class="ml-auto" id="order_id"><?= $orderID ?></span>
                             <input type="hidden" name="order_id" value="<?= $orderID ?>">
                         </div>
                         <div class="d-flex">
-                            <p class="mr-3">Order Time:</p>
+                            <p class="mr-3">Thời gian đặt hàng:</p>
                             <div class="ml-auto"><?= $currentDateTime ?></div>
                             <input type="hidden" name="order_date" value="<?= $currentDateTime ?>">
                         </div>
                         <div class="d-flex">
-                            <p class="mr-3">Shipping Fee:</p>
+                            <p class="mr-3">Phí vận chuyển:</p>
                             <span class="ml-auto">10 $</span>
                         </div>
                     </div>
@@ -102,15 +102,15 @@ if (isset($_SESSION['cart'])) {
             <div class="col-12">
                 <div class="card bg-light p-3">
                     <div class="d-flex justify-content-between">
-                        <p>Total Products: <?= isset($_SESSION['total_cart']) ? $_SESSION['total_cart'] : 0 ?> products</p>
+                        <p>Tổng số lượng sản phẩm: <?= isset($_SESSION['total_cart']) ? $_SESSION['total_cart'] : 0 ?> sản phẩm</p>
                         <div class="d-flex align-items-center">
                             <i class="fab fa-cc-discover pr-3" style="color: red; font-size: 30px;"></i>
-                            <h5 class="pr-1">Total Payment: </h5>
+                            <h5 class="pr-1">Tổng tiền thanh toán: </h5>
                             <h5 class="text-danger"><?= $totalAll?> $</h5>
                             <input type="hidden" name="price" value="<?= $totalAll?>">
                         </div>
                     </div>
-                    <a href="<?= $CLIENT_URL . "/cart/list-cart?btn_insert" ?>"><button type="submit" name="agree_order" class="btn btn-primary font-weight-bold mt-3 w-100">Confirm Order</button></a>
+                    <a href="<?= $CLIENT_URL . "/cart/list-cart?btn_insert" ?>"><button type="submit" name="agree_order" class="btn btn-primary font-weight-bold mt-3 w-100">Xác nhận đặt hàng</button></a>
                 </div>
             </div>
         </div>

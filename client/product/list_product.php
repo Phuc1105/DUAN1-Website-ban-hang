@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-12">
@@ -190,10 +189,12 @@
                                     <div class="text-center py-4">
                                         <a class="h6 text-decoration-none text-truncate text-center" href=""><?= $name ?></a>
                                         <div class="d-flex align-items-center justify-content-center mt-2">
-                                            <h5 class="d-block text-center"><?= $price - $discount?>$ </h5>
+                                            <h5 class="d-block text-center"><?= number_format($price - $discount, 0, ',', ',') ?>đ </h5>
                                             <del>
-                                                <p class=" fz-20 d-block ml-3 mb-2">
-                                                    <?= $price ?>$</p>
+                                                <p class="fz-20 d-block ml-3 mb-2">
+                                                    <?= number_format($price, 0, ',', ',') ?>đ
+                                                </p>
+                                            </del>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-center mb-1">
                                             <small class="fa fa-star text-primary mr-1"></small>
@@ -209,24 +210,24 @@
                         </div>
                     <?php endforeach; ?>
                     <div class="row mt-5 justify-content-center text-center" style="margin: 0 auto;">
-    <ul class="pagination">
-        <?php 
-        // Kiểm tra xem $_SESSION['total_page'] có tồn tại không
-        if (isset($_SESSION['total_page'])) {
-            for ($i = 1; $i <= $_SESSION['total_page']; $i++) { 
-        ?>
-            <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
-                <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
-            </li>
-        <?php 
-            }
-        } else {
-            // Nếu không tồn tại, thực hiện một xử lý khác hoặc thông báo lỗi
-            echo "Không tìm thấy tổng số trang.";
-        }
-        ?>
-    </ul>
-</div>
+                        <ul class="pagination">
+                            <?php
+                            // Kiểm tra xem $_SESSION['total_page'] có tồn tại không
+                            if (isset($_SESSION['total_page'])) {
+                                for ($i = 1; $i <= $_SESSION['total_page']; $i++) {
+                            ?>
+                                    <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
+                                        <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                                    </li>
+                            <?php
+                                }
+                            } else {
+                                // Nếu không tồn tại, thực hiện một xử lý khác hoặc thông báo lỗi
+                                echo "Không tìm thấy tổng số trang.";
+                            }
+                            ?>
+                        </ul>
+                    </div>
 
                     <!-- <div class="col-12">
                         <nav>

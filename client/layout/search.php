@@ -8,24 +8,6 @@
         </div>
     </div>
 </form>
-<style>
-.input-group {
-    width: 300px; 
-    border: gray;
-}
 
-.form-control {
-    border: none; 
-}
-
-.btn-primary {
-    background-color: #007bff; /* Màu nền của nút tìm kiếm */
-    border-color: #007bff; /* Màu đường viền của nút tìm kiếm */
-}
-
-.btn-primary:hover {
-    background-color: #0056b3; /* Màu nền của nút khi hover */
-    border-color: #0056b3; /* Màu đường viền của nút khi hover */
-}
 
 </style>

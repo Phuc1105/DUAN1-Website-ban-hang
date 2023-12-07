@@ -15,7 +15,6 @@
                     <th>Hình</th>
                     <th>Tên</th>
                     <th>Loại</th>
-                    <th>Đặc biệt</th>
                     <th>Trạng thái</th>
                     <th>Giá</th>
                     <th>Giảm</th>
@@ -57,24 +56,17 @@
 
                   <?php
                   if ($product['status'] == 1) {
-                    $status =  "Activated";
+                    $status =  "Kích hoạt";
                   } else {
-                    $status = "Not activated";
+                    $status = "Ẩn";
                   }
                   ?>
 
 
-                  <?php
-                  if ($product['outstanding'] == 1) {
-                    $outstanding =  "Special product";
-                  } else {
-                    $outstanding = "Normal";
-                  }
-                  ?>
-                  <td><?= $outstanding ?></td>
+                 
                   <td><?= $status ?></td>
-                  <td><?= $product['price'] ?>$</td>
-                  <td><?= $product['discount'] ?>%</td>
+                  <td><?= $product['price'] ?>đ</td>
+                  <td><?= $product['discount'] ?>đ</td>
                   <td><?= $product['user_id'] ?></td>
                   <td>
 

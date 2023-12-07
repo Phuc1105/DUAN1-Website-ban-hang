@@ -73,6 +73,10 @@ foreach ($order as $item) {
                     Trạng thái:
                     <span style="font-weight: 600;" class="text-danger"><?= $order_status ?></span>
                 </span>
+                <span class="float-right text-black">
+                    Thời gian đặt hàng:
+                    <span style="font-weight: 600;" class="text-danger"><?= $item['order_date'] ?></span>
+                </span>
             </div>
 
             <div class="card-body">

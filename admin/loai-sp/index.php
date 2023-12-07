@@ -7,8 +7,10 @@
     $VIEW_NAME = "list.php";
   }elseif(exist_param("btn_insert")){
     $name = $_POST['name'];
+    $images = $_FILES['image'];
+    $image = $images['name'];
     $status = $_POST['status'];
-        category_insert($name,$status);  
+        category_insert($name,$image, $status);  
         $VIEW_NAME = "list.php";
   }elseif(exist_param('btn_delete')){
     $category_id = $_REQUEST['category_id'];

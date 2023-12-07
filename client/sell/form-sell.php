@@ -41,7 +41,13 @@
                             <label for="discount" class="form-label">Giảm(%):</label>
                             <input type="number" name="discount" id="discount" class="form-control" required>
                         </div>
+
                         <div class="form-group col-sm-4">
+                            <label for="image" class="form-label">Ảnh:</label>
+                            <input type="file" name="image" id="image" class="form-control" required>
+                        </div>
+
+                        <!-- <div class="form-group col-sm-4">
                             <label>Sản phẩm mới hay là đặc biệt?</label>
                             <div class="form-control">
                                 <label class="radio-inline  mr-3">
@@ -51,13 +57,7 @@
                                     <input type="radio" value="" name="outstanding" checked>Mới
                                 </label>
                             </div>
-                        </div>  
-                    </div>
-                    <div class="row">
-                    <div class="form-group col-sm-4">
-                            <label for="image" class="form-label">Ảnh:</label>
-                            <input type="file" name="image" id="image" class="form-control" required>
-                        </div>
+                        </div>   -->
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12">

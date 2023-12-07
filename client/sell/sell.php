@@ -9,7 +9,7 @@ if(exist_param('btn_insert_product')){
     $quantity = $_REQUEST['quantity'];
     $price = $_REQUEST['price'];
     $discount = $_REQUEST['discount'];
-    $outstanding = $_REQUEST['outstanding'];
+    // $outstanding = $_REQUEST['outstanding'];
     $describes = $_REQUEST['describes'];
     $format = "Y/m/d";
     $images = $_FILES['image'];
@@ -18,7 +18,7 @@ if(exist_param('btn_insert_product')){
     $user = $_SESSION['user'];
     $user_id = $user['user_id'];
     $status = "";
-    product_insert($name, $price, $category_id, $input_date, $describes, $quantity, $outstanding, $user_id, $discount,$status,$image);
+    product_insert($name, $price, $category_id, $input_date, $describes, $quantity, $user_id, $discount,$status,$image);
     $product_find = product_select_by_name($name);
     $VIEW_NAME = "list-product.php";
 }elseif (exist_param('btn_list_product')) {

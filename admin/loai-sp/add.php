@@ -35,6 +35,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="ten" class="col-sm-3 text-end control-label col-form-label">Ảnh danh mục:</label>
+                            <div class="col-sm-9">
+                                <input type="file" class="form-control" id="image" placeholder="Nhập ảnh danh mục..." name="image">
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="status" class="col-sm-3 text-end control-label col-form-label ">Trạng thái:</label>
                             <div class="col-sm-9">
                                 <select class="col-sm-12 text-end control-label col-form-label form-control" name="status" id="status">

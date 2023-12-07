@@ -4,8 +4,8 @@
         <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
             <h5 class="text-secondary text-uppercase mb-4">Liên Hệ</h5>
             <p class="mb-4">Chào mừng bạn đến với cửa hàng của chúng tôi. Hãy liên hệ nếu bạn có bất kỳ câu hỏi nào.</p>
-            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Đường, New York, USA</p>
-            <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
+            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Đường trần chiên, Cái răng, Cần Thơ</p>
+            <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>nhom6wd18305@gamil.com</p>
             <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
         </div>
         <div class="col-lg-8 col-md-12">
@@ -57,8 +57,8 @@
     <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
         <div class="col-md-6 px-xl-0">
             <p class="mb-md-0 text-center text-md-left text-secondary">
-                &copy; <a class="text-primary" href="#">Domain</a>. Bản quyền đã đăng ký. Thiết kế bởi
-                <a class="text-primary" href="https://htmlcodex.com">3TL</a>
+                &copy; <a class="text-primary" href="#"></a>. Bản quyền đã đăng ký. Thiết kế bởi
+                <a class="text-primary" href="https://htmlcodex.com">Nhóm 6-WD18305</a>
             </p>
         </div>
         <div class="col-md-6 px-xl-0 text-center text-md-right">

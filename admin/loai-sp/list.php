@@ -59,13 +59,10 @@
             <?php
             }
             ?>
-
             </tbody>
             </table>
             <a href="index.php?btn_add"><button class="btn btn-success">Thêm</button></a>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+     
 </section>

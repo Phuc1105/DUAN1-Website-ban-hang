@@ -20,7 +20,6 @@
                     <th>Mã sản phẩm</th>
                     <th>Tên</th>
                     <th>Loại</th>
-                    <th>Đặc biệt</th>
                     <th>Trạng thái</th>
                     <th>Giá</th>
                     <th>Giảm</th>
@@ -62,17 +61,11 @@
                 ?>
 
 
-                <?php
-                if ($product['outstanding'] == 1) {
-                  $outstanding =  "Đặc biệt";
-                } else {
-                  $outstanding = "Bình thường";
-                }
-                ?>
-                <td><?= $outstanding ?></td>
+                
+
                 <td><?= $status ?></td>
-                <td><?= $product['price'] ?>$</td>
-                <td><?= $product['discount'] ?>%</td>
+                <td><?= $product['price'] ?>đ</td>
+                <td><?= $product['discount'] ?>đ</td>
                 <td><?= $product['user_id'] ?></td>
           
                 <td>

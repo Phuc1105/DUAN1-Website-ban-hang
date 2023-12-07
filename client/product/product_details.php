@@ -46,7 +46,8 @@
                         echo '</div>';
                         ?>
                         <p class="pr-2"><?= number_format($averageRating, 1) ?> |</p>
-                        <p><?= $totalReviews ?> Đánh giá</p>
+                        <p class="pr-2"><?= $totalReviews ?> Đánh giá</p>  |
+                        <p class="pl-2"><?= $view ?> Lượt xem</p>
                     </div>
                     <?php
                     if ($price > 0) {
@@ -57,10 +58,10 @@
 
                     <div class="">
                         <div class="d-flex">
-                            <h5 class="d-block text-center"><?= number_format($price - $discount, 0, ',', ',') ?>$ </h5>
+                            <h5 class="d-block text-center"><?= number_format($price - $discount, 0, ',', ',') ?>đ </h5>
                             <del>
                                 <p class="fz-20 d-block ml-3 mb-2">
-                                    <?= number_format($price, 0, ',', ',') ?>$
+                                    <?= number_format($price, 0, ',', ',') ?>đ
                                 </p>
                             </del>
                         </div>

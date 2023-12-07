@@ -1,10 +1,10 @@
 <?php
 require_once 'pdo.php';
 
-function product_insert($name, $price, $category_id, $input_date, $describes, $quantity, $outstanding, $user_id, $discount, $status, $image)
+function product_insert($name, $price, $category_id, $input_date, $describes, $quantity,  $user_id, $discount, $status, $image)
 {
-    $sql = "INSERT INTO products(name, price, category_id ,input_date, describes, quantity, outstanding, user_id, discount,status,image) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $name, $price, $category_id, $input_date, $describes, $quantity, $outstanding, $user_id, $discount, $status, $image);
+    $sql = "INSERT INTO products(name, price, category_id ,input_date, describes, quantity, user_id, discount,status,image) VALUES (?,?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql, $name, $price, $category_id, $input_date, $describes, $quantity, $user_id, $discount, $status, $image);
 }
 function product_update($name, $price, $category_id, $describes, $quantity, $outstanding, $status, $discount, $product_id)
 {

@@ -342,7 +342,6 @@ $(document).ready(function () {
             discount: {
                 required: true,
                 min: 0,
-                max: 100,
             },
             image: {
                 required: true,
@@ -366,8 +365,7 @@ $(document).ready(function () {
             },
             discount: {
                 required: 'Vui lòng nhập giảm giá',
-                min: 'Vui lòng nhập giảm gía từ 0-100(%)',
-                max: 'Vui lòng nhập giảm gía từ 0-100(%)',
+                min: 'Giảm giá lớn hơn 0',
             },
             quantity: {
                 required: 'Vui lòng điền số lượng sản phẩn',
@@ -391,6 +389,7 @@ $(document).ready(function () {
                             return $('#name').val();
                         }
                     }
+                    }
                 }
             },
             quantity: {
@@ -406,8 +405,6 @@ $(document).ready(function () {
             discount: {
                 required: true,
                 min: 0,
-                max: 100,
-            },
             image: {
                 required: true,
             },
@@ -430,8 +427,7 @@ $(document).ready(function () {
             },
             discount: {
                 required: 'Vui lòng nhập giảm giá',
-                min: 'Vui lòng nhập giảm gía từ 0-100(%)',
-                max: 'Vui lòng nhập giảm gía từ 0-100(%)',
+                min: 'Giảm giá lớn hơn 0',
             },
             quantity: {
                 required: 'Vui lòng điền số lượng sản phẩn',
