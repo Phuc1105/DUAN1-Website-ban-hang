@@ -1,12 +1,10 @@
-<div class="col-lg-4 col-6 text-left">
-    <form action="<?= $CLIENT_URL ?>/product/list.php" method="POST">
-        <div class="input-group">
-            <div class="input-group">
-                <input type="text" class="form-control" name="kyww" placeholder="Search...">
-                <div class="input-group-append">
-                    <button class="btn bg-warning" type="submit" name="search"><i class="fa fa-search text-white"></i></button>
-                </div>
-            </div>
+<form action="<?= $CLIENT_URL ?>/product/list.php" method="post" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <div class="input-group">
+        <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..." name="keyword" aria-label="Search" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit" name="search">
+                <i class="fas fa-search fa-sm"></i>
+            </button>
         </div>
-    </form>
-</div>
+    </div>
+</form>

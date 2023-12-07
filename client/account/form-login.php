@@ -17,15 +17,15 @@
 </style>
 <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
     <div class="card-body">
-        <h4 class="card-title mb-4" >Login</h4>
+        <h4 class="card-title mb-4" >Đăng nhập</h4>
 
         <form action="<?= $CLIENT_URL ?>/account/login.php" method="POST" id="form_login">
             <div class="form-group">
-                <label for="email" class="form-label">User name</label>
+                <label for="email" class="form-label">Tên tài khoản</label>
                 <input name="user_id" class="form-control" placeholder="Username" type="text" value="<?=$user_id?>">
             </div> <!-- form-group// -->
             <div class="form-group">
-                <label for="password" class="form-label">Password</label>
+                <label for="password" class="form-label">Mật khẩu</label>
                 <input name="password" class="form-control" id="password" placeholder="Password" type="password"
                     value="<?=$password?>">
                 <span class="toggle-password">
@@ -35,16 +35,16 @@
             </div> <!-- form-group// -->
 
             <div class="form-group">
-                <a href="<?= $CLIENT_URL ?>/account/forgot_password.php" class="float-right">Change password?</a>
+                <a href="<?= $CLIENT_URL ?>/account/quen_mk.php" >Quên mật khẩu?</a>
 
-                <label class="float-left custom-control custom-checkbox"> <input type="checkbox"
+                <label class="float-left custom-control custom-checkbox mr-5"> <input type="checkbox"
                         class="custom-control-input" name="ghi_nho" checked>
-                    <div class="custom-control-label"> Remember account</div>
+                    <div class="custom-control-label">Ghi nhớ tài khoản</div>
                 </label>
             </div> 
 
             <div class="form-group">
-                <button type="submit" name="btn_login" class="btn btn-primary btn-block"> Login </button>
+                <button type="submit" name="btn_login" class="btn btn-primary btn-block"> Đăng nhập </button>
             </div> <!-- form-group// -->
         </form>
 
@@ -69,6 +69,6 @@
         showHidePassword,
     )
 </script>
-<p class="text-center mt-4">Don't already have an account?<a href="<?= $CLIENT_URL ?>/account/register.php">Register</a></p>
+<p class="text-center mt-4">Bạn chưa có tài khoản?<a href="<?= $CLIENT_URL ?>/account/register.php">Đăng ký</a></p>
 <br><br>
 <!-- ============================ COMPONENT LOGIN  END.// ================================= -->

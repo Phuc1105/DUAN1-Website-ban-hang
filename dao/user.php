@@ -60,7 +60,7 @@ function user_exist_email($email)
 function user_change_password($user_id, $password2)
 {
 
-    $sql = "UPDATE users SET mat_khau=? WHERE user_id=?";
+    $sql = "UPDATE users SET password=? WHERE user_id=?";
     pdo_execute($sql, $password2, $user_id);
 }
 function user_select_by_facebook_id($facebook_id)
@@ -86,3 +86,15 @@ function user_insert_facebook($facebook_id, $facebook_name, $facebook_email)
     return pdo_query_one("SELECT LAST_INSERT_ID()")['LAST_INSERT_ID()'];
 }
 
+function user_change_Email($email, $password_moi)
+{
+
+    $sql = "UPDATE users SET password=? WHERE email=?";
+    pdo_execute($sql, $password_moi, $email);
+}
+function user_select_by_email($email)
+{
+    $sql = "SELECT * FROM users WHERE email=?";
+    return pdo_query_one($sql, $email);
+}
+?>

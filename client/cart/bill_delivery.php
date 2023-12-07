@@ -10,44 +10,44 @@
     .itemside .aside {
         position: relative;
         -ms-flex-negative: 0;
-        flex-shrink: 0
+        flex-shrink: 0;
     }
 
     .img-sm {
         width: 140px;
         height: 140px;
-        padding: 7px
+        padding: 7px;
     }
 
     ul.row,
     ul.row-sm {
         list-style: none;
-        padding: 0
+        padding: 0;
     }
 
     .itemside .info {
         padding-left: 15px;
-        padding-right: 7px
+        padding-right: 7px;
     }
 
     .itemside .title {
         display: block;
         margin-bottom: 5px;
-        color: #212529
+        color: #212529;
     }
 
     p {
         margin-top: 0;
-        margin-bottom: 1rem
+        margin-bottom: 1rem;
     }
 </style>
 <div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-12">
             <nav class="breadcrumb bg-light mb-30">
-                <a class="breadcrumb-item text-dark" href="#">Home</a>
-                <a class="breadcrumb-item text-dark" href="#">Shop</a>
-                <span class="breadcrumb-item active">Shopping Cart</span>
+                <a class="breadcrumb-item text-dark" href="#">Trang chủ</a>
+                <a class="breadcrumb-item text-dark" href="#">Cửa hàng</a>
+                <span class="breadcrumb-item active">Giỏ hàng</span>
             </nav>
         </div>
     </div>
@@ -55,13 +55,13 @@
 <?php
 
 foreach ($order as $item) {
-    $order_status = 'Not yet confirmed';
+    $order_status = 'Chưa xác nhận';
     if ($item['status'] == 1) {
-        $order_status = 'Order confirmation';
+        $order_status = 'Xác nhận đơn hàng';
     } elseif ($item['status'] == 2) {
-        $order_status = 'Delivering';
+        $order_status = 'Đang giao hàng';
     } elseif ($item['status'] == 3) {
-        $order_status = 'Delivered successfully';
+        $order_status = 'Giao hàng thành công';
     }
 
 ?>
@@ -70,11 +70,11 @@ foreach ($order as $item) {
         <article class="card">
             <div class="card-header" style="background-color: #f9f9f9">
                 <span class="fw-500 text-black">
-                    Status:
+                    Trạng thái:
                     <span style="font-weight: 600;" class="text-danger"><?= $order_status ?></span>
                 </span>
                 <span class="float-right text-black">
-                    Order time:
+                    Thời gian đặt hàng:
                     <span style="font-weight: 600;" class="text-danger"><?= $item['order_date'] ?></span>
                 </span>
             </div>
@@ -98,7 +98,7 @@ foreach ($order as $item) {
                 <hr>
                 <div>
                     <div class="float-right">
-                        <span class="text-dark">Into money: <?= $item['price'] ?>$</span>
+                        <span class="text-dark">Thành tiền: <?= $item['price'] ?>$</span>
                         <span style="font-weight: 600;" class="text-danger mr-3"></span>
                         <a href="<?= $CLIENT_URL ?>/cart/bill.php?btn_details=<?= $item['order_id'] ?>" class="btn btn-custom">
                             <button type="submit" class="btn bg-warning">Chi tiết đơn hàng</button>
@@ -112,7 +112,5 @@ foreach ($order as $item) {
     </div>
 
 <?php } ?>
-
-
 
 <div style="margin-bottom: 200px;"></div>

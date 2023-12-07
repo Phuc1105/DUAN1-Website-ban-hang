@@ -154,7 +154,7 @@ sub {
 }
 
 sup {
-  top: -.5em;
+  top: -.5em; 
 }
 
 a {
@@ -163,10 +163,7 @@ a {
   background-color: transparent;
 }
 
-a:hover {
-  color: #e6b400;
-  text-decoration: underline;
-}
+
 
 a:not([href]):not([class]) {
   color: inherit;

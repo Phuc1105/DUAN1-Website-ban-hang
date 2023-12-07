@@ -18,7 +18,6 @@
                                 ?>
                                     <option value="<?= $categories['category_id'] ?>"><?= $categories['name'] ?></option>
                                 <?php
-
                                 }
                                 ?>
 

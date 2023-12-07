@@ -1,5 +1,5 @@
  <!-- //sản phẩm -->
- <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">You May Also Like</span></h2>
+ <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Gợi ý cho bạn</span></h2>
  <div class="row px-xl-5">
      <?php
         foreach ($product_cl as $item) :

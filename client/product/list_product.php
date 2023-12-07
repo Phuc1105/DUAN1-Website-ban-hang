@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-12">
@@ -146,15 +147,15 @@
                         <?php require "../layout/search.php" ?>
                         <div class="ml-2">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Sorting</button>
+                                <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Sắp Xếp</button>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="<?= $CLIENT_URL ?>/product/list.php?date_old">Latest</a>
-                                    <a class="dropdown-item" href="<?= $CLIENT_URL ?>/product/list.php?view_product">Popularity</a>
-                                    <a class="dropdown-item" href="#">Best Rating</a>
+                                    <a class="dropdown-item" href="<?= $CLIENT_URL ?>/product/list.php?date_old">Sản Phẩm Cũ Nhất</a>
+                                    <a class="dropdown-item" href="<?= $CLIENT_URL ?>/product/list.php?view_product">Phổ Biến</a>
+                                    <a class="dropdown-item" href="#">Đánh giá tốt nhất</a>
                                 </div>
                             </div>
                             <div class="btn-group ml-2">
-                                <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Showing</button>
+                                <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Hiển Thị</button>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="#">10</a>
                                     <a class="dropdown-item" href="#">20</a>
@@ -208,17 +209,25 @@
                         </div>
                     <?php endforeach; ?>
                     <div class="row mt-5 justify-content-center text-center" style="margin: 0 auto;">
-                        <ul class="pagination">
-                            <?php for ($i = 1; $i <= $_SESSION['total_page']; $i++) { ?>
+    <ul class="pagination">
+        <?php 
+        // Kiểm tra xem $_SESSION['total_page'] có tồn tại không
+        if (isset($_SESSION['total_page'])) {
+            for ($i = 1; $i <= $_SESSION['total_page']; $i++) { 
+        ?>
+            <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
+                <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+            </li>
+        <?php 
+            }
+        } else {
+            // Nếu không tồn tại, thực hiện một xử lý khác hoặc thông báo lỗi
+            echo "Không tìm thấy tổng số trang.";
+        }
+        ?>
+    </ul>
+</div>
 
-                                <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
-                                    <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
-                                </li>
-
-                            <?php } ?>
-
-                        </ul>
-                    </div>
                     <!-- <div class="col-12">
                         <nav>
                           <ul class="pagination justify-content-center">

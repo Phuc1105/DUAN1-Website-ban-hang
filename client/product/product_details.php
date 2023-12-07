@@ -1,10 +1,10 @@
     <div class="container-fluid">
-        <div class="row px-xl-5">
+        <div class="px-xl-5">
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="<?= $ROOT_URL ?>/">Home</a>
-                    <a class="breadcrumb-item text-dark" href="<?= $CLIENT_URL ?>/product/list.php">Shop</a>
-                    <span class="breadcrumb-item active">Shop Details</span>
+                    <a class="breadcrumb-item text-dark" href="<?= $ROOT_URL ?>/">Trang chủ</a>
+                    <a class="breadcrumb-item text-dark" href="<?= $CLIENT_URL ?>/product/list.php">Sản phẩm</a>
+                    <span class="breadcrumb-item active">Chi tiết sản phẩm</span>
                 </nav>
             </div>
         </div>
@@ -46,7 +46,7 @@
                         echo '</div>';
                         ?>
                         <p class="pr-2"><?= number_format($averageRating, 1) ?> |</p>
-                        <p><?= $totalReviews ?> Reviews</p>
+                        <p><?= $totalReviews ?> Đánh giá</p>
                     </div>
                     <?php
                     if ($price > 0) {
@@ -65,7 +65,6 @@
                             </del>
                         </div>
                     </div>
-                    <p class="mb-4"><?= $describes ?></p>
                     <div class="d-flex mb-3">
                         <strong class="text-dark mr-3">Sizes:</strong>
                         <form>
@@ -130,28 +129,20 @@
                                 </button>
                             </div>
                         </div>
-                        <a href="<?= $CLIENT_URL . "/cart/add-cart.php?id=" . $product_id ?>"><button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To
-                                Cart</button></a>
+                        <a href="<?= $CLIENT_URL . "/cart/add-cart.php?id=" . $product_id ?>"><button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ hàng</button></a>
                     </div>
                     <div class="d-flex pt-2">
-                        <strong class="text-dark mr-2">Share on:</strong>
+                        <strong class="text-dark mr-2">Chia sẻ:</strong>
                         <div class="d-inline-flex">
-                            <a class="text-dark px-2" href="#" onclick="shareProduct()">
+                            <a class="text-dark px-2" href="" onclick="shareProduct()">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-
-                            <!-- Đoạn mã JavaScript -->
                             <script>
                                 function shareProduct() {
-                                    // Thay đổi thông tin dưới đây theo sản phẩm cụ thể của bạn
                                     var productName = 'Tên sản phẩm';
-                                    var productURL = 'URL_sản_phẩm';
-                                    var productImageURL = 'URL_ảnh_sản_phẩm';
-
-                                    // Tạo đường link chia sẻ Facebook
+                                    var productURL = 'http://wd18305-nhom6.demowebcantho.online/client/product/details.php?product_id=<?php echo $product_id; ?>';
+                                    var productImageURL = 'http://localhost/DUAN1-Website-ban-hang/upload/products/<?php echo $image; ?>';  
                                     var facebookShareURL = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(productURL);
-
-                                    // Mở cửa sổ chia sẻ
                                     window.open(facebookShareURL, 'Chia sẻ sản phẩm', 'width=600,height=400');
                                 }
                             </script>
@@ -169,16 +160,16 @@
                 </div>
             </div>
         </div>
-        <div class="row px-xl-5">
+        <div class="px-xl-5">
             <div class="col">
                 <div class="bg-light p-30">
                     <div class="nav nav-tabs mb-4">
-                        <a class="nav-item nav-link text-dark active" data-toggle="tab" href="#tab-pane-1">Description</a>
-                        <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">Reviews</a>
+                        <a class="nav-item nav-link text-dark active" data-toggle="tab" href="#tab-pane-1">Mô tả</a>
+                        <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">Đánh giá</a>
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="tab-pane-1">
-                            <h4 class="mb-3">Product Description</h4>
+                            <h4 class="mb-3">Mô tả sản phẩm</h4>
                             <p><?= $describes ?></p>
 
                         </div>
@@ -191,5 +182,6 @@
             </div>
         </div>
     </div>
+    
     <!-- Shop Detail End -->
     <?php require "../product/product_also_like.php"; ?>

@@ -4,7 +4,7 @@ require '../../dao/product.php';
 require '../../dao/user.php';
 require '../../dao/invoice.php';
 //-------------------------------//
-
+check_login(); 
 extract($_REQUEST);
 // var_dump($_REQUEST);
 // die;
@@ -44,7 +44,7 @@ if (exist_param("form_invoice")) {
         $name_product = $_POST['name'];
         $quantity = $_POST['quantity'];
         invoice_insert($user_id, $order_id, $voucher_id, $order_date, $img_product,$quantity, $name_product,$price, $status);
-        invoice_details_insert($order_id, $address, $order_date, $receiving_date, $status);
+        invoice_details_insert($order_id, $address, $order_date, $receiving_date);
         clearCart();
         $VIEW_NAME = "../cart/cart.php";
     }

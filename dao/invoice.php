@@ -6,11 +6,11 @@ function invoice_insert( $user_id, $order_id, $voucher_id, $order_date, $img_pro
 
     pdo_execute($sql, $user_id, $order_id, $voucher_id, $order_date, $img_product, $quantity, $name_product, $price, $status);
 }
-function invoice_details_insert( $order_id,$address, $order_date,$receiving_date, $status)
+function invoice_details_insert( $order_id,$address, $order_date,$receiving_date)
 {
-    $sql = "INSERT INTO order_details(order_id, address, order_date, receiving_date, status) VALUES (?,?,?,?,?)";
+    $sql = "INSERT INTO order_details(order_id, address, order_date, receiving_date) VALUES (?,?,?,?)";
 
-    pdo_execute($sql, $order_id,$address, $order_date,$receiving_date, $status);
+    pdo_execute($sql, $order_id,$address, $order_date,$receiving_date);
 }
 function invoice_select_by_user($user_id)
 {

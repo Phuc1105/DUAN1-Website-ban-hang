@@ -72,9 +72,10 @@ function product_exist_update($product_id, $name)
 
 function product_view($product_id)
 {
-    $sql = "UPDATE products SET view = view + 1 WHERE product_id=?";
+    $sql = "UPDATE products SET view = view + 1 WHERE product_id = ?";
     pdo_execute($sql, $product_id);
 }
+
 function product_select_popular_products()
 {
     $sql = "SELECT * FROM products WHERE view > 0 ORDER BY view DESC LIMIT 0, 10";
@@ -103,12 +104,15 @@ function product_select_by_loai($category_id)
 }
 function product_select_keyword($keyword)
 {
-    $sql = "SELECT * FROM products p "
-    . " JOIN categories c ON c.category_id = p.category_id "
-    . " WHERE c.name LIKE ? OR p.name LIKE ?";
-return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
+    $lowerKeyword = strtolower($keyword); // Chuyển đổi keyword thành chữ thường
 
+    $sql = "SELECT * FROM products p "
+        . " JOIN categories c ON c.category_id=p.category_id "
+        . " WHERE LOWER(c.name) LIKE ? OR LOWER(p.name) LIKE ?";
+        
+    return pdo_query($sql, '%' . $lowerKeyword . '%', '%' . $lowerKeyword . '%');
 }
+
 function product_select_page($order, $limit)
 {
     if (!isset($_REQUEST['page'])) {
@@ -126,6 +130,7 @@ function product_select_page($order, $limit)
     $sql = "SELECT * FROM products ORDER BY $order DESC LIMIT $begin,$limit";
     return pdo_query($sql);
 }
+
 function product_select_price(){
     $sql = "SELECT * FROM products ORDER BY price DESC";
     return pdo_query($sql);
