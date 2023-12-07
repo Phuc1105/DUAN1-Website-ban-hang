@@ -16,7 +16,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="index.php" method="POST" enctype="multipart/form-data" id="btn_update">
+                    <form action="index.php?btn_update" method="POST" enctype="multipart/form-data" name="btn_update" id="btn_update">
                         <div class="row">
                             <div class="form-group col-sm-4">
                                 <label for="category_id" class="form-label">Loại:</label>
@@ -133,7 +133,7 @@
                         </div>
                         <div class="mb-3 float-lg-right mb-3">
                             <a href="index.php?btn_list"><input type="button" class="btn btn-primary" value="Trở về"></a>
-                            <input type="submit" name="btn_update" value="Cập nhật" class="btn btn-success mr-3 ">
+                            <input type="submit" name="btn_update"  value="Cập nhật" class="btn btn-success mr-3 ">
                         </div>
                     </form>
                 </div>
