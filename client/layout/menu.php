@@ -10,10 +10,14 @@
     .dropdown:hover .dropdown-menu {
         display: block;
     }
+
     a.text-body {
-        color: white; /* Set the default text color to white */
-        text-decoration: none; /* Remove underline */
-        transition: color 0.3s; /* Add a smooth color transition effect */
+        color: white;
+        /* Set the default text color to white */
+        text-decoration: none;
+        /* Remove underline */
+        transition: color 0.3s;
+        /* Add a smooth color transition effect */
     }
 
     /* Change text color to gray on hover */
@@ -36,7 +40,7 @@
         <div class="col-lg-6 text-center text-lg-right pt-3">
             <!-- User -->
             <div class="dropdown widget-header icontext d-flex float-right mr-4">
-                <a >
+                <a>
                     <?php
                     if (isset($_SESSION['user']) && $_SESSION['user']['image'] != "") { ?>
                         <img src="<?= $UPLOAD_URL . "/users/" . $_SESSION['user']['image'] ?>" width="50" height="50" class="mb-2 object-fit-cover" alt="User Image">
@@ -87,9 +91,16 @@
             </a>
         </div>
         <div class="col-lg-4 col-6 text-left">
-            <div class="input-group">
-                <?= require '../layout/search.php'; ?>
-            </div>
+            <form action="<?= $CLIENT_URL ?>/product/list.php" method="post" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <div class="input-group">
+                    <input type="text" class="form-control border-1 small rounded-pill" placeholder="Tìm kiếm..." name="keyword" aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary rounded-pill" type="submit" name="search">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="col-lg-4 col-6 text-right">
             <p class="m-0">Dịch Vụ Khách Hàng</p>
