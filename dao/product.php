@@ -29,6 +29,11 @@ function product_update_status_hide($product_id){
     $sql = "UPDATE products SET status=0 WHERE product_id = ?";
     pdo_execute($sql , $product_id);
 }
+function find_product($keyword){
+    $sql = "SELECT * FROM products WHERE name LIKE ?";
+    $keyword = '%' . $keyword . '%';
+    return pdo_query($sql,$keyword);
+}
 function product_delete($product_id)
 {
     $sql = "DELETE FROM products WHERE product_id=?";
@@ -91,11 +96,7 @@ function product_select_popular_products()
     $sql = "SELECT * FROM products WHERE view > 0 ORDER BY view DESC LIMIT 0, 10";
     return pdo_query($sql);
 }
-function product_select_popular()
-{
-    $sql = "SELECT * FROM products WHERE view > 0 ORDER BY view ASC LIMIT 0, 10";
-    return pdo_query($sql);
-}
+
 function product_select_outstanding()
 {
     $sql = "SELECT * FROM products WHERE outstanding=1";
@@ -145,9 +146,16 @@ function product_select_price(){
     $sql = "SELECT * FROM products ORDER BY price DESC";
     return pdo_query($sql);
 }
-function product_select_date_old(){
-    $sql = "SELECT * FROM products ORDER BY input_date DESC";
-    return pdo_query($sql);
+function product_select_date_old($keyword){
+    $sql = "SELECT * FROM products WHERE name LIKE ? ORDER BY input_date DESC";
+    $keyword = '%' . $keyword . '%';
+    return pdo_query($sql,$keyword);
+}
+function product_select_popular($keyword)
+{
+    $sql = "SELECT * FROM products WHERE view > 0 AND name LIKE ?  ORDER BY view DESC";
+    $keyword = '%' . $keyword . '%';
+    return pdo_query($sql,$keyword);
 }
 function product_select_view()
 {
