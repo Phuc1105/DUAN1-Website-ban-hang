@@ -11,7 +11,6 @@ if (exist_param("category_id")) {
     $name_loai = category_select_by_id($category_id);
     extract($name_loai);
     $title_site = "Types of product attributes : '$name' ";
-
     $results = product_select_by_loai($category_id);
 }else if(exist_param("find_product")){
     if(isset($_REQUEST["keyword"])){

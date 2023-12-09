@@ -145,7 +145,7 @@
                         <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php" class="nav-item nav-link active">Trang chủ</a>
                         <!-- <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?detail" class="nav-item nav-link">Shop Detail</a> -->
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Đơn hàng<i class="fa fa-angle-down mt-1"></i></a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Đơn hàng<i class="fa fa-angle-down mt-1 ml-1"></i></a>
                             <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
                                 <!-- <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?cart" class="dropdown-item">Shopping Cart</a> -->
                                 <a href="<?= $CLIENT_URL ?>/cart/bill.php?btn_list" class="dropdown-item">Đơn mua</a>

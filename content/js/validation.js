@@ -372,6 +372,9 @@ $(document).ready(function () {
                 number: 'Vui lòng nhập số',
                 min: 'Đơn giá phải lớn hơn 0$',
             },
+            image: {
+                required: 'Vui lòng chọn ảnh cho sản phẩm',
+            },
         },
     });
     $('#edit_product').validate({

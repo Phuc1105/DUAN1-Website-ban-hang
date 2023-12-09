@@ -17,9 +17,9 @@
         <!-- Shop Sidebar Start -->
         <div class="col-lg-3 col-md-4">
             <!-- Price Start -->
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by price</span></h5>
-            <div class="bg-light p-4 mb-30">
-                <form>
+            <h5 class=""><span class="bg-secondary pr-3"></span></h5>
+            <div class="">
+                <!-- <form>
                     <div class="custom-control custom-checkbox d-flex align-results-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" checked id="price-all">
                         <label class="custom-control-label" for="price-all">All Price</label>
@@ -50,7 +50,7 @@
                         <label class="custom-control-label" for="price-5">$400 - $500</label>
                         <span class="badge border font-weight-normal">168</span>
                     </div>
-                </form>
+                </form> -->
             </div>
             <!-- Price End -->
 
@@ -153,7 +153,7 @@
                                 <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Sắp Xếp</button>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-result" href="<?= $CLIENT_URL ?>/product/list.php?date_old&keyword=<?=$keyword?>">Sản Phẩm Cũ Nhất</a>
-                                    <a class="dropdown-result" href="<?= $CLIENT_URL ?>/product/list.php?view_product&keyword=<?=$keyword?>">Phổ Biến</a><br>
+                                    <a class="dropdown-result" href="<?= $CLIENT_URL ?>/product/list.php?view_product&keyword=<?=$keyword?>">Phổ Biến</a>
                                     <a class="dropdown-result" href="#">Đánh giá tốt nhất</a>
                                 </div>
                             </div>
