@@ -43,7 +43,7 @@ if (exist_param("form_invoice")) {
         $order_id = $_POST['order_id'];
         $name_product = $_POST['name'];
         $quantity = $_POST['quantity'];
-        invoice_insert($user_id, $order_id, $voucher_id, $order_date, $img_product,$quantity, $name_product,$price, $status);
+        invoice_insert($user_id, $order_id, $voucher_id, $order_date, $img_product, $quantity, $name_product, $price, $status);
         invoice_details_insert($order_id, $address, $order_date, $receiving_date);
         clearCart();
         $VIEW_NAME = "../cart/cart.php";

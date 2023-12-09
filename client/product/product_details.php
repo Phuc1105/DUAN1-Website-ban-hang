@@ -140,9 +140,9 @@
                             </a>
                             <script>
                                 function shareProduct() {
-                                    var productName = 'Tên sản phẩm';
+                                    var productName = '<?php echo $name; ?>';
                                     var productURL = 'http://wd18305-nhom6.demowebcantho.online/client/product/details.php?product_id=<?php echo $product_id; ?>';
-                                    var productImageURL = 'http://localhost/DUAN1-Website-ban-hang/upload/products/<?php echo $image; ?>';  
+                                    var productImageURL = 'http://wd18305-nhom6.demowebcantho.online/upload/products/<?php echo $image; ?>';  
                                     var facebookShareURL = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(productURL);
                                     window.open(facebookShareURL, 'Chia sẻ sản phẩm', 'width=600,height=400');
                                 }

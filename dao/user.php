@@ -24,6 +24,16 @@ function user_update($password, $name, $email, $status, $role,$phone,$gender,$im
         pdo_execute($sql, $password, $name, $email, $status, $role,$phone,$gender,$user_id);    
     }
 }
+function user_update_client($user_id, $password, $name, $email, $image)
+{
+    if(!empty($image)){
+    $sql = "UPDATE users SET password=?,name=?,email=?,image=? WHERE user_id=?";
+    pdo_execute($sql, $password, $name, $email,$image,$user_id);
+    }else{
+        $sql = "UPDATE users SET password=?,name=?,email=? WHERE user_id=?";
+        pdo_execute($sql, $password, $name, $email,$user_id);    
+    }
+}
 function user_delete($user_id)
 {
     $sql = "DELETE FROM users WHERE user_id=?";

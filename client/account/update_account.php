@@ -11,7 +11,7 @@ if (exist_param("btn_update")) {
     $file_name = save_file("up_image", "$UPLOAD_URL/users/");
     $image = $file_name ? $file_name : $image;
     try {
-        user_update($user_id, $password, $name, $email, $image, $status, $role);
+        user_update_client($user_id, $password, $name, $email, $image, $status, $role);
         $MESSAGE = "Update successful!";
         $_SESSION['user'] = user_select_by_id($user_id);
     } catch (Exception $exc) {

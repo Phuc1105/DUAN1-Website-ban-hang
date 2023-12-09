@@ -91,7 +91,7 @@
             </a>
         </div>
         <div class="col-lg-4 col-6 text-left">
-            <form action="<?= $CLIENT_URL ?>/product/list.php" method="post" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <form action="<?= $CLIENT_URL ?>/product/list.php?find_product" method="post" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                 <div class="input-group">
                     <input type="text" class="form-control border-1 small rounded-pill" placeholder="Tìm kiếm..." name="keyword" aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -143,10 +143,9 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php" class="nav-item nav-link active">Trang chủ</a>
-                        <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?product" class="nav-item nav-link">Sản phẩm</a>
                         <!-- <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?detail" class="nav-item nav-link">Shop Detail</a> -->
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Đơn hàng<i class="fa fa-angle-down mt-1"></i></a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Đơn hàng<i class="fa fa-angle-down mt-1 ml-1"></i></a>
                             <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
                                 <!-- <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?cart" class="dropdown-item">Shopping Cart</a> -->
                                 <a href="<?= $CLIENT_URL ?>/cart/bill.php?btn_list" class="dropdown-item">Đơn mua</a>
