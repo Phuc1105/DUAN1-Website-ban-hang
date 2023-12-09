@@ -6,6 +6,37 @@ function invoice_insert( $user_id, $order_id, $voucher_id, $order_date, $img_pro
 
     pdo_execute($sql, $user_id, $order_id, $voucher_id, $order_date, $img_product, $quantity, $name_product, $price, $status);
 }
+function invoice__vnpay_insert(
+    $vnp_TxnRef,
+    $vnp_Amount,
+    $vnp_OrderInfo,
+    $vnp_ResponseCode,
+    $vnp_TransactionNo,
+    $vnp_BankCode,
+    $vnp_PayDate
+) {
+    $sql = "INSERT INTO vnpay (
+        vnp_TxnRef,
+        vnp_Amount,
+        vnp_OrderInfo,
+        vnp_ResponseCode,
+        vnp_TransactionNo,
+        vnp_BankCode,
+        vnp_PayDate
+    ) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+    pdo_execute(
+        $sql,
+        $vnp_TxnRef,
+        $vnp_Amount,
+        $vnp_OrderInfo,
+        $vnp_ResponseCode,
+        $vnp_TransactionNo,
+        $vnp_BankCode,
+        $vnp_PayDate
+    );
+}
+
 function invoice_details_insert( $order_id,$address, $order_date,$receiving_date)
 {
     $sql = "INSERT INTO order_details(order_id, address, order_date, receiving_date) VALUES (?,?,?,?)";

@@ -42,8 +42,8 @@ if (isset($_SESSION['cart'])) {
                         <?php foreach ($_SESSION['cart'] as $index => $item) : ?>
                             <tr>
                                 <td class="align-middle"><img src="<?= $UPLOAD_URL . '/products/' . $item['image'] ?>" alt="no image" style="width: 70px;"> <?= $item['name'] ?></td>
-                                <td class="align-middle"><?= $item['price'] ?>$ </td>
-                                <td class="align-middle"><?= $item['discount'] ?>$</td>
+                                <td class="align-middle"><?= number_format($item['price'], 0, ',', ',') ?>đ </td>
+                                <td class="align-middle"><?= number_format($item['discount'], 0, ',', ',') ?>đ</td>
                                 <td class="align-middle" style="width: 100px;">
                                     <form action="<?= $CLIENT_URL . "/cart/delete-cart.php?act=update_sl&id=" . $index ?>" method="post">
                                         <input type="number" class="form-control sl" name="update_sl" onchange="this.form.submit()" value="<?= $item['sl'] ?>" min="1" max="10">
@@ -57,14 +57,14 @@ if (isset($_SESSION['cart'])) {
                 </table>
             </div>
             <div class="col-lg-4">
-                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Cart Summary</span></h5>
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Thông tin sản phẩm</span></h5>
                 <div class="bg-light p-30 mb-5">
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Tổng tiền:</h5>
-                            <h5><?= $totalAll ?>$</h5>
+                            <h5><?= number_format($item['total'], 0, ',', ',') ?>đ</h5>
                         </div>
-                        <a href="<?= $CLIENT_URL . "/cart/list-cart.php?form_invoice" ?>"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</button></a>
+                        <a href="<?= $CLIENT_URL . "/cart/list-cart.php?form_invoice" ?>"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Mua hàng</button></a>
                     </div>
                 </div>
             </div>

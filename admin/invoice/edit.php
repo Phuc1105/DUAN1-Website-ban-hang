@@ -212,7 +212,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
                                     <p class="mb-0 text-right">Phí vận chuyển</p>
                                 </div>
                                 <div class="col-sm-8">
-                                    <p class="mb-0 text-right">10$</p>
+                                    <p class="mb-0 text-right">10000đ</p>
                                 </div>
                             </div>
                             <hr>

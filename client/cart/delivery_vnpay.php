@@ -15,7 +15,7 @@ if (isset($_SESSION['cart'])) {
 }
 ?>
     <div class="container w-50">
-        <form action="list-cart.php?btn_insert" method="POST" class="m-auto" id="invoice">
+        <form action="list-cart.php?btn_insert_vnpay" method="POST" class="m-auto" id="invoice">
             <!-- Breadcrumb Navigation -->
             <div class="row">
                 <div class="col-12">
@@ -41,8 +41,8 @@ if (isset($_SESSION['cart'])) {
                                 <input type="hidden" name="image" value="<?= $item['image'] ?>">
                                 <p class="card-text">Số lượng: <?= $item['sl'] ?></p>
                                 <input type="hidden" name="quantity" value="<?= $item['sl'] ?>">
-                                <p class="card-text text-danger">Total: <span class="thanh_tien_sp" id="thanh_tien_sp_<?= $index ?>" data-price="<?= $item['price'] ?>" data-discount="<?= $item['discount'] ?>"><?= number_format($item['total'], 0, ',', ',' ) ?></span> đ</p>
-                                <input type="hidden" name="price" value="<?= number_format($item['total'], 0, ',', ',' ) ?>">
+                                <p class="card-text text-danger">Total: <span class="thanh_tien_sp" id="thanh_tien_sp_<?= $index ?>" data-price="<?= $item['price'] ?>" data-discount="<?= $item['discount'] ?>"><?= number_format($item['total'], 0 ,',' , ',') ?></span> đ</p>
+                                <input type="hidden" name="price" value="<?= number_format($item['total'], 0, ".") ?>">
                                 <p class="card-text text-danger">Trạng thái: Đang chờ xác nhận</p>
                             </div>
                         </div>
@@ -66,8 +66,8 @@ if (isset($_SESSION['cart'])) {
                                 <p class="mr-3 h5 mt-1 ml-2"><?= $kh['name'] ?></p>
                             </div>
                             <div class="d-flex">
-                                <p class="mr-3">Giá: <?= number_format($item['price'], 0, ',', ',' ) ?> đ</p>
-                                <p class="mr-3">Giảm giá: <?= number_format($item['discount'] , 0, ',', ',' ) ?> đ</p>
+                                <p class="mr-3">Giá: <?= number_format($item['price'] , 0,',',',')?> đ</p>
+                                <p class="mr-3">Giảm giá: <?= number_format($item['discount'], 0 ,',' , ',')?> đ</p>
                             </div>
                         </div>
                     </div>
@@ -106,11 +106,13 @@ if (isset($_SESSION['cart'])) {
                             <div class="d-flex align-items-center">
                                 <i class="fab fa-cc-discover pr-3" style="color: red; font-size: 30px;"></i>
                                 <h5 class="pr-1">Tổng tiền thanh toán: </h5>
-                                <h5 class="text-danger"><?= number_format($totalAll, 0, ',', ',') ?> đ</h5>
+                                <h5 class="text-danger"><?= number_format($totalAll, 0, ',', ',' ) ?> đ</h5>
                                 <input type="hidden" name="price" value="<?= $totalAll ?>">
                             </div>
                         </div>
-                        <a href="<?= $CLIENT_URL . "/cart/list-cart?btn_insert" ?>"><button type="submit" name="" class="btn btn-primary font-weight-bold mt-3 w-100">Xác nhận đặt hàng</button></a>
+                        <form action="<?= $CLIENT_URL . '/cart/checkoutOnline.php' ?>" method="post">
+                        <a href=""><button type="submit" name="redirect" class="btn btn-primary font-weight-bold mt-3 w-100">Tiếp tục thanh toán</button></a>
+                        </form>
                     </div>
                 </div>
             </div>

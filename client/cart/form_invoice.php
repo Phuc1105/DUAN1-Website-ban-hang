@@ -34,7 +34,7 @@
         foreach ($_SESSION['cart'] as $index => $item) {
             // Tính tổng tiền cho từng sản phẩm với giảm giá nếu có
             $itemTotal = $item['sl'] * ($item['price'] - $item['discount']);
-            $totalAll += $itemTotal + 10;
+            $totalAll += $itemTotal + 10000;
             // Cập nhật tổng tiền của sản phẩm trong session
             $_SESSION['cart'][$index]['total'] = $itemTotal;
         }
@@ -51,15 +51,15 @@
                                 <th>Giá tiền</th>
                                 <th>Giảm giá</th>
                                 <th>Số lượng</th>
-                                <th>Tổng tiền</th>
+                                <th>Xóa</th>
                             </tr>
                         </thead>
                         <tbody class="align-middle">
                             <?php foreach ($_SESSION['cart'] as $index => $item) : ?>
                                 <tr>
                                     <td class="align-middle"><img src="<?= $UPLOAD_URL . '/products/' . $item['image'] ?>" alt="no image" style="width: 70px;"> <?= $item['name'] ?></td>
-                                    <td class="align-middle"><?= $item['price'] ?>$ </td>
-                                    <td class="align-middle"><?= $item['discount'] ?>$</td>
+                                    <td class="align-middle"><?= number_format($item['price'], 0, ',', ',') ?>đ </td>
+                                    <td class="align-middle"><?= number_format($item['discount'], 0, ',', ',') ?>đ</td>
                                     <td class="align-middle" style="width: 100px;">
                                         <form action="<?= $CLIENT_URL . "/cart/delete-cart.php?act=update_sl&id=" . $index ?>" method="post">
                                             <input type="number" class="form-control sl" name="update_sl" onchange="this.form.submit()" value="<?= $item['sl'] ?>" min="1" max="10">
@@ -83,23 +83,23 @@
                     </form>
                     <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Thông tin đặt hàng</span></h5>
                     <div class="bg-light p-30 mb-5">
-                        <form action="<?= $CLIENT_URL . '/cart/checkoutOnline.php' ?>" method="POST">
+                        <form action="" method="POST">
                             <div class="border-bottom pb-2">
                                 <div class="d-flex justify-content-between mb-3">
                                     <h6>Giá tiền sản phẩm</h6>
-                                    <h6><span class="thanh_tien_sp " id="thanh_tien_sp_<?= $index ?>" data-price="<?= $item['price'] ?>" data-discount="<?= $item['discount'] ?>"><?= $item['total']?></span> $</h6>
+                                    <h6><span class="thanh_tien_sp " id="thanh_tien_sp_<?= $index ?>" data-price="<?= number_format($item['price'], 0, ',', ',') ?>" data-discount="<?= number_format($item['discount'], 0, ',', ',') ?>"><?= number_format($item['total'], 0, ',', ',') ?></span> đ</h6>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <h6 class="font-weight-medium">Phí vận chuyển</h6>
-                                    <h6 class="font-weight-medium">$10</h6>
+                                    <h6 class="font-weight-medium">10,000đ</h6>
                                 </div>
                             </div>
                             <div class="pt-2">
                                 <div class="d-flex justify-content-between mt-2">
                                     <h5>Tổng thanh toán</h5>
-                                    <h5><?= $totalAll ?>$</h5>
+                                    <h5><?= number_format($totalAll, 0, ',', ',') ?>đ</h5>
                                 </div>
-                                <button type="submit" name="redirect" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Thanh toán Vnpay</button>
+                                <a href="<?= $CLIENT_URL . "/cart/list-cart.php?delivery_vnpay" ?>"><button type="button" name="" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Thanh toán Vnpay</button></a>
                                 <a href="<?= $CLIENT_URL . "/cart/list-cart.php?delivery" ?>"><button type="button" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Thanh toán khi nhận hàng</button></a>
                             </div>
                         </form>

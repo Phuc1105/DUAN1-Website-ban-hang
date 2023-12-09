@@ -2,6 +2,8 @@
 require '../../global.php';
 require '../../dao/product.php';
 require '../../dao/category.php';
+require '../../dao/comment.php';
+
 //-------------------------------//
 
 check_login(); 
@@ -22,6 +24,8 @@ if (exist_param("category_id")) {
 
 } else if (exist_param("price")) {
     $items = product_select_outstanding();
+    $comment_list = comment_select_by_product($product_id, 5);
+
     
 } else if (exist_param("date_old")) {
     $keyword = $_REQUEST["keyword"];
@@ -45,11 +49,12 @@ if (exist_param("category_id")) {
     $title_site = "All Menu";
     $items = product_select_page('view', 12);
 }
+$product = product_select_by_id($product_id);
+extract($product);
 $hh_db = product_select_outstanding();
 $hh_top10 = product_select_popular_products();
 $list_category = category_select_all();
 $price_desc = product_select_price();
-
 $VIEW_NAME = "product/list_product.php";
 
 require '../layout.php';
