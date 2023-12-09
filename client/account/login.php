@@ -21,9 +21,8 @@ if (exist_param("btn_login")) {
 
             $role =  $user['role'] == 0 ? "" : "staff";
             echo "<script>
-                     alert('Log in to your account " . $role . " success!'); 
-                     location.href='http://localhost:/" . $ROOT_URL . "';
-                </script>";
+                window.location.href='" . $ROOT_URL . "/index.php';
+            </script>";
         } else {
             $MESSAGE = "Incorrect password!";
         }
@@ -33,7 +32,7 @@ if (exist_param("btn_login")) {
 } else {
 
     if (exist_param("btn_logout")) {
-        unset($_SESSION['user']);//xóa người dùng khỏi session
+        unset($_SESSION['user']); //xóa người dùng khỏi session
         $_SESSION['name_page'] = 'home';
     }
     $user_id = get_cookie("user_id");

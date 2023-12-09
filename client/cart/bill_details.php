@@ -287,7 +287,7 @@ foreach ($order as $orders) :
                                             <p class="mb-0">Phí vận chuyển</p>
                                         </div>
                                         <div class="col-sm-8">
-                                            <p class="mb-0">$10</p>
+                                            <p class="mb-0">10,000đ</p>
                                         </div>
                                     </div>
                                     <hr>
@@ -297,7 +297,7 @@ foreach ($order as $orders) :
                                             <p class="mb-0">Tổng cộng</p>
                                         </div>
                                         <div class="col-sm-8">
-                                            <p style="font-size: 1.5rem;" class="mb-0 text-danger fw-500"><?= $orders['price'] ?>$</p>
+                                            <p style="font-size: 1.5rem;" class="mb-0 text-danger fw-500"><?= number_format($orders['price'], 0, ',',',') ?>đ</p>
                                         </div>
                                     </div>
                                 </div>

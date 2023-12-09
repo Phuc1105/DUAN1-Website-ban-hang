@@ -17,9 +17,9 @@
         <!-- Shop Sidebar Start -->
         <div class="col-lg-3 col-md-4">
             <!-- Price Start -->
-            <h5 class=""><span class="bg-secondary pr-3"></span></h5>
-            <div class="">
-                <!-- <form>
+            <!-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by price</span></h5> -->
+            <!-- <div class="bg-light p-4 mb-30">
+                <form>
                     <div class="custom-control custom-checkbox d-flex align-results-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" checked id="price-all">
                         <label class="custom-control-label" for="price-all">All Price</label>
@@ -201,13 +201,23 @@
                                             </del>
                                         </div>
                                         <div class="d-flex align-results-center justify-content-center mb-1">
-                                            <small class="fa fa-star text-primary mr-1"></small>
-                                            <small class="fa fa-star text-primary mr-1"></small>
-                                            <small class="fa fa-star text-primary mr-1"></small>
-                                            <small class="fa fa-star text-primary mr-1"></small>
-                                            <small class="fa fa-star text-primary mr-1"></small>
-                                            <small>(99)</small>
-                                        </div>
+                                        
+                        <?php
+                        foreach ($product as $comment) {
+                        }
+
+                        echo '<div class="text-primary pr-2">';
+                        for ($i = 1; $i <= 5; $i++) {
+                            $class = ($comment['rating'] >= $i) ? 'fas fa-star' : (($$comment['rating'] + 0.5 >= $i) ? 'fas fa-star-half-alt' : 'far fa-star');
+                            echo '<small class="' . $class . '"></small>';
+                        }
+                        echo '</div>';
+                        ?>
+                        <p class="pr-2"><?= number_format($averageRating, 1) ?> |</p>
+                        <p class="pr-2"><?= $totalReviews ?> Đánh giá</p>  |
+                        <p class="pl-2"><?= $view ?> Lượt xem</p>
+                    </div>
+                                        
                                     </div>
                                 </div>
                             </a>

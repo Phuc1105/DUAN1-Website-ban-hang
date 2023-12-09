@@ -98,7 +98,7 @@ foreach ($order as $item) {
                 <hr>
                 <div>
                     <div class="float-right">
-                        <span class="text-dark">Thành tiền: <?= $item['price'] ?>$</span>
+                        <span class="text-dark">Thành tiền: <?= number_format($item['price']) ?>đ</span>
                         <span style="font-weight: 600;" class="text-danger mr-3"></span>
                         <a href="<?= $CLIENT_URL ?>/cart/bill.php?btn_details=<?= $item['order_id'] ?>" class="btn btn-custom">
                             <button type="submit" class="btn bg-warning">Chi tiết đơn hàng</button>
