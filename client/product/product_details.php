@@ -116,9 +116,6 @@
                                 }
                             </script>
 
-                            <a class="text-dark px-2" href="">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
                             <!-- chia sẻ pin tơ rệt  -->
                             <a class="text-dark px-2" href="#" onclick="shareOnPinterest()">
                                 <i class="fab fa-pinterest"></i>

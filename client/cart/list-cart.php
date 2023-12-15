@@ -146,7 +146,7 @@ if (exist_param("form_invoice")) {
         $vnp_TxnRef = rand(00, 9999); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
         $vnp_OrderInfo = 'Thanh toan don hang';
         $vnp_OrderType = 'billpayment';
-        $vnp_Amount = 10000 * 100;
+        $vnp_Amount = $price * 1000;
         $vnp_Locale = 'vn';
         $vnp_BankCode = 'NCB';
         $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];

@@ -45,14 +45,6 @@
                                     <a class="dropdown-result" href="#">Đánh giá tốt nhất</a>
                                 </div>
                             </div>
-                            <div class="btn-group ml-2">
-                                <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Hiển Thị</button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-result" href="#">10</a>
-                                    <a class="dropdown-result" href="#">20</a>
-                                    <a class="dropdown-result" href="#">30</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

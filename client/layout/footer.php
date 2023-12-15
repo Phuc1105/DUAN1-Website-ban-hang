@@ -1,4 +1,10 @@
 <!-- Footer Start -->
+<style>
+        .success-message {
+            display: none;
+            color: green;
+        }
+    </style>
 <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
     <div class="row px-xl-5 pt-5">
         <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
@@ -29,14 +35,16 @@
                 <div class="col-md-4 mb-5">
                     <h5 class="text-secondary text-uppercase mb-4">Bản Tin</h5>
                     <p>Hiện tại cửa hàng chưa có bảng tin</p>
-                    <form action="">
+                    <form action="../layout/lienHe.php" method="post" target="_self" id="subscribeForm">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Địa chỉ Email của bạn">
+                            <input type="text" name="email" class="form-control" placeholder="Địa chỉ Email của bạn">
+                            <input type="hidden" name="id">
                             <div class="input-group-append">
-                                <button class="btn btn-primary">Đăng Ký</button>
+                                <button type="submit" class="btn btn-primary">Đăng Ký</button>
                             </div>
                         </div>
                     </form>
+                    <p id="successMessage" class="success-message text-secondary text-uppercase mt-4 mb-3" >Cảm ơn bạn đã quan tâm ! chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
                     <h6 class="text-secondary text-uppercase mt-4 mb-3">Theo Dõi Chúng Tôi</h6>
                     <div class="d-flex">
                         <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -63,3 +71,24 @@
 <!-- Footer End -->
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger intent="WELCOME" chat-title="Chat" agent-id="838613ff-173d-4a7c-9875-22a0c9dccb35" language-code="vi"></df-messenger>
+
+<!-- // mail  -->
+<script>
+        document.getElementById('subscribeForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Tạm thời ẩn form và hiển thị thông báo
+            document.getElementById('subscribeForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Gửi dữ liệu form đến server
+            var formData = new FormData(this);
+            fetch('../layout/lienHe.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+        });
+    </script>

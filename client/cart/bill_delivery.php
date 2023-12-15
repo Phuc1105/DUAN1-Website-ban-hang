@@ -54,7 +54,7 @@
 <?php
 
 foreach ($order as $item) {
-    $order_status = 'Chưa xác nhận';
+    $order_status = 'Chờ xác nhận';
     if ($item['status'] == 2) {
         $order_status = 'Đã xác nhận đơn hàng';
     } elseif ($item['status'] == 3) {
