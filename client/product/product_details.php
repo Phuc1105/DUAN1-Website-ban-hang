@@ -67,12 +67,12 @@
                         </div>
                     </div>
                     <div>
-                        <p><?=$describes?></p>
+                        <p><?= $describes ?></p>
                     </div>
                     <div class="d-flex align-items-center mb-4 pt-2">
-                        
+
                         <div class="input-group quantity mr-3" style="width: 130px;">
-                       
+
                             <div class="input-group-btn">
                                 <button class="btn btn-primary btn-minus">
                                     <i class="fa fa-minus"></i>
@@ -85,20 +85,20 @@
                                 </button>
                             </div>
                         </div>
-                        <a href="<?= $CLIENT_URL . "/cart/add-cart.php?id=" . $product_id?>"><button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ hàng</button></a>
+                        <a href="<?= $CLIENT_URL . "/cart/add-cart.php?id=" . $product_id ?>"><button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ hàng</button></a>
                     </div>
                     <div class="d-flex pt-2">
-                        <strong class="text-dark mr-2">Chia sẻ:</strong> 
+                        <strong class="text-dark mr-2">Chia sẻ:</strong>
                         <div class="d-inline-flex">
                             <a class="text-dark px-2" href="" onclick="shareProduct()">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                             <script>
                                 function shareProduct() {
-                                    var productName = '<?php echo $name; ?>';
+                                    var productName = '<?= $name; ?>';
                                     var productURL = 'http://wd18305-nhom6.demowebcantho.online/client/product/details.php?product_id=<?php echo $product_id; ?>';
                                     var productImageURL = 'http://wd18305-nhom6.demowebcantho.online/upload/products/<?php echo $image; ?>';
-                                    var facebookShareURL = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(productURL) + '&text=' + encodeURIComponent(productName) + '&picture=' + encodeURIComponent(productImageURL);
+                                    var facebookShareURL = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(productURL) + '&quote=' + encodeURIComponent(productName);
                                     window.open(facebookShareURL, 'Chia sẻ sản phẩm', 'width=600,height=400');
                                 }
                             </script>

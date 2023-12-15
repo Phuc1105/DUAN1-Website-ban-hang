@@ -2,6 +2,7 @@
 require '../../global.php';
 require '../../dao/product.php';
 require '../../dao/comment.php';
+require '../../dao/category.php';
 //-------------------------------//
 check_login();
 extract($_REQUEST);
@@ -23,6 +24,6 @@ if (exist_param("content")) {
 }
 // Lấy list bình luận ra
 $comment_list = comment_select_by_product($product_id, 5);
-
+$list_category = category_select_all_client();
 $VIEW_NAME = "product/product_details.php";
 require '../layout.php';

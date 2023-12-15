@@ -147,13 +147,13 @@ function product_select_price(){
     return pdo_query($sql);
 }
 function product_select_date_old($keyword){
-    $sql = "SELECT * FROM products WHERE name LIKE ? ORDER BY input_date DESC";
+    $sql = "SELECT * FROM products WHERE name LIKE ? AND status =1 ORDER BY input_date DESC";
     $keyword = '%' . $keyword . '%';
     return pdo_query($sql,$keyword);
 }
 function product_select_popular($keyword)
 {
-    $sql = "SELECT * FROM products WHERE view > 0 AND name LIKE ?  ORDER BY view DESC";
+    $sql = "SELECT * FROM products WHERE view > 0 AND name LIKE ? AND status =1  ORDER BY view DESC";
     $keyword = '%' . $keyword . '%';
     return pdo_query($sql,$keyword);
 }

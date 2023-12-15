@@ -2,6 +2,7 @@
 require '../../global.php';
 require '../../dao/product.php';
 require '../../dao/user.php';
+require '../../dao/category.php';
 require '../../dao/invoice.php';
 //-------------------------------//
 check_login();
@@ -205,5 +206,6 @@ if (exist_param("form_invoice")) {
 } else {
     $VIEW_NAME = "../cart/cart.php";
 }
+$list_category = category_select_all_client();
 $items = product_select_all();
 require '../layout.php';
