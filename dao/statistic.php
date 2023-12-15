@@ -15,7 +15,8 @@ function thong_ke_comments(){
     $sql = "SELECT hh.product_id, hh.name,"
             . " COUNT(*) quantity,"
             . " MIN(bl.comment_date) cu_nhat,"
-            . " MAX(bl.comment_date) moi_nhat"
+            . " MAX(bl.comment_date) moi_nhat,"
+            . " AVG(bl.rating) sao"
             . " FROM comments bl "
             . " JOIN products hh ON hh.product_id=bl.product_id "
             . " GROUP BY hh.product_id, hh.name";

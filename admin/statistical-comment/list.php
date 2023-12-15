@@ -6,6 +6,7 @@
             <th>SỐ LƯỢNG</th>
             <th>LÂU NHẤT</th>
             <th>MỚI NHẤT</th>
+            <th>ĐÁNH GIÁ</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
             <td><?=$quantity?></td>
             <td><?=$cu_nhat?></td>
             <td><?=$moi_nhat?></td>
+            <td><?=number_format($sao,1)?></td>
         </tr>
         <?php 
         }
