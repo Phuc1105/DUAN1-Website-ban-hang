@@ -176,7 +176,7 @@ foreach ($order2 as $item) {
 foreach ($order as $orders) :
 
     //Trang thái đơn hàng
-    $order_status = 'Chưa xác nhận';
+    $order_status = 'Chờ xác nhận';
     if ($orders['status'] == 2) {
         $order_status = 'Đã xác nhận';
     } elseif ($orders['status'] == 3) {

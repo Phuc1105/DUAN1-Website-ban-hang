@@ -58,6 +58,12 @@ function invoice_select_by_user($user_id)
     $sql = "SELECT * FROM orders WHERE user_id=?";
     return pdo_query($sql, $user_id);
 }
+function invoice_select_total_price()
+{
+    $sql = "SELECT SUM(price) as total_price FROM orders";
+    return pdo_query_one($sql);
+}
+
 function invoice_select_by_id($order_id)
 {
     $sql = "SELECT * FROM orders WHERE order_id=?";
@@ -87,6 +93,9 @@ function order_update_status($status, $order_id)
     $sql = "UPDATE orders SET status=? WHERE order_id=?";
     pdo_execute($sql, $status, $order_id);
 }
-
+function hoa_don_update($order_id, $status) {
+    $sql = "UPDATE orders SET status=? WHERE order_id=?";
+    pdo_execute($sql, $status, $order_id);
+}
 ?>
 

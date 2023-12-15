@@ -78,8 +78,7 @@
 foreach ($order_details as $item) {
     extract($item);
 }
-foreach ($order as $orders) {
-    extract($item);
+foreach ($order as $orders) :
 
     //Trang thái đơn hàng
     $order_status = 'Chưa xác nhận';
@@ -90,150 +89,111 @@ foreach ($order as $orders) {
     } elseif ($orders['status'] == 4) {
         $order_status = 'Giao thành công';
     }
-}
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])) {
-    $status = $_POST["status"];
-    $order_id = $_POST["order_id"];
-    order_update_status($status, $order_id);
-}
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])) {
+        $status = $_POST["status"];
+        $order_id = $_POST["order_id"];
+        order_update_status($status, $order_id);
+    }
 ?>
 
-<div class="container pt-4">
-    <article class="card">
-        <header class="card-header">
-            <h6>
-                <a href="index.php?quanli=danh-sach-don-hang" class="link-not-hover text-light">Đơn hàng</a>
-                / Chi tiết đơn hàng
-            </h6>
-        </header>
-        <div class="card-body mt-2">
-            <ul class="row text-decoration-none">
-                <?php
-                foreach ($order as $value) {
-                ?>
-                    <li class="col-md-4 list-inline-item" >
-                        <figure class="itemside mb-3">
-                            <div class="aside" ><img src="<?= $UPLOAD_URL . '/products/' .  $value['img_product'] ?>" alt="Product Image"></div>
-                            <figcaption class="info align-self-center">
-                                <p class="title"><?= $value['name_product'] ?><br> </p>
-                            </figcaption>
-                        </figure>
-                    </li>
-                <?php
-                }
-                ?>
-            </ul>
-            <div class="row">
-                <div class="card col-lg-6">
-                    <div class="cart bg-custom rounded bg-custom" style="background-color: fffff;">
-                        <div class="p-4">
+    <div class="container">
+        <article class="card">
+            <header class="card-header">
+                <h6>
+                    <a href="index.php?quanli=danh-sach-don-hang" class="link-not-hover text-light">Đơn hàng</a>
+                    / Chi tiết đơn hàng
+                </h6>
+            </header>
+            <div class="card-body mt-2">
 
-                            <h6 class="mb-4">
-                                Trạng thái đơn hàng: <span class="text-danger"><?= $order_status ?></span>
-                                <?php
-                                function getStatusName($statusValue)
-                                {
-                                    switch ($statusValue) {
-                                        case 1:
-                                            return 'Chưa xác nhận';
-                                        case 2:
-                                            return 'Đã xác nhận';
-                                        case 3:
-                                            return 'Đang giao';
-                                        case 4:
-                                            return 'Giao thành công';
-                                        default:
-                                            return 'Không xác định';
-                                    }
-                                }
-                                ?>
-                            </h6>
+                <div class="row">
+                        <ul class="row text-decoration-none">
+                            <?php
+                            foreach ($order as $item) {
+                            ?>
+                               
+                            <?php
+                            }
+                            ?>
+                        </ul>
+                  
+                    <div class="col-lg-5">
+                        <div class="card mb-4 " style="background-color: #ffff;">
+                            <div class="card-body text-dark">
+                                <div class="row mb-3">
+                                    <div class="col-sm-6">
+                                    <p class="title"><?= $item['name_product'] ?><br></p>
 
-                            <!-- Hiển thị trạng thái đơn vào options -->
-                            <form action="" method="post">
-                                <div class="mb-3">
-                                    <label for="status" class="form-label">Trạng thái</label>
-                                    <select name="status" class="form-select" id="status">
-                                        <?php
-                                        $status_options = [1, 2, 3, 4];
-                                        foreach ($status_options as $option_value) {
-                                            $selected = ($option_value == $orders['status']) ? 'selected' : '';
-                                            echo "<option value='$option_value' $selected>";
-                                            // Đặt tên hoặc giá trị của option tại đây
-                                            echo getStatusName($option_value); // Thay thế hàm này bằng hàm trả về tên tương ứng
-                                            echo "</option>";
-                                        }
-                                        ?>
-                                    </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <img src="<?= $UPLOAD_URL . '/products/' . $item['img_product'] ?>" alt="Product Image" style="width: 200px; height: 200px;">
+
+                                    </div>
                                 </div>
-                                <input type="hidden" name="order_id" value="<?= $order_id ?>">
-                                <div class="mb-4">
-                                    <button type="submit" name="update_status_order" class="btn btn-primary">Cập nhật</button>
-                                    <a href="" class="btn btn-danger">Xóa đơn</a>
-                                </div>
-                            </form>
 
-
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card mb-4 bg-custom" style="background-color: #ffff;">
-                        <div class="card-body text-dark">
-                            <div class="row mb-3">
-                                <div class="col-sm-4">
-                                    <p class="mb-0 text-right">Tên khách hàng</p>
+                    <div class="col-lg-6">
+                        <div class="card mb-4 bg-custom" style="background-color: #ffff;">
+                            <div class="card-body text-dark">
+                                <div class="row mb-3">
+                                    <div class="col-sm-4">
+                                        <p class="mb-0 text-right">Tên khách hàng</p>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p class="mb-0 text-right"><?= $item['user_id'] ?></p>
+                                        <input type="hidden" name="user_id" value="<?= $item['user_id'] ?>">
+                                    </div>
                                 </div>
-                                <div class="col-sm-8">
-                                    <p class="mb-0 text-right"><?= $value['user_id'] ?></p>
-                                    <input type="hidden" name="user_id" value="<?= $value['user_id'] ?>">
-                                </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <div class="col-sm-4">
-                                    <p class="mb-0 text-right">Địa chỉ giao hàng</p>
+                                <div class="row mb-3">
+                                    <div class="col-sm-4">
+                                        <p class="mb-0 text-right">Địa chỉ giao hàng</p>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p class="mb-0 text-right"><?= $address ?></p>
+                                    </div>
                                 </div>
-                                <div class="col-sm-8">
-                                    <p class="mb-0 text-right"><?= $address ?></p>
-                                </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <div class="col-sm-4">
-                                    <p class="mb-0 text-right">Thời gian</p>
+                                <div class="row mb-3">
+                                    <div class="col-sm-4">
+                                        <p class="mb-0 text-right">Thời gian</p>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p class="mb-0 text-right"><?= $item['order_date'] ?></p>
+                                    </div>
                                 </div>
-                                <div class="col-sm-8">
-                                    <p class="mb-0 text-right"><?= $item['order_date'] ?></p>
+                                <div class="row mb-3">
+                                    <div class="col-sm-4">
+                                        <p class="mb-0 text-right">Phí vận chuyển</p>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p class="mb-0 text-right">10000đ</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-sm-4">
-                                    <p class="mb-0 text-right">Phí vận chuyển</p>
-                                </div>
-                                <div class="col-sm-8">
-                                    <p class="mb-0 text-right">10000đ</p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <p class="mb-0 text-right">Thành tiền</p>
-                                </div>
-                                <div class="col-sm-8">
-                                    <p style="font-size: 1.5rem;" class="mb-0 text-right text-danger fw-500">
-                                        <?= $value['price'] ?>$
-                                    </p>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p class="mb-0 text-right">Thành tiền</p>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p style="font-size: 1.5rem;" class="mb-0 text-right text-danger fw-500">
+                                            <?= $item['price'] ?>$
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
+                <a class="btn btn-primary float-lg-left ml-3" href="index.php?btn_list">Trở về</a>
+
             </div>
 
-            <a class="btn btn-primary float-lg-right " href="index.php?btn_list">Trở về</a>
-        </div>
+        </article>
 
-    </article>
-
-</div>
+    </div>
+<?php endforeach; ?>

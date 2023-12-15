@@ -35,8 +35,7 @@ function GuiMial()
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'phucpvpc06866@fpt.edu.vn';                     //SMTP username
-        $mail->Password = 'iuoy byaq qaiz dtwr
-        ';                               //SMTP password
+        $mail->Password = 'iuoy byaq qaiz dtwr';                               //SMTP password
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         //Recipients

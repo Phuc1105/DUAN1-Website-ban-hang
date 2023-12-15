@@ -1,4 +1,5 @@
-<h3 class="alert alert-success">THỐNG KÊ HÀNG LOẠT HÀNG HÓA</h3>
+<div class="container">
+<h3 class="text-dark">THỐNG KÊ HÀNG LOẠT HÀNG HÓA</h3>
 <table class="table">
     <thead class="alert-success">
         <tr>
@@ -28,4 +29,5 @@
 </table>
 <div class="form-group">
     <a href="index.php?chart" class="btn btn-success float-lg-right form-group m-4">Xem Biểu đồ</a>
+</div>
 </div>
