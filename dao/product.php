@@ -104,9 +104,11 @@ function product_select_outstanding()
 }
 function product_select_new_product()
 {
-    $sql = "SELECT * FROM products WHERE outstanding='' AND status = 1";
+    $sql = "SELECT * FROM products WHERE status = 1 ORDER BY input_date DESC LIMIT 5";
     return pdo_query($sql);
 }
+
+
 
 function product_select_by_loai($category_id)
 {

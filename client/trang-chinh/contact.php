@@ -12,13 +12,14 @@
 <!-- Breadcrumb End -->
 
 <!-- Contact Start -->
+
 <div class="container-fluid">
     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Liên Hệ Chúng Tôi</span></h2>
     <div class="row px-xl-5">
         <div class="col-lg-7 mb-5">
             <div class="contact-form bg-light p-30">
                 <div id="success"></div>
-                <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                <form action="../conten/mail/contactcontact.php" method="post" name="sentMessage" id="contactForm" novalidate="novalidate">
                     <div class="control-group">
                         <input type="text" class="form-control" id="name" placeholder="Họ và Tên" required="required" data-validation-required-message="Vui lòng nhập họ và tên của bạn" />
                         <p class="help-block text-danger"></p>

@@ -50,9 +50,20 @@ function GuiMail($toEmail)
         $mail->Subject = 'Thư Liên Hệ Từ Khách Hàng:';
 
         $noidungthu = "
-            <h3>Á đù z hia</h3>
-            <p>Cảm ơn bạn đã quan tâm! Chúng tôi sẽ liên hệ để hỗ trợ bạn trong thời gian sớm nhất.</p>
-        ";
+        <h3>Xin chào vị khách hàng thân mến của chúng tôi</h3>
+        
+        <p>Cảm ơn bạn đã đăng ký thành viên hoặc liên hệ với chúng tôi.</p>
+        
+        <p>Chúng tôi sẽ xử lý yêu cầu của bạn trong thời gian sớm nhất và sẽ liên hệ lại nếu cần thiết.</p>
+        
+        <p>Nếu bạn có bất kỳ câu hỏi nào khác, đừng ngần ngại liên hệ với chúng tôi qua địa chỉ email phucpvpc06866@fpt.edu.vn hoặc số điện thoại 0347219161 của chúng tôi.</p>
+        
+        <p>Cảm ơn bạn một lần nữa và chúng tôi mong muốn được phục vụ bạn!</p>
+        
+        <p>Trân trọng,<br>
+        MILTI SHOP</p>
+    ";
+    
 
         $mail->Body = $noidungthu;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';

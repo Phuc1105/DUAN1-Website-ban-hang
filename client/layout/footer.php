@@ -12,7 +12,7 @@
             <p class="mb-4">Chào mừng bạn đến với cửa hàng của chúng tôi. Hãy liên hệ nếu bạn có bất kỳ câu hỏi nào.</p>
             <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Đường trần chiên, Cái răng, Cần Thơ</p>
             <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>nhom6wd18305@gamil.com</p>
-            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+0347219261</p>
         </div>
         <div class="col-lg-8 col-md-12">
             <div class="row">
@@ -27,9 +27,9 @@
                 <div class="col-md-4 mb-5">
                     <h5 class="text-secondary text-uppercase mb-4">Tài Khoản Của Tôi</h5>
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="text-secondary mb-2" href="<?=$ROOT_URL?>"><i class="fa fa-angle-right mr-2"></i>Trang chủ</a>
-                        <a class="text-secondary mb-2" href="<?=$CLIENT_URL?>/cart/list-cart.php"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
-                        <a class="text-secondary" href="<?=$CLIENT_URL?>/trang-chinh/index.php?contact"><i class="fa fa-angle-right mr-2"></i>Liên hệ chúng tôi</a>
+                        <a class="text-secondary mb-2" href="<?= $CLIENT_URL . '/account/update_account.php' ?>"><i class="fa fa-angle-right mr-2"></i>Hồ sơ</a>
+                        <a class="text-secondary mb-2" href="<?= $CLIENT_URL ?>/cart/bill.php?btn_list"><i class="fa fa-angle-right mr-2"></i>Đơn hàng</a>
+                       
                     </div>
                 </div>
                 <div class="col-md-4 mb-5">
@@ -46,12 +46,7 @@
                     </form>
                     <p id="successMessage" class="success-message text-secondary text-uppercase mt-4 mb-3" >Cảm ơn bạn đã quan tâm ! chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
                     <h6 class="text-secondary text-uppercase mt-4 mb-3">Theo Dõi Chúng Tôi</h6>
-                    <div class="d-flex">
-                        <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
+                   
                 </div>
             </div>
         </div>

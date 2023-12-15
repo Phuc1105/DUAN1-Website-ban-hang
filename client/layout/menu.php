@@ -104,7 +104,7 @@
         </div>
         <div class="col-lg-4 col-6 text-right">
             <p class="m-0">Dịch Vụ Khách Hàng</p>
-            <h5 class="m-0">+012 345 6789</h5>
+            <h5 class="m-0">+0347219261</h5>
         </div>
     </div>
 </div>
@@ -154,10 +154,7 @@
                         <a href="<?= $CLIENT_URL ?>/trang-chinh/index.php?contact" class="nav-item nav-link">Liên hệ</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                        <a href="" class="btn px-0">
-                            <i class="fas fa-heart text-primary"></i>
-                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
-                        </a>
+                       
                         <a href="<?= $CLIENT_URL . "/cart/list-cart.php" ?>" class="btn px-0 ml-3">
                             <i class="fas fa-shopping-cart text-primary"></i>
                             <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
