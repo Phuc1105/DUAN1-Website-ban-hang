@@ -4,6 +4,7 @@ require '../../global.php';
 require '../../dao/product.php';
 require '../../dao/user.php';
 require '../../dao/invoice.php';
+require '../../dao/category.php';
 //-------------------------------//
 check_login();
 extract($_REQUEST);
@@ -25,6 +26,6 @@ if (exist_param("btn_list")) {
 } else {
     $VIEW_NAME = "../cart/bill_delivery.php";
 }
-
+$list_category = category_select_all_client();
 // $order_details['$order_detail_id'];
 require '../layout.php';

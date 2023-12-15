@@ -46,7 +46,7 @@
                         echo '</div>';
                         ?>
                         <p class="pr-2"><?= number_format($averageRating, 1) ?> |</p>
-                        <p class="pr-2"><?= $totalReviews ?> Đánh giá</p>  |
+                        <p class="pr-2"><?= $totalReviews ?> Đánh giá</p> |
                         <p class="pl-2"><?= $view ?> Lượt xem</p>
                     </div>
                     <?php
@@ -142,20 +142,38 @@
                                 function shareProduct() {
                                     var productName = '<?php echo $name; ?>';
                                     var productURL = 'http://wd18305-nhom6.demowebcantho.online/client/product/details.php?product_id=<?php echo $product_id; ?>';
-                                    var productImageURL = 'http://wd18305-nhom6.demowebcantho.online/upload/products/<?php echo $image; ?>';  
-                                    var facebookShareURL = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(productURL);
+                                    var productImageURL = 'http://wd18305-nhom6.demowebcantho.online/upload/products/<?php echo $image; ?>';
+                                    var facebookShareURL = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(productURL) + '&text=' + encodeURIComponent(productName) + '&picture=' + encodeURIComponent(productImageURL);
                                     window.open(facebookShareURL, 'Chia sẻ sản phẩm', 'width=600,height=400');
                                 }
                             </script>
-                            <a class="text-dark px-2" href="">
+                            <a class="text-dark px-2" href="#" onclick="shareOnTwitter()">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a class="text-dark px-2" href="">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a class="text-dark px-2" href="">
+
+                            <script>
+                                function shareOnTwitter() {
+                                    var productName = '<?php echo $name; ?>';
+                                    var productURL = 'http://wd18305-nhom6.demowebcantho.online/client/product/details.php?product_id=<?php echo $product_id; ?>';
+                                    var twitterShareURL = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(productURL) + '&text=' + encodeURIComponent(productName);
+                                    window.open(twitterShareURL, 'Chia sẻ sản phẩm trên Twitter', 'width=600,height=400');
+                                }
+                            </script>
+                            <a class="text-dark px-2" href="#" onclick="shareOnPinterest()">
                                 <i class="fab fa-pinterest"></i>
                             </a>
+
+                            <script>
+                                function shareOnPinterest() {
+                                    var productName = '<?php echo $name; ?>';
+                                    var productURL = 'http://wd18305-nhom6.demowebcantho.online/client/product/details.php?product_id=<?php echo $product_id; ?>';
+                                    var productImageURL = 'http://wd18305-nhom6.demowebcantho.online/upload/products/<?php echo $image; ?>';
+
+                                    // Chia sẻ trên Pinterest
+                                    var pinterestShareURL = 'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(productURL) + '&media=' + encodeURIComponent(productImageURL) + '&description=' + encodeURIComponent(productName);
+                                    window.open(pinterestShareURL, 'Chia sẻ sản phẩm trên Pinterest', 'width=600,height=400');
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -183,6 +201,6 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Shop Detail End -->
     <?php require "../product/product_also_like.php"; ?>

@@ -163,13 +163,13 @@
     <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Statistics" aria-expanded="true" aria-controls="collapsePages">
              <i class="fas fa-fw fa-folder"></i>
-             <span>Statistics</span>
+             <span>Thống kê</span>
          </a>
          <div id="Statistics" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="login.html">Thống kê sản phẩm</a>
-                 <a class="collapse-item" href="register.html">Thống kê hóa đơn</a>
-                 <a class="collapse-item" href="register.html">Thống kê bình luận</a>
+                 <a class="collapse-item" href="../statistical-product">Thống kê sản phẩm</a>
+                 <!-- <a class="collapse-item" href="../statistical-order">Thống kê hóa đơn</a> -->
+                 <a class="collapse-item" href="../statistical-comment">Thống kê bình luận</a>
              </div>
          </div>
      </li>

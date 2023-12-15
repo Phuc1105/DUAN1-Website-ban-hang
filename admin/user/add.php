@@ -61,15 +61,10 @@
      
                         </div>
                         <div class="form-group col-sm-4">
-                            <label>Giới tính</label>
-                            <div class="form-control">
-                                <label class="radio-inline mr-3">   
-                                    <input type="radio" value="Nam" name="gender" checked>Nam
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" value="Nữ" name="gender">Nữ
-                            </div>
+                            <label for="address" class="form-label">Địa chỉ</label>
+                            <input type="text" name="address" id="address" class="form-control" value="" multiple>
                         </div>
+                        
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-4">
@@ -94,15 +89,23 @@
                                 </label>
                             </div>
                         </div>
-
                         <div class="form-group col-sm-4">
+                            <label>Giới tính</label>
+                            <div class="form-control">
+                                <label class="radio-inline mr-3">   
+                                    <input type="radio" value="Nam" name="gender" checked>Nam
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" value="Nữ" name="gender">Nữ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="form-group col-sm-4">
                             <label for="image" class="form-label">Ảnh</label>
                             <input type="file" name="image" id="image" class="form-control" value="" multiple>
                         </div>
-
-                    </div>
-
-
+                    </div>  
                     <div class="mb-3">
                         <input type="submit" name="" value="Thêm" class="btn btn-primary mr-3">
                         <a href="index.php?btn_list"><input type="button" class="btn btn-success" value="Danh sách"></a>

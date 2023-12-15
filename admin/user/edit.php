@@ -59,10 +59,10 @@
                             <label>Gender</label>   
                                 <div class="form-control">
                                     <label class="radio-inline mr-3">
-                                        <input type="radio" value="Nam" name="gender" <?php if($gender=="Male"){echo"checked";}?>>Nam
+                                        <input type="radio" value="Nam" name="gender" <?php if($gender=="Nam"){echo"checked";}?>>Nam
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" value="Nữ" name="gender" <?php if($gender!="Male"){echo"checked";}?>>Nữ
+                                        <input type="radio" value="Nữ" name="gender" <?php if($gender=="Nữ"){echo"checked";}?>>Nữ
                                 </div>
                         </div>
                     </div>

@@ -37,11 +37,17 @@ function category_select_all($order = 'DESC')
     $sql = "SELECT * FROM categories ORDER BY category_id $order";
     return pdo_query($sql);
 }
+    function category_select_all_client($order = 'DESC')
+    {
+        $sql = "SELECT * FROM categories WHERE status = 1 ORDER BY category_id $order";
+        return pdo_query($sql);
+    }
 function category_select_by_id($category_id)
 {
-    $sql = "SELECT * FROM categories WHERE category_id=?";
+    $sql = "SELECT * FROM categories WHERE category_id= ? AND status= 1";
     return pdo_query_one($sql, $category_id);
 }
+
 function category_select_by_name($name)
 {
     $sql = "SELECT * FROM categories WHERE name=?";

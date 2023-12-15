@@ -51,7 +51,7 @@
                         <span class="badge border font-weight-normal">168</span>
                     </div>
                 </form> -->
-            </div>
+            <!-- </div> -->
             <!-- Price End -->
 
             <!-- Color Start -->
@@ -173,7 +173,7 @@
                 <!-- //sản phẩm -->
                 <div class="row px-xl-5">
                     <?php
-                    foreach ($results as $result) :
+                    foreach ($results as $result) {
                         extract($result);
                         if ($price > 0) {
                             $percent_discount = number_format($discount / $price * 100);
@@ -201,29 +201,11 @@
                                             </del>
                                         </div>
                                         <div class="d-flex align-results-center justify-content-center mb-1">
-                                        
-                        <?php
-                        foreach ($product as $comment) {
-                        }
-
-                        echo '<div class="text-primary pr-2">';
-                        for ($i = 1; $i <= 5; $i++) {
-                            $class = ($comment['rating'] >= $i) ? 'fas fa-star' : (($$comment['rating'] + 0.5 >= $i) ? 'fas fa-star-half-alt' : 'far fa-star');
-                            echo '<small class="' . $class . '"></small>';
-                        }
-                        echo '</div>';
-                        ?>
-                        <p class="pr-2"><?= number_format($averageRating, 1) ?> |</p>
-                        <p class="pr-2"><?= $totalReviews ?> Đánh giá</p>  |
-                        <p class="pl-2"><?= $view ?> Lượt xem</p>
-                    </div>
-                                        
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    <?php endforeach;
-                    }else{
+                                    
+                    <?php 
+                    }   
+                    }
+                    else{
                         ?>
                         <h1 class="text text-center">Không tìm thấy sản phẩm hay danh mục như trên</h1>
                         <?php

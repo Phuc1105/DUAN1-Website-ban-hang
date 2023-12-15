@@ -5,10 +5,10 @@ function user_insert($user_id, $password, $name, $email, $image, $status, $role)
     $sql = "INSERT INTO users(user_id,password,name,email,image,status,role) VALUES(?,?,?,?,?,?,?)";
     pdo_execute($sql, $user_id, $password, $name, $email, $image, $status == 1, $role == 1);
 }
-function user_insert_admin($user_id, $password, $name, $email, $image, $status, $role,$phone,$gender)
+function user_insert_admin($user_id, $password, $name, $email, $image, $status, $role,$phone,$gender,$address)
 {
-    $sql = "INSERT INTO users(user_id,password,name,email,image,status,role,phone,gender) VALUES(?,?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $user_id, $password, $name, $email, $image,$status == 1, $role == 1,$phone,$gender);
+    $sql = "INSERT INTO users(user_id,password,name,email,image,status,role,phone,gender,address) VALUES(?,?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql, $user_id, $password, $name, $email, $image,$status == 1, $role == 1,$phone,$gender,$address);
 }
 function user_update_status($status,$user_id){
     $sql = "UPDATE users SET status=? WHERE user_id = ?";
