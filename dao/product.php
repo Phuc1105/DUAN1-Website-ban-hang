@@ -93,18 +93,18 @@ function product_view($product_id)
 
 function product_select_popular_products()
 {
-    $sql = "SELECT * FROM products WHERE view > 0 ORDER BY view DESC LIMIT 0, 10";
+    $sql = "SELECT * FROM products WHERE view > 0 AND status = 1 ORDER BY view DESC LIMIT 0, 10";
     return pdo_query($sql);
 }
 
 function product_select_outstanding()
 {
-    $sql = "SELECT * FROM products WHERE outstanding=1";
+    $sql = "SELECT * FROM products WHERE outstanding=1 AND status = 1";
     return pdo_query($sql);
 }
 function product_select_new_product()
 {
-    $sql = "SELECT * FROM products WHERE outstanding=''";
+    $sql = "SELECT * FROM products WHERE outstanding='' AND status = 1";
     return pdo_query($sql);
 }
 
