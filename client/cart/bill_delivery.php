@@ -45,9 +45,8 @@
     <div class="row px-xl-5">
         <div class="col-12">
             <nav class="breadcrumb bg-light mb-30">
-                <a class="breadcrumb-item text-dark" href="#">Trang chủ</a>
-                <a class="breadcrumb-item text-dark" href="#">Cửa hàng</a>
-                <span class="breadcrumb-item active">Giỏ hàng</span>
+                <a class="breadcrumb-item text-dark" href="<?=$ROOT_URL?>">Trang chủ</a>
+                <span class="breadcrumb-item active">Đơn hàng</span>
             </nav>
         </div>
     </div>
@@ -56,11 +55,11 @@
 
 foreach ($order as $item) {
     $order_status = 'Chưa xác nhận';
-    if ($item['status'] == 1) {
-        $order_status = 'Xác nhận đơn hàng';
-    } elseif ($item['status'] == 2) {
-        $order_status = 'Đang giao hàng';
+    if ($item['status'] == 2) {
+        $order_status = 'Đã xác nhận đơn hàng';
     } elseif ($item['status'] == 3) {
+        $order_status = 'Đang giao hàng';
+    } elseif ($item['status'] == 4) {
         $order_status = 'Giao hàng thành công';
     }
 

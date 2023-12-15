@@ -158,9 +158,9 @@
     <div class="row px-xl-5">
         <div class="col-12">
             <nav class="breadcrumb bg-light mb-30">
-                <a class="breadcrumb-item text-dark" href="#">Trang chủ</a>
-                <a class="breadcrumb-item text-dark" href="#">Cửa hàng</a>
-                <span class="breadcrumb-item">Giỏ hàng</span>
+                <a class="breadcrumb-item text-dark" href="<?= $ROOT_URL ?>">Trang chủ</a>
+                <a class="breadcrumb-item text-dark" href="bill.php?btn_list">Đơn hàng</a>
+                <span class="breadcrumb-item">Đơn hàng chi tiết</span>
             </nav>
         </div>
     </div>
@@ -297,7 +297,7 @@ foreach ($order as $orders) :
                                             <p class="mb-0">Tổng cộng</p>
                                         </div>
                                         <div class="col-sm-8">
-                                            <p style="font-size: 1.5rem;" class="mb-0 text-danger fw-500"><?= number_format($orders['price'], 0, ',',',') ?>đ</p>
+                                            <p style="font-size: 1.5rem;" class="mb-0 text-danger fw-500"><?= number_format($orders['price'], 0, ',', ',') ?>đ</p>
                                         </div>
                                     </div>
                                 </div>

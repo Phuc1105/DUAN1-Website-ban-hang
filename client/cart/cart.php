@@ -9,7 +9,6 @@
         </div>
     </div>
 </div>
-<!-- Breadcrumb End -->
 <?php
 $totalAll = 0;
 
@@ -62,9 +61,13 @@ if (isset($_SESSION['cart'])) {
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Tổng tiền:</h5>
-                            <h5><?= number_format($item['total'], 0, ',', ',') ?>đ</h5>
+                            <h5><?= number_format($totalAll, 0, ',', ',') ?>đ</h5>
                         </div>
-                        <a href="<?= $CLIENT_URL . "/cart/list-cart.php?form_invoice" ?>"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Mua hàng</button></a>
+                        <?php if ($totalAll > 0) : ?>
+                            <a href="<?= $CLIENT_URL . "/cart/list-cart.php?form_invoice" ?>"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Mua hàng</button></a>
+                        <?php else : ?>
+                            <a href="<?= $ROOT_URL ?>"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Xem sản phẩm</button></a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

@@ -111,9 +111,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_status_order"])
                 <?php
                 foreach ($order as $value) {
                 ?>
-                    <li class="col-md-4 ">
+                    <li class="col-md-4 list-inline-item" >
                         <figure class="itemside mb-3">
-                            <div class="aside"><img src="<?= $UPLOAD_URL . '/products/' .  $value['img_product'] ?>" alt="Product Image"></div>
+                            <div class="aside" ><img src="<?= $UPLOAD_URL . '/products/' .  $value['img_product'] ?>" alt="Product Image"></div>
                             <figcaption class="info align-self-center">
                                 <p class="title"><?= $value['name_product'] ?><br> </p>
                             </figcaption>

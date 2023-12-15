@@ -10,12 +10,12 @@
             </div>
             <div class="form-group last mb-3">
                 <label for="text">Mật Khẩu Mới</label>
-                <input name="mat_khau1" type="text" class="form-control" id="mat_khau1">
+                <input name="mat_khau1" type="password" class="form-control" id="mat_khau1">
 
             </div>
             <div class="form-group last mb-4">
-                <label for="text">Xác Nhận Mật Khẩu</label>
-                <input name="mat_khau2" type="text" class="form-control" id="mat_khau2">
+                <label for="name">Xác Nhận Mật Khẩu</label>
+                <input name="mat_khau2" type="password" class="form-control" id="mat_khau2">
 
             </div>
             <i class="alert"><?= (isset($thongbao) && (strlen($thongbao) > 0)) ? $thongbao : "" ?></i>

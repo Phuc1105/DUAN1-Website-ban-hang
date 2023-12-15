@@ -1,46 +1,119 @@
-<div class="container">
-    <h5 class="pt-5 pb-5 text-center" style="font-family: 'Dancing Script', cursive; font-size: 60px ;">Update account</h5>
-    <div class="row m-1 pb-5">
-        <div class="col-lg-6 col-md p-6">
-            <img src="<?= $UPLOAD_URL . '/users/' . $image ?>" class="img-fluid rounded-circle" alt="">
+<!-- /// giao diện mới  -->
+
+<section>
+<div class="container-fluid">
+            <div class="row px-xl-5">
+                <div class="col-12">
+                    <nav class="breadcrumb bg-light mb-30">
+                        <a class="breadcrumb-item text-dark" href="<?= $ROOT_URL ?>">Trang chủ</a>
+                        <span class="breadcrumb-item active">Hồ sơ</span>
+                    </nav>
+                </div>
+            </div>
         </div>
-
-
-        <div class="col-lg-6 col-md">
-            <form action="<?= $CLIENT_URL . '/account/update_account.php' ?>" method="POST" enctype="multipart/form-data" id="update_acount">
-
-                <div class="form-group ">
-                    <label for="">User name</label>
-                    <input type="text" name="user_id" id="" class="form-control" value="<?= $user_id ?>" readonly aria-describedby="helpId">
+    <div class="container py-5">
+        <form action="<?= $CLIENT_URL . '/account/update_account.php' ?>" method="POST" enctype="multipart/form-data" id="update_acount">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <img src="<?= $UPLOAD_URL . '/users/' . $image ?>" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                            <h5 class="my-3"><?= $user_id ?></h5>
+                            <div class="d-flex justify-content-center mb-2">
+                                <button type="submit" name="btn_update" class="btn btn-primary mr-3">Sửa hồ sơ</button>
+                                <a href="<?= $CLIENT_URL ?>/cart/bill.php?btn_list" class="text-dark">
+                                <button type="button" class="btn btn-outline-primary ms-1">Đơn hàng</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4 mb-lg-0">
+                        <div class="card-body p-0">
+                            <ul class="list-group list-group-flush rounded-3">
+                                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                    <a href="" class="text-dark">
+                                        <p class="mb-0">Hồ sơ</p>
+                                    </a>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                    <a href="<?= $CLIENT_URL ?>/cart/bill.php?btn_list" class="text-dark">
+                                        <p class="mb-0">Đơn hàng</p>
+                                    </a>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                    <a href="<?= $CLIENT_URL . '/account/quen_mk.php' ?>" class="text-dark">
+                                        <p class="mb-0">Thay đổi mật khẩu</p>
+                                    </a>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                    <a href="<?= $CLIENT_URL . '/account/login.php?btn_logout' ?>" class="text-dark">
+                                        <p class="mb-0">Đăng xuất</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group form">
-                    <label for="">First and last name</label>
-                    <input type="text" name="name" id="" class="form-control" value="<?= $name ?>" aria-describedby="helpId">
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Họ và tên</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"><?= $name ?></p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Email</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"><?= $email ?></p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Mật khẩu</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">*****************</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Điện thoại di động</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"><?= $phone ?></p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Giới tính</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"><?= $gender ?></p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Địa chỉ</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"><?= $address ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="">Email address</label>
-                    <input type="text" name="email" id="" class="form-control" value="<?= $email ?>" aria-describedby="helpId">
-                </div>
-                <div class="form-group">
-                    <label for="">Avatar user</label>
-                    <input type="file" name="up_image" id="" class="form-control" aria-describedby="helpId">
-                </div>
-                <div class="form-group pl-2">
+            </div>
+        </form>
 
-                    <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
-
-                </div>
-
-                <input name="role" value="<?= $role ?>" type="hidden">
-                <input name="status" value="<?= $status ?>" type="hidden">
-                <input name="password" value="<?= $password ?>" type="hidden">
-                <input name="image" value="<?= $image ?>" type="hidden">
-                <div class="form-group">
-                    <button type="submit" name="btn_update" class="btn btn-warning pt-2 pb-2">Update</button>
-                </div>
-            </form>
-        </div>
-
-
-    </div>
-</div>
+</section>

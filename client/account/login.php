@@ -29,7 +29,7 @@ if (exist_param("btn_login")) {
     } else {
         $MESSAGE = "Incorrect username!";
     }
-} else {
+}else {
 
     if (exist_param("btn_logout")) {
         unset($_SESSION['user']); //xóa người dùng khỏi session
