@@ -1,22 +1,20 @@
-
 <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
     <div class="card-body">
         <h4 class="card-title mb-4">Nhập mã xác nhận đã gửi về email của bạn</h4>
-                        <form action="#" method="post">
+        <form action="#" method="post">
 
-                            <input type="hidden" name="ma_kh">
-                            <div class="form-group last mb-4">
-                                <label for="email">Mã Xác Nhận</label>
-                                <input name="token" type="text" class="form-control" id="email">
+            <input type="hidden" name="ma_kh">
+            <div class="form-group last mb-4">
+                <label for="email">Mã Xác Nhận</label>
+                <input name="token" type="text" class="form-control" id="email">
 
-                            </div>
-
-                            <input name="btn_forgot_xac-nhan" type="submit" value="Gửi"
-                            class="btn btn-primary btn-block" >
-                        </form>
-                    </div>
-                </div>
             </div>
+
+            <input name="btn_forgot_xac-nhan" type="submit" value="Gửi" class="btn btn-primary btn-block">
+        </form>
+    </div>
+</div>
+</div>
 </body>
 
 <?php
@@ -37,12 +35,12 @@ function GuiMial()
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'phucpvpc06866@fpt.edu.vn';                     //SMTP username
-$mail->Password = 'iuoy byaq qaiz dtwr
+        $mail->Password = 'iuoy byaq qaiz dtwr
         ';                               //SMTP password
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         //Recipients
-        $mail->setFrom('phucpvpc06866@fpt.edu.vn', 'restaurant');
+        $mail->setFrom('phucpvpc06866@fpt.edu.vn', 'MULTI SHOP');
         $mail->addAddress($_SESSION['email']); // Add a recipient from the session
         //Add a recipient
         //Content
@@ -67,8 +65,6 @@ $mail->Password = 'iuoy byaq qaiz dtwr
         $mail->send();
 
         ob_end_flush();
-
-
     } catch (Exception $e) {
         echo "không đc: {$mail->ErrorInfo}";
     }

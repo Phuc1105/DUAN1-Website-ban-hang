@@ -28,7 +28,7 @@
             <div class="col-lg-7 h-auto mb-30">
                 <div class="h-100 bg-light p-30">
                     <h3><?= $name ?></h3>
-                    <div class="d-flex" style="font-size: 19px;">
+                    <div class="d-flex mb-2" style="font-size: 19px;">
                         <?php
                         $totalRating = 0;
                         $totalReviews = count($comment_list);
@@ -56,7 +56,7 @@
                         $percent_discount = 0;
                     } ?>
 
-                    <div class="">
+                    <div class="mb-1">
                         <div class="d-flex">
                             <h5 class="d-block text-center"><?= number_format($price - $discount, 0, ',', ',') ?>đ </h5>
                             <del>
@@ -66,58 +66,13 @@
                             </del>
                         </div>
                     </div>
-                    <div class="d-flex mb-3">
-                        <strong class="text-dark mr-3">Sizes:</strong>
-                        <form>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="size-1" name="size">
-                                <label class="custom-control-label" for="size-1">XS</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="size-2" name="size">
-                                <label class="custom-control-label" for="size-2">S</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="size-3" name="size">
-                                <label class="custom-control-label" for="size-3">M</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="size-4" name="size">
-                                <label class="custom-control-label" for="size-4">L</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="size-5" name="size">
-                                <label class="custom-control-label" for="size-5">XL</label>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="d-flex mb-4">
-                        <strong class="text-dark mr-3">Colors:</strong>
-                        <form>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-1" name="color">
-                                <label class="custom-control-label" for="color-1">Black</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-2" name="color">
-                                <label class="custom-control-label" for="color-2">White</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-3" name="color">
-                                <label class="custom-control-label" for="color-3">Red</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-4" name="color">
-                                <label class="custom-control-label" for="color-4">Blue</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-5" name="color">
-                                <label class="custom-control-label" for="color-5">Green</label>
-                            </div>
-                        </form>
+                    <div>
+                        <p><?=$describes?></p>
                     </div>
                     <div class="d-flex align-items-center mb-4 pt-2">
+                        
                         <div class="input-group quantity mr-3" style="width: 130px;">
+                       
                             <div class="input-group-btn">
                                 <button class="btn btn-primary btn-minus">
                                     <i class="fa fa-minus"></i>
@@ -130,10 +85,10 @@
                                 </button>
                             </div>
                         </div>
-                        <a href="<?= $CLIENT_URL . "/cart/add-cart.php?id=" . $product_id ?>"><button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ hàng</button></a>
+                        <a href="<?= $CLIENT_URL . "/cart/add-cart.php?id=" . $product_id?>"><button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ hàng</button></a>
                     </div>
                     <div class="d-flex pt-2">
-                        <strong class="text-dark mr-2">Chia sẻ:</strong>
+                        <strong class="text-dark mr-2">Chia sẻ:</strong> 
                         <div class="d-inline-flex">
                             <a class="text-dark px-2" href="" onclick="shareProduct()">
                                 <i class="fab fa-facebook-f"></i>
@@ -147,15 +102,39 @@
                                     window.open(facebookShareURL, 'Chia sẻ sản phẩm', 'width=600,height=400');
                                 }
                             </script>
-                            <a class="text-dark px-2" href="">
+                            <!-- // chia sẻ tai win  -->
+                            <a class="text-dark px-2" href="#" onclick="shareOnTwitter()">
                                 <i class="fab fa-twitter"></i>
                             </a>
+
+                            <script>
+                                function shareOnTwitter() {
+                                    var productName = '<?php echo $name; ?>';
+                                    var productURL = 'http://wd18305-nhom6.demowebcantho.online/client/product/details.php?product_id=<?php echo $product_id; ?>';
+                                    var twitterShareURL = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(productURL) + '&text=' + encodeURIComponent(productName);
+                                    window.open(twitterShareURL, 'Chia sẻ sản phẩm trên Twitter', 'width=600,height=400');
+                                }
+                            </script>
+
                             <a class="text-dark px-2" href="">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a class="text-dark px-2" href="">
+                            <!-- chia sẻ pin tơ rệt  -->
+                            <a class="text-dark px-2" href="#" onclick="shareOnPinterest()">
                                 <i class="fab fa-pinterest"></i>
                             </a>
+
+                            <script>
+                                function shareOnPinterest() {
+                                    var productName = '<?php echo $name; ?>';
+                                    var productURL = 'http://wd18305-nhom6.demowebcantho.online/client/product/details.php?product_id=<?php echo $product_id; ?>';
+                                    var productImageURL = 'http://wd18305-nhom6.demowebcantho.online/upload/products/<?php echo $image; ?>';
+
+                                    // Chia sẻ trên Pinterest
+                                    var pinterestShareURL = 'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(productURL) + '&media=' + encodeURIComponent(productImageURL) + '&description=' + encodeURIComponent(productName);
+                                    window.open(pinterestShareURL, 'Chia sẻ sản phẩm trên Pinterest', 'width=600,height=400');
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>

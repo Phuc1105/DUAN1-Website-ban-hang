@@ -57,9 +57,9 @@
                                     <a class="dropdown-item" href="<?= $ADMIN_URL . "/trang-chinh/" ?>">Quản lý Admin</a>
                                 <?php } ?>
                                 <a class="dropdown-item" href="<?= $CLIENT_URL . '/sell/sell.php' ?>">Bán hàng</a>
-                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/update_account.php' ?>">Cập nhật tài khoản</a>
-                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/quen_mk.php' ?>">Thay đổi mật khẩu</a>
-                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/login.php?btn_logout' ?>">Đăng xuất</a>
+                                <a class="dropdown-item" href="<?= $CLIENT_URL . '/account/update_account.php' ?>">Thông tin hồ sơ</a>
+
+
                             </div>
                         </div>
                     <?php } else { ?>
@@ -166,16 +166,6 @@
                                     echo $_SESSION['total_cart'];
                                 } else {
                                     echo 0;
-                                }
-                                function clearCart2()
-                                {
-                                    // Kiểm tra xem phiên đã bắt đầu chưa
-                                    if (session_status() == PHP_SESSION_NONE) {
-                                        session_start();
-                                    }
-
-                                    // Xóa giỏ hàng bằng cách unset biến $_SESSION['cart']
-                                    unset($_SESSION['cart']);
                                 }
                                 ?></span>
                         </a>

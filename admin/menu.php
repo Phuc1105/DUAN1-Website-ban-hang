@@ -150,29 +150,7 @@
              <i class="fas fa-fw fa-chart-area"></i>
              <span>Danh sách bình luận</span></a>
      </li>
-<!-- MENU QUẢN LÝ THỐNG KÊ  -->
-     <!-- Divider -->
-     <hr class="sidebar-divider">
 
-     <!-- Heading -->
-     <div class="sidebar-heading">
-        Thống kê
-     </div>
-     <!-- Nav Item - Tables -->
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Statistics" aria-expanded="true" aria-controls="collapsePages">
-             <i class="fas fa-fw fa-folder"></i>
-             <span>Statistics</span>
-         </a>
-         <div id="Statistics" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="login.html">Thống kê sản phẩm</a>
-                 <a class="collapse-item" href="register.html">Thống kê hóa đơn</a>
-                 <a class="collapse-item" href="register.html">Thống kê bình luận</a>
-             </div>
-         </div>
-     </li>
 
      <!-- Divider -->
      <hr class="sidebar-divider d-none d-md-block">

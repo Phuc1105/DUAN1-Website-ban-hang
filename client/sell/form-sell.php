@@ -1,7 +1,7 @@
 <style>
 </style>
 <h1 class="text text-center">Thông tin sản phẩm</h1>
-<div class="row row justify-content-center">
+<div class="d-flex justify-content-center align-items-center">
     <div class="col-lg-10">
         <div class="card">
             <div class="card-body">

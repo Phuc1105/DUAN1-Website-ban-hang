@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="user_id" class="form-label">Tài khoản:</label>
-                            <input type="text" name="user_id" id="user_id" class="form-control">
+                            <input type="text" name="user_id"  class="form-control">
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="name" class="form-label">Tên:</label>

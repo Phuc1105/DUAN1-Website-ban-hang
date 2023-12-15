@@ -17,7 +17,7 @@ if (exist_param("btn_update")) {
     } catch (Exception $exc) {
         $MESSAGE = "Update failed!";
     }
-} else {
+}else {
     extract($_SESSION['user']);
 }
 

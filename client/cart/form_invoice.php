@@ -100,6 +100,7 @@
                                     <h5><?= number_format($totalAll, 0, ',', ',') ?>đ</h5>
                                 </div>
                                 <a href="<?= $CLIENT_URL . "/cart/list-cart.php?delivery_vnpay" ?>"><button type="button" name="" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Thanh toán Vnpay</button></a>
+                                <a href="<?= $CLIENT_URL . "/cart/list-cart.php?delivery_momo" ?>"><button type="button" name="" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Thanh toán Momo</button></a>
                                 <a href="<?= $CLIENT_URL . "/cart/list-cart.php?delivery" ?>"><button type="button" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Thanh toán khi nhận hàng</button></a>
                             </div>
                         </form>

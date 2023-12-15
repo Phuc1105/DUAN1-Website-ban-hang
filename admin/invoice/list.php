@@ -41,7 +41,7 @@
                         <td><?=$value['user_id']?></td>
                         <td><?=$value['order_date']?></td>
                         <td class="text-dark" style="font-weight: 600;">
-                            <?=number_format($value['price'])?>$
+                            <?=number_format($value['price'])?>đ
                         </td>
                         <td> 
                             <?=$order_status?>

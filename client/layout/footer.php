@@ -13,23 +13,17 @@
                 <div class="col-md-4 mb-5">
                     <h5 class="text-secondary text-uppercase mb-4">Mua Sắm Nhanh</h5>
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Trang chủ</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cửa hàng của chúng tôi</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Chi tiết cửa hàng</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Thanh toán</a>
-                        <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Liên hệ chúng tôi</a>
+                        <a class="text-secondary mb-2" href="<?=$ROOT_URL?>"><i class="fa fa-angle-right mr-2"></i>Trang chủ</a>
+                        <a class="text-secondary mb-2" href="<?=$CLIENT_URL?>/cart/list-cart.php"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
+                        <a class="text-secondary" href="<?=$CLIENT_URL?>/trang-chinh/index.php?contact"><i class="fa fa-angle-right mr-2"></i>Liên hệ chúng tôi</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-5">
                     <h5 class="text-secondary text-uppercase mb-4">Tài Khoản Của Tôi</h5>
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Trang chủ</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cửa hàng của chúng tôi</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Chi tiết cửa hàng</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Thanh toán</a>
-                        <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Liên hệ chúng tôi</a>
+                        <a class="text-secondary mb-2" href="<?=$ROOT_URL?>"><i class="fa fa-angle-right mr-2"></i>Trang chủ</a>
+                        <a class="text-secondary mb-2" href="<?=$CLIENT_URL?>/cart/list-cart.php"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
+                        <a class="text-secondary" href="<?=$CLIENT_URL?>/trang-chinh/index.php?contact"><i class="fa fa-angle-right mr-2"></i>Liên hệ chúng tôi</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-5">

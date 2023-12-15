@@ -16,7 +16,7 @@ function exist_param($fieldname)
 }
 
 
-function save_file($fieldname, $target_dir)
+function save_file($fieldname, $target_dir)/*  */
 {
     $file_upload = $_FILES[$fieldname];
     $file_name = basename($file_upload['name']);

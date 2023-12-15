@@ -15,7 +15,7 @@ if (isset($_SESSION['cart'])) {
 }
 ?>
     <div class="container w-50">
-        <form action="list-cart.php?btn_insert_vnpay" method="POST" class="m-auto" id="invoice">
+        <form action="../cart/list-cart.php" method="POST" >
             <!-- Breadcrumb Navigation -->
             <div class="row">
                 <div class="col-12">
@@ -110,9 +110,7 @@ if (isset($_SESSION['cart'])) {
                                 <input type="hidden" name="price" value="<?= $totalAll ?>">
                             </div>
                         </div>
-                      
-                        <a href=""><button type="submit" name="redirect" class="btn btn-primary font-weight-bold mt-3 w-100">Tiếp tục thanh toán</button></a>
-                       
+                      <button type="submit" name="payUrl"  class="btn btn-primary font-weight-bold mt-3 w-100">Tiếp tục thanh toán</button>
                     </div>
                 </div>
             </div>
