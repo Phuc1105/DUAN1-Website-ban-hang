@@ -29,5 +29,5 @@ else {
   $popular_products = product_select_popular_products();
   $VIEW_NAME = "trang-chinh/trang-chu.php";
 }
-$list_category = category_select_all();
+$list_category = category_select_all_client();
 require "../layout.php";

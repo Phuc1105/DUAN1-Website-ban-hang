@@ -46,7 +46,7 @@
                         echo '</div>';
                         ?>
                         <p class="pr-2"><?= number_format($averageRating, 1) ?> |</p>
-                        <p class="pr-2"><?= $totalReviews ?> Đánh giá</p>  |
+                        <p class="pr-2"><?= $totalReviews ?> Đánh giá</p> |
                         <p class="pl-2"><?= $view ?> Lượt xem</p>
                     </div>
                     <?php
@@ -97,8 +97,8 @@
                                 function shareProduct() {
                                     var productName = '<?php echo $name; ?>';
                                     var productURL = 'http://wd18305-nhom6.demowebcantho.online/client/product/details.php?product_id=<?php echo $product_id; ?>';
-                                    var productImageURL = 'http://wd18305-nhom6.demowebcantho.online/upload/products/<?php echo $image; ?>';  
-                                    var facebookShareURL = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(productURL);
+                                    var productImageURL = 'http://wd18305-nhom6.demowebcantho.online/upload/products/<?php echo $image; ?>';
+                                    var facebookShareURL = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(productURL) + '&text=' + encodeURIComponent(productName) + '&picture=' + encodeURIComponent(productImageURL);
                                     window.open(facebookShareURL, 'Chia sẻ sản phẩm', 'width=600,height=400');
                                 }
                             </script>
@@ -162,6 +162,6 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Shop Detail End -->
     <?php require "../product/product_also_like.php"; ?>

@@ -17,19 +17,19 @@ if (exist_param("btn_list")) {
     $name = $_REQUEST['name'];
     $password = $_REQUEST['password'];
     $email = $_REQUEST['email'];
+    $address = $_REQUEST['address'];
     $phone = $_REQUEST['phone'];
     $phone = preg_replace('/[^0-9]/', '', $phone);
     $role = $_REQUEST['role'];
     $status = $_REQUEST['status'];
     $gender = $_REQUEST['gender'];
-    if (!isset($_FILES['image'])) {
+    $image_array = $_FILES['image'];
+    $image = $image_array['name'];
+    if (!isset($image)) {
       $image = "default.jpg";
-    } else {
-      $image_array = $_FILES['image'];
-      $image = $image_array['name'];
     }
     // if ((strlen($phone) == 10 && preg_match('/^0[0-9]{9}$/', $phone)) && strlen($password) >= 6 && filter_var($email, FILTER_VALIDATE_EMAIL) && empty($user_select_id)) {
-      user_insert_admin($user_id, $password, $name, $email, $image, $status, $role, $phone, $gender);
+      user_insert_admin($user_id, $password, $name, $email, $image, $status, $role, $phone, $gender, $address);
       $VIEW_NAME = "list.php";
   //   } else {
   //     if (strlen($phone) != 10 || !preg_match('/^0[0-9]{9}$/', $phone)) {

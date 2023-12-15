@@ -230,6 +230,9 @@ $(document).ready(function () {
                 required: true,
                 phoneVN: true,
             },
+            address: {
+                required: true,
+            },
         },
         messages: {
             user_id: {
@@ -253,6 +256,9 @@ $(document).ready(function () {
             phone: {
                 required: "Vui lòng nhập số điện thoại.",
                 phoneVN: "Vui lòng nhập số điện thoại hợp lệ của Việt Nam.",
+            },
+            address: {
+                required: "Vui lòng nhập địa chỉ",
             },
         },
     });
