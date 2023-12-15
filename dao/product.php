@@ -30,7 +30,7 @@ function product_update_status_hide($product_id){
     pdo_execute($sql , $product_id);
 }
 function find_product($keyword){
-    $sql = "SELECT * FROM products WHERE name LIKE ? ";
+    $sql = "SELECT * FROM products WHERE name LIKE ? AND status = 1 ";
     $keyword = '%' . $keyword . '%';
     return pdo_query($sql,$keyword);
 }
@@ -110,7 +110,7 @@ function product_select_new_product()
 
 function product_select_by_loai($category_id)
 {
-    $sql = "SELECT * FROM products WHERE category_id=?";
+    $sql = "SELECT * FROM products WHERE category_id=? AND status = 1";
     return pdo_query($sql, $category_id);
 }
 function product_select_keyword($keyword)
